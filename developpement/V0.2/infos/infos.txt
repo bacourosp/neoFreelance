@@ -1,0 +1,70 @@
+****************************************************************************************************************
+*********************************************   Motivations : **************************************************
+****************************************************************************************************************
+Contexte :
+Je suis informaticien consultant à la recherche d'opportunités de travail.
+
+Contraintes :
+- Isolement de la ville de mon entreprise
+- Chéreté des sites de freelance en informatique.
+
+Objectifs du projet :
+Désir de créer ce projet et ainsi créer une place de marché où réduire le coût pour moi 
+et faire de la prospection collective pour les membres du site qui sont dans mon cas.
+
+www.neofreelance.com se devra d'apporter une solution gratuite aux freelances, pour se lancer
+et faire des affaires.
+
+tout les membres ainsi que les moderateurs seront utilisateurs de la platteforme. Comme tout utilisateur 
+et donc face aux mêmes problèmes que les autres devra être porté par l'innovation et la création concurentielle.
+ 
+Ainsi, on pourra trouver des opportunités de travail à distance ou non.
+
+****************************************************************************************************************
+****************************************************************************************************************
+****************************************************************************************************************
+
+Reste à faire : 
+- Pour evites de créer une sorte de monnaie virtuelle, le système de Karma de www.launchpad.com est largement suffisant
+  afin de permettre aux membres de cumuler sur les actions liés au site notemment la moderation par le vote.
+- Modération du site par vote.
+- Concevoir la base de donnée pour la concurence sur les projets.
+- Ouverture totale du site.
+
+****************************************************************************************************************
+********************************************** Suivi pour les investisseurs : **********************************
+****************************************************************************************************************
+
+04/12/2012 :
+- integration architecturale de www.gravatar.com pour la gestion de l'avatar des membres
+- restructuration du site par rapport au multidomaine www.neofreelance.com hebergé sur mon 
+  site perso
+
+03/12/2011 : 
+- l'interface est en partie terminée, une charte graphique inspirée en majeur partie du site www.freelancer.com
+- l'achat du nom de domaine neofreelance poitera sur mon site perso en option multidomaine
+
+28/11/2011 : 
+- la conception du projet est en partie finie mais j'ai de plus en plus d'idée qui me viennent à l'esprit.
+
+01/11/2011 :
+- Lancement du projet de developpement du site www.neofreelance.com
+
+             
+                                                       .          :%%%.    
+                                                  __%%%(\        `%%%%%   
+                      ---------------------    /a  ^  '%        %%%% %: 
+                      | www.aldaffah.biz   >   '__..  ,'%     .-%:     %-'
+                      ---------------------       ~~""%:. `     % '          `.
+                                                      %% % `   %%            . \.
+                                                       %%:. `-'   `         %: :\
+                                                       %(%,%..."   `%,     %% ) )
+                                                        %)%%)%%'   )%%%...   "/ (
+                                                         %a:f%%\ % / \`%  "   / \))
+                                                             %(%'  % /-. \    \ |-. '.
+                                                       `'    |%   `()    \|  `()
+                                                             ||    /     ()   /
+                                                             ()   0       |  o
+                                                              \  /\       o /
+                                                               o  `       /-|
+                                                            ,-/ `        ' - \ 
