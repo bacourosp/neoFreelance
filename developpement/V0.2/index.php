@@ -44,17 +44,39 @@ include('menu.php');
 include('projets.php');
 ?>
 
-<div id="ns_banner-wrapper">
- <div id="ns_banner">
-  <h1>Quoi de neuf sur neofreelance ?</h1>
-  <p>Etat du <a href="/infos/infos.txt">developpement</a> du site</p>
-  <table width="920">
-  <tr>
-  <td><a href="http://www.aldaffah.biz">Qui sommes nous</a></td>
-  </tr>
-</table>
+<br>
+<h1>Quoi de neuf sur neofreelance ?</h1>
+<br>
 
- </div>
+<div class="row show-grid">
+
+<div class="span-one-third">
+<strong>Informations ></strong><br />
+
+<a href="/infos/mentions-legales">Mentions légales</a><br />
+<a href="/infos/reglement">Conditions Générales</a><br />
+<a href="/infos/infos.txt">developpement du site</a> <br />&nbsp;
+
+</div>
+
+<div class="span-one-third">
+<strong>A propos ></strong><br />
+
+<a href="http://www.aldaffah.biz">Qui sommes nous</a><br />
+<a href="http://www.facebook/neoFreelance">Facebook</a><br />
+<a href="http://www.twitter/neoFreelance">Twitter</a><br />&nbsp;
+
+</div>
+
+<div class="span-one-third">
+<strong>Actions ></strong><br />
+
+<a href="/project/nouveau">Poster un projet</a><br />
+<a href="/membres/inscription.php">Ouvrir un bureau</a><br />
+<a href="/infos">Nous contacter</a><br />&nbsp;
+
+</div>
+
 </div>
 
 </div> <!-- Fin de la marge -->

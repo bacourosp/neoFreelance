@@ -57,7 +57,9 @@ if($total) {
  echo '</br>';
  echo '<h1>'.$row["NOMPROJET"].'</h1>';
  echo '</div>';
-
+ echo '<form>'
+ echo '<button class="ns_btn ns_blue" type="submit" value="post" onClick="Soumissionner();">Soumissionner</button>'
+ echo '</form>'
 }
 ?>
 </body>
