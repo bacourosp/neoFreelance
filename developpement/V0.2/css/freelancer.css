@@ -550,6 +550,7 @@ Bottom banner
 #ns_bottom-banner{width:920px; position:relative; background:url(../images/menu.png) bottom left no-repeat; color:#FFF; clear:both; margin-top:-10px; float:left; *margin-bottom:-20px;font-size:16px;}
 
 .span-one-third{width:250px}
+.span-one-half{width:450px}
 .row > [class*="span"] {
 display: inline;
 float: left;
