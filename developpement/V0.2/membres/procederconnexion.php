@@ -31,7 +31,7 @@ if($total) {
 		$_SESSION['email']=$row["EMAIL"];
 		echo '<script language="Javascript">
         <!--
-        document.location.replace("../index.php");
+        document.location.replace("../membres/profil.php");
         // -->
         </script>';
   }

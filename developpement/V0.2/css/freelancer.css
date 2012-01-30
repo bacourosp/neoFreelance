@@ -84,12 +84,19 @@ th {
 /* Login box */
 #login{cursor:pointer; margin:20px 0px 0px 0px; padding:10px 10px; border:#fff solid 1px; color:#333 !important; }
 .login{ margin:0 auto; position: relative; display:block;  width:920px;}
+
 #account{outline:none; float:right; margin:60px 0px 0px 0px; padding:7px 10px; border:#fff solid 1px; color:#333 !important; }
 .account{ background:no-repeat top right; display:block; height:28px; position:absolute; right:100; top:25px; width:60px;}
 
 #logout{cursor:pointer; margin:20px 0px 0px 0px; padding:10px 10px; border:#fff solid 1px; color:#999999 !important; }
 
 #box-login{display:none; width:280px; position:absolute; top:57px; right:0px; border:#CCC solid 5px; background:#FFF; z-index:10; padding:25px 30px 10px 30px;}
+
+#profil{cursor:pointer; margin:20px 0px 0px 0px; padding:10px 10px; border:#fff solid 1px; color:#333 !important; }
+.profil{ margin:0 auto; position: relative; display:block;  width:920px;}
+
+#box-profil{display:none; width:280px; position:absolute; top:57px; right:0px; border:#CCC solid 5px; background:#FFF; z-index:10; padding:25px 30px 10px 30px;}
+
 #box-login .field{padding-bottom:10px !important;}
 #box-login .remember{float:left; padding-top:12px;}
 #username{width:260px;}

@@ -26,7 +26,7 @@ include('menu.php');
   <ul>
   <li>Un réseau social de freelances télétravailleurs</li>
   <li>Une place de marché pour trouver les meilleurs prestataires frealances</li>
-  <li>Une platteforme gratuite de télétravail et de coworking</li>
+  <li>Une plateforme gratuite de télétravail et de coworking</li>
   <li>Une utilisation simple pour réussir vos projets</li>
   <li>Un coût minimal pour vos projets, pas d'abonnement !</li>
   </ul>

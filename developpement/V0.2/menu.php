@@ -6,11 +6,22 @@
 <div class="login">
 <?
 if ($_SESSION['connected']==1) {
-echo '<a id="login" href="/membres/deconnexion.php"><span>Déconnexion</span></a>';
+echo '<a id="login" onClick="showProfilArea();"><span>Profil et Compte</span></a>';
 } else {
 echo '<a id="login" onClick="showLoginArea();"><span>Mon bureau virtuel</span></a>';
 }
 ?>
+<!-- Profil et Compte box -->
+
+<div id="box-profil"> <a style="position:absolute; top:0; right:0;" onClick="hideProfilArea();"><img src="../images/icones/icon_close1.png"></a>
+<a href="/membres/profil.php">Profil</a>
+<br>
+<a href="/membres/parametres.php">Paramètres</a>
+<br>
+<a href="/membres/deconnexion.php">Déconnexion</a>
+</div>
+
+
 <!-- Login box -->
 
 			<div id="box-login"> <a style="position:absolute; top:0; right:0;" onClick="hideLoginArea();"><img src="../images/icones/icon_close1.png"></a>
@@ -58,6 +69,8 @@ echo '<a id="login" onClick="showLoginArea();"><span>Mon bureau virtuel</span></
 				
 			</ul>
 </div>
+
+<!-- A revoir
 <?
 if (isset($_SESSION['pseudo'])) {
 echo '<div class="grid_12">';
@@ -67,3 +80,5 @@ echo '<a href="/membres/profil.php">'.htmlentities(trim($_SESSION['pseudo'])).'<
 echo '</div>';
 }
 ?>			
+
+-->
