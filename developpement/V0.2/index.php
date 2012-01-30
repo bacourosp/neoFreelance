@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>NeoFreelance, télétravail et coworking</title>
+<title>neoFreelance, coworking et télétravail</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 
 <?
@@ -22,7 +22,7 @@ include('menu.php');
 <div id="ns_banner-wrapper">
  <div id="ns_banner">
 
-  <h1>Qu'est-ce que neofreelance ?</h1>
+  <h1>Qu'est-ce que neoFreelance ?</h1>
   <ul>
   <li>Un réseau social de freelances télétravailleurs</li>
   <li>Une place de marché pour trouver les meilleurs prestataires frealances</li>
@@ -50,9 +50,9 @@ include('menu.php');
 <div class="span-one-third">
 <strong>Informations ></strong><br />
 
-<a href="/infos/mentions-legales">Mentions légales</a><br />
-<a href="/infos/reglement">Conditions Générales</a><br />
-<a href="/infos/infos.txt">developpement du site</a> <br />&nbsp;
+<a href="/infos/mentions-legales.html">Mentions légales</a><br />
+<a href="/infos/reglement.html">Conditions Générales</a><br />
+<a href="/infos/infos.txt">Infos investisseurs</a> <br />&nbsp;
 
 </div>
 
