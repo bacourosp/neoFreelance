@@ -278,11 +278,10 @@ font-size: 16px;
 	width:620px;
 }
 
-#project-name-hint {
+.hint {
    	display: none;
     position: absolute;
-    right: 0px;
-    bottom: 5px;
+
     width: 200px;
     margin-top: -4px;
     padding: 10px 12px;
@@ -290,9 +289,9 @@ font-size: 16px;
     I must do a bg image, too!  So I'm duplicating the pointer.gif
     image, and positioning it so that it doesn't show up
     within the box */
-    background: #FFFF99 url('../images/icones/hintpointer.png') no-repeat -10px 5px;
+    background: #f26d7d url('../images/icones/hintpointer.png') no-repeat -10px 5px;
 	
-	border: 2px solid #FFFF00;
+	border: 2px solid #f26d7d;
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px;
 
@@ -303,55 +302,26 @@ font-size: 16px;
 	font-weight: normal; 
 }
 
-#project-description-hint {
-   	display: none;
+/* The pointer image is hadded by using another span */
+.hint .hint-pointer {
     position: absolute;
-    right: -150px;
-    top: 20px;
-    width: 200px;
-    margin-top: -4px;
-    padding: 10px 12px;
-    /* to fix IE6, I can't just declare a background-color,
-    I must do a bg image, too!  So I'm duplicating the pointer.gif
-    image, and positioning it so that it doesn't show up
-    within the box */
-    background: #FFFF99 url('../images/hintpointer.png') no-repeat -10px 5px;
-	
-	border: 2px solid #FFFF00;
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px;
-
-	font-family:Helvetica, Arial, sans-serif;
-	font-size:12px;
-	color:#000000;
-	z-index:5;
-	font-weight: normal; 
+    left: -10px;
+    top: 5px;
+    width: 10px;
+    height: 19px;
+    background: url('../images/icones/hintpointer.png') left top no-repeat;
+    z-index:5; 
 }
 
-#bidperiod-hint {
-  	display: none;
-    position: absolute;
-    right: 400px;
-    top: 60px;
-    width: 200px;
-    margin-top: -4px;
-    padding: 10px 12px;
-    /* to fix IE6, I can't just declare a background-color,
-    I must do a bg image, too!  So I'm duplicating the pointer.gif
-    image, and positioning it so that it doesn't show up
-    within the box */
-    background: #FFFF99 url('../images/hintpointer.png') no-repeat -10px 5px;
-	
-	border: 2px solid #FFFF00;
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px;
-
-	font-family:Helvetica, Arial, sans-serif;
-	font-size:12px;
-	color:#000000;
-	z-index:5;
-	font-weight: normal; 
+.clear {
+	clear:both;
+	content:".";
+	display:block;
+	font-size:0;
+	line-height:0;
+	visibility:hidden;
 }
+
 #project-name-err {display:none; width: 100%;}
 #project-description-err {display:none; width: 100%;}
 #bidperiod-err {display:none; width: 100%;}

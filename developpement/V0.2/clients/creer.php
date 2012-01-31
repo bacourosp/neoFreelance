@@ -31,11 +31,12 @@ include('../menu.php');
 <h1>Nouveau Projet</h1>
 
 <form name="neoprojet" method="post" action="creer.php">
-<div id="divProjectName" style="position:relative">
-	<label for="projectName"><b>Nom du Projet :</b></label>&nbsp;<span id="project-name-err" class="err-msg">Entrez un nom à votre projet (minimum 10 caractères)</span>
-	</br>
+<div id="divProjectName" style="position: relative ">
+	<label for="projectName"><b>Nom du Projet :</b></label>&nbsp;
+	<span id="project-name-err" class="err-msg">Entrez un nom à votre projet (minimum 10 caractères)</span>
+	<br>
 	<input type="text" value="" size="45" maxlength="60" name="NOMPROJET" id="project-name" class="projectFormTextField big-textbox" onMouseOver="showHint('project-name-hint');" onMouseOut="hideHint('project-name-hint');" onBlur="showError10('project-name','project-name-err');">&nbsp;
-	<span id="project-name-hint">Le nom de votre projet est important car c'est ce qui va attirer les freelances à soumissionner. Vous devez clairement décrire vos besoins en aussi peu de mots que possible.<span class="hint-pointer">&nbsp;</span></span>
+	<span id="project-name-hint" class="hint" style="display:none;">Le nom de votre projet est important car c'est ce qui va attirer les freelances à soumissionner. Vous devez clairement décrire vos besoins en aussi peu de mots que possible.<span class="hint-pointer">&nbsp;</span></span>
 </div>
 <div class="clear"></div>
 <br />
@@ -81,7 +82,7 @@ document.write('<input type="hidden" value="" size="45" maxlength="60" name="SKI
 			<td colspan="2">
 			<div style="width:790px; margin-bottom:15px; position:relative;">
 			<textarea style="width:764px;" name="DESCRIPTION" rows="13" id="project-description" class="projectFormTextField" onMouseOver="showHint('project-description-hint');" onMouseOut="hideHint('project-description-hint');" onBlur="showError10('project-description','project-description-err');"></textarea>&nbsp;
-			<span id="project-description-hint">Plus vous détaillez votre projet, plus vous aurez de chance d'avoir exactement ce que vous cherchez après un minimum de temps.<span class="hint-pointerRC">&nbsp;</span></span>
+			<span id="project-description-hint" class="hint">Plus vous détaillez votre projet, plus vous aurez de chance d'avoir exactement ce que vous cherchez après un minimum de temps.<span class="hint-pointer">&nbsp;</span></span>
 			</div>
 			</td>
 		</tr>
@@ -137,7 +138,7 @@ document.write('<input type="hidden" value="" size="45" maxlength="60" name="SKI
 <div id="bidPeriodDiv"  style="position:relative" >
         <label for="subCategory"><b>Temps de soumission ?</b></label><br>
         <input type="text" class="projectFormTextField small-textbox" name="DUREESOUMISSION" id="bidperiod" maxlength="3" size="3" value="0" style="vertical-align:middle;" onMouseOver="showHint('bidperiod-hint');" onMouseOut="hideHint('bidperiod-hint');" onBlur="showError('bidperiod','bidperiod-err');">
-        <span id="bidperiod-hint">Donnez vous 1-60 jours pour recevoir des soumissions et choisir un freelance si vous séléctionnez 1 votre projet sera marqué URGENT!<span class="hint-pointerRC">&nbsp;</span></span>
+        <span id="bidperiod-hint" class="hint">Donnez vous 1-60 jours pour recevoir des soumissions et choisir un freelance si vous séléctionnez 1 votre projet sera marqué URGENT!<span class="hint-pointer">&nbsp;</span></span>
         <label>Jours</label> (maximum 60 jours, 0 pour une période indéfinie) &nbsp;<span id="bidperiod-err" class="err-msg">Entrez une période de soumission s'il vous plait.</span>
 </div>
 

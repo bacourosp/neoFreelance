@@ -65,7 +65,7 @@ function showHideLoginArea(){
 
 function showHint(elementId){
 	
-	    document.getElementById(elementId).style.display = 'block';
+	    document.getElementById(elementId).style.display = 'inline';
 		
 }
 
