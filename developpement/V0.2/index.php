@@ -50,7 +50,7 @@ include('menu.php');
 <div class="span-one-third">
 <strong>Informations ></strong><br />
 
-<a href="/infos/mentions-legales.html">Mentions légales</a><br />
+<a href="/infos/termes.html">Mentions légales</a><br />
 <a href="/infos/reglement.html">Conditions Générales</a><br />
 <a href="/infos/infos.txt">Infos investisseurs</a> <br />&nbsp;
 

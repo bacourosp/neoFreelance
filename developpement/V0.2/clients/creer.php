@@ -48,8 +48,11 @@ include('../menu.php');
 </br>
 </br>
 <!------Affichage dune compétence------>
+<div id="box-skills">Compétences disponibles : <a style="position:absolute; top:0; right:0;" onClick="hideBoxSkills();"><img src="../images/icones/icon_close1.png"></a>
 
 <? include('competences.php'); ?>
+
+</div>
 
 <div id="skill-container">
 

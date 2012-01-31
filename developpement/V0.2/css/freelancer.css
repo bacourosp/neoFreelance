@@ -563,3 +563,23 @@ display: inline;
 float: left;
 margin-left: 20px;
 }
+/*
+LibertyLand.tv
+*/
+
+.plus{
+	cursor: pointer;}
+.left_c{
+	padding-left:15px;}
+#left{
+	width:210px;  
+	padding-bottom:5px;
+	float:left;
+	
+	}
+#center{
+	padding-left:10px;
+	float:left; width:570px; 
+	text-align:left;
+	margin-top:15px;
+	}

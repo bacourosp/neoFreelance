@@ -1,5 +1,3 @@
-<div id="box-skills">Compétences disponibles : <a style="position:absolute; top:0; right:0;" onClick="hideBoxSkills();"><img src="../images/icones/icon_close1.png"></a>
-
 <?
 //=========================================
 
@@ -34,15 +32,17 @@ $resultCategorie = mysql_query($selectCategorie,$link) or die ('Erreur : '.mysql
 $totalCategorie = mysql_num_rows($resultCategorie);
 
 
-echo '<div>';
+//echo '<div>';
 
 if ($totalCategorie) {
 
 while($rowCategorie = mysql_fetch_array($resultCategorie)) {
      
-	 echo '<div>'.$rowCategorie["CATEGORIE"];
-
-     $Categorie = $rowCategorie["CATEGORIE"];
+	 $Categorie = $rowCategorie["CATEGORIE"];
+	 
+  echo '<div><div id="'.$Categorie.'" onclick="javascript:permute1(this.id);" class="plus">[<span id="s'.$Categorie.'">+</span>] '.$Categorie.'</div>';
+  echo '<div class="left_c" id="c'.$Categorie.'" style="display:none">';
+     
      $selectCompetence = 'SELECT DISTINCT ID,COMPETENCE FROM COMPETENCES WHERE CATEGORIE ="'.$Categorie.'";';
      $resultCompetence = mysql_query($selectCompetence,$link) or die ('Erreur : '.mysql_error() );
      $totalCompetence = mysql_num_rows($resultCompetence);
@@ -56,9 +56,10 @@ while($rowCategorie = mysql_fetch_array($resultCategorie)) {
      echo '</li>';
      }
      }
-echo '</div>';
+  echo '</div>';
+  echo '</div>';
 }
+
 };
-echo '</div>';
+//echo '</div>';
 ?>
-</div>

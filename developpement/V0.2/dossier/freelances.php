@@ -12,11 +12,22 @@ include('../scriptes.php');
 </head>
 
 <body id="sky">
+
+<script type="text/javascript" src="http://www.libertyland.tv/wz_tooltip.js"></script>
+
 <?
 include('../menu.php');
 ?>
 <div class="c9d-tabcnt">
+
+<div id="left">
+
+<? include('competences.php'); ?>
+
+</div>
+
 <?
+echo '<div id="center">';
 
 //=========================================
 
@@ -68,6 +79,8 @@ echo '</div>';
 echo '</li>';
 }
 echo '</ul>';
+
+echo '</div>';
 ?>
 </div>
 </body>

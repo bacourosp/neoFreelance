@@ -1,4 +1,35 @@
 // JavaScript Document
+
+function permute1(val)
+{
+	
+	if(document.getElementById('c'+val).style.display=='none'){
+	document.getElementById('c'+val).style.display='block';
+	document.getElementById('s'+val).innerHTML='-';perm=1;
+	}
+	else if(document.getElementById('c'+val).style.display=='block'){
+	document.getElementById('c'+val).style.display='none';
+	document.getElementById('s'+val).innerHTML='+';perm=0;
+	}
+
+}
+
+var perm=0;
+	
+function permute2(val)
+{
+	
+	if(perm==0){
+	document.getElementById("c"+val).style.display='block';
+	document.getElementById('s'+val).innerHTML='-';perm=1;
+	}
+	else if(perm==1){
+	document.getElementById("c"+val).style.display='none';
+	document.getElementById('s'+val).innerHTML='+';perm=0;
+	}
+
+}
+
 function showLoginArea(){
 	
 	document.getElementById('box-login').style.display = 'block';
