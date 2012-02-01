@@ -55,7 +55,7 @@ include('menu.php');
 
 <a href="/infos/termes.html">Termes &amp; Conditions d'utilisation</a><br />
 <a href="/infos/reglement.html">Réglement du site</a><br />
-<a href="/infos/infos.txt">Infos investisseurs</a> <br />&nbsp;
+<a href="/infos/infos.html">Infos investisseurs</a> <br />&nbsp;
 
 </div>
 
