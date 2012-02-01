@@ -23,7 +23,7 @@ include('../scriptes.php');
 <?
 include('../menu.php');
 ?>
-<div class="c9d-tabcnt">
+<div class="content">
 
 <div id="postprojectContainer">
 
@@ -44,12 +44,14 @@ include('../menu.php');
 
 
 <div>
-<span><b>Compétences requises : </b><a style="color:#00CC33; text-decoration:underline; cursor:pointer" onClick="showBoxSkills();">Compétences disponibles</a></span>
+<span><b>Compétences requises : <a style="color:#008BCB; text-decoration:underline; cursor:pointer" onClick="showBoxSkills();">Explorer <img src="../images/icones/loupe.png" width="20"></a></b></span>
+<br>
+<input type="text" value="Fonction non encore disponible, Explorez !" size="45" maxlength="60" id="skill-input" class="projectFormTextField big-textbox" style="vertical-align: text-bottom" onMouseOver="showHint('skill-input-hint');" onMouseOut="hideHint('skill-input-hint');" disabled/>
+<span id="skill-input-hint" class="hint">Selon ce que demande votre projet, les freelances du réseau sauront postuler à votre projet.<span class="hint-pointer">&nbsp;</span></span>
 </div>
 </br>
-</br>
 <!------Affichage dune compétence------>
-<div id="box-skills">Compétences disponibles : <a style="position:absolute; top:0; right:0;" onClick="hideBoxSkills();"><img src="../images/icones/icon_close1.png"></a>
+<div id="box-skills"><b>Compétences : </b><a style="position:absolute; top:0; right:0;" onClick="hideBoxSkills();"><img src="../images/icones/icon_close1.png"></a>
 
 <? include('competences.php'); ?>
 
@@ -144,8 +146,9 @@ document.write('<input type="hidden" value="" size="45" maxlength="60" name="SKI
 
 </br>
 </br>
-
-<button class="ns_btn ns_blue" type="submit" value="post" onClick="ajouterSkills();">CREER VOTRE PROJECT</button>
+<center>
+<button class="ns_btn ns_blue" type="submit" value="post" onClick="ajouterSkills();">Créer</button>
+</center>
 </form>
 </br>
 </br>

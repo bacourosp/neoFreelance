@@ -16,9 +16,11 @@ include('scriptes.php');
 <?
 include('menu.php');
 ?>
-<div class="c9d-tabcnt">
-</br>
-</br>
+<div class="content">
+
+<br>
+<h1 style="padding:0px 0px 0px 20px;">Bienvenue Anonyme</h1>
+
 <div id="ns_banner-wrapper">
  <div id="ns_banner">
 
@@ -41,17 +43,18 @@ include('menu.php');
  </div>
 </div>
 
+
+
 <br>
-<h1>Quoi de neuf sur neofreelance ?</h1>
-<br>
+<h1 style="padding:0px 0px 0px 20px; ">Quoi de neuf sur neofreelance ?</h1>
 
 <div class="row show-grid">
 
 <div class="span-one-third">
 <strong>Informations ></strong><br />
 
-<a href="/infos/termes.html">Mentions légales</a><br />
-<a href="/infos/reglement.html">Conditions Générales</a><br />
+<a href="/infos/termes.html">Termes &amp; Conditions d'utilisation</a><br />
+<a href="/infos/reglement.html">Réglement du site</a><br />
 <a href="/infos/infos.txt">Infos investisseurs</a> <br />&nbsp;
 
 </div>

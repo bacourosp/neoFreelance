@@ -31,6 +31,10 @@ var selected_job_count = selected_jobs.length;
 
 }
 
+function retirer(ide){
+$('#'+ide+'-chosen-skill').remove();
+}
+
 function ajouterCompetence(id) {
 	if ($('.chosen-skill').length >= 5) {
 		window.alert('Vous pouvez ajouter un maximum de 5 Compétences')
@@ -39,7 +43,7 @@ function ajouterCompetence(id) {
 	if($('#'+id+'-chosen-skill').length != 0) {
 		window.alert('Vous avez déjà choisi cette compétence') }
 	else {
-        $('<span class="chosen-skill" id="'+id+'-chosen-skill" onClick="javascript:$(this).remove();supprimerCompetence('+id+');">'+document.getElementById(id).innerHTML+'<a><img class="btn-remove-skill" src="../images/icones/close_8x8.gif"></a></span>').appendTo($('#skill-container'));
+        $('<span class="chosen-skill" id="'+id+'-chosen-skill">'+document.getElementById(id).innerHTML+'<a><img class="btn-remove-skill" src="../images/icones/close_8x8.gif" onClick="javascript:retirer('+id+');supprimerCompetence('+id+');"></a></span>').appendTo($('#skill-container'));
         updateCountOfAddedSkills(id);
     };
 }

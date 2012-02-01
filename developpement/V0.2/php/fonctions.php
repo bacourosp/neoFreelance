@@ -1,4 +1,23 @@
 <?
+/*
+Voici une fonction en PHP qui peut être assez pratique, surtout quand on fait de l'URL Rewriting. 
+
+Cette fonction permet de transformer les caractères de n'importe quelle chaîne de caractères en chaîne non accentuée, 
+en enlevant les caractères spéciaux et en remplaçant les espaces par des tirets. 
+Par exemple : "Café noir" donnera "cafe-noir". 
+*/
+function string2url($chaine) {
+	$chaine = trim($chaine);
+	$chaine = strtr($chaine,
+"ÀÁÂÃÄÅàáâãäåÒÓÔÕÖØòóôõöøÈÉÊËèéêëÇçÌÍÎÏìíîïÙÚÛÜùúûüÿÑñ",
+"aaaaaaaaaaaaooooooooooooeeeeeeeecciiiiiiiiuuuuuuuuynn");
+	$chaine = strtr($chaine,"ABCDEFGHIJKLMNOPQRSTUVWXYZ","abcdefghijklmnopqrstuvwxyz");
+	$chaine = preg_replace('#([^.a-z0-9]+)#i', '-', $chaine);
+        $chaine = preg_replace('#-{2,}#','-',$chaine);
+        $chaine = preg_replace('#-$#','',$chaine);
+        $chaine = preg_replace('#^-#','',$chaine);
+	return $chaine;
+}
 
 //récupération de $limite
 

@@ -1,4 +1,7 @@
 <?
+include('../php/fonctions.php');
+?>
+<?
 //=========================================
 
 // information pour la connection à le DB
@@ -38,9 +41,9 @@ if ($totalCategorie) {
 
 while($rowCategorie = mysql_fetch_array($resultCategorie)) {
      
-	 $Categorie = $rowCategorie["CATEGORIE"];
+	 $Categorie = string2url($rowCategorie["CATEGORIE"]);
 	 
-  echo '<div><div id="'.$Categorie.'" onclick="javascript:permute1(this.id);" class="plus">[<span id="s'.$Categorie.'">+</span>] '.$Categorie.'</div>';
+  echo '<div><div id="'.$Categorie.'" onclick="javascript:permute1(this.id);" class="plus">[<span id="s'.$Categorie.'">+</span>] '.$rowCategorie["CATEGORIE"].'</div>';
   echo '<div class="left_c" id="c'.$Categorie.'" style="display:none">';
      
      $selectCompetence = 'SELECT DISTINCT ID,COMPETENCE FROM COMPETENCES WHERE CATEGORIE ="'.$Categorie.'";';
@@ -50,8 +53,9 @@ while($rowCategorie = mysql_fetch_array($resultCategorie)) {
      if ($totalCompetence) {
 
      while($rowCompetence = mysql_fetch_array($resultCompetence)) {
-    
-     echo '<li class="skill" id="'.$rowCompetence["ID"].'" onClick="ajouterCompetence(this.id);">';
+     
+	 $Competence= string2url($rowCompetence["ID"]);
+     echo '<li class="skill" id="'.$Competence.'" onClick="ajouterCompetence(this.id);">';
      echo ''.$rowCompetence["COMPETENCE"].'';
      echo '</li>';
      }

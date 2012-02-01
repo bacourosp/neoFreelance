@@ -14,8 +14,9 @@ include('../scriptes.php');
 <?php
 include('../menu.php');
 ?>
-<div class="c9d-tabcnt">
+<div class="content">
 <div id="profilContainer">
+<br>
 <h1>Profil</h1>
 
 <?

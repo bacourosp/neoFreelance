@@ -18,8 +18,7 @@ include('../scriptes.php');
 <?
 include('../menu.php');
 ?>
-<div class="c9d-tabcnt">
-</br>
+<div class="content">
 </br>
 <div id="consultprojectContainer">
 

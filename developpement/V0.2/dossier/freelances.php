@@ -18,7 +18,13 @@ include('../scriptes.php');
 <?
 include('../menu.php');
 ?>
-<div class="c9d-tabcnt">
+<div class="content">
+</br>
+<div id="freelancesContainer">
+
+<h1>Derniers Projets</h1>
+
+</div>
 
 <div id="left">
 
@@ -82,6 +88,7 @@ echo '</ul>';
 
 echo '</div>';
 ?>
+</div>
 </div>
 </body>
 </html>

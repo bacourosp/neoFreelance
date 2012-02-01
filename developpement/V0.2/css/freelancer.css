@@ -130,6 +130,30 @@ th {
 	border-top-right-radius: 10px; 
 }
 
+.content{ margin:0 auto; position:relative; border:none; width:920px; background:#fff; border-top:none;
+
+-moz-border-radius-topleft: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-o-border-radius-topleft: 10px;
+	-o-border-top-left-radius: 10px;
+	-ms-border-radius-topleft: 10px;
+	-ms-border-top-left-radius: 10px;
+	-khtml-border-radius-topleft: 10px;
+	-khtml-border-top-left-radius: 10px;
+ 	border-top-left-radius: 10px;
+
+-moz-border-radius-topright: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-o-border-radius-topright: 10px;
+	-o-border-top-right-radius: 10px;
+	-ms-border-radius-topright: 10px;
+	-ms-border-top-right-radius: 10px;
+	-khtml-border-radius-topright: 10px;
+	-khtml-border-top-right-radius: 10px;
+	border-top-right-radius: 10px; 
+}
+
+
 /* Compétences */
 #box-skills{display:none; width:250px; height:250px; position:absolute; top:51px; right:0px; border:#CCC solid 5px; background:#FFF; z-index:10; padding:25px 30px 10px 30px;}
 
@@ -243,6 +267,20 @@ th {
 /*
 --------------------- Création d'un projet-----------------------------------
 */
+#freelancesContainer {
+
+padding:0px 0px 0px 20px;
+font-size: 16px;
+
+}
+
+#indexContainer {
+
+padding:0px 0px 0px 20px;
+font-size: 16px;
+
+}
+
 #consultprojectContainer {
 
 padding:0px 0px 0px 20px;
@@ -289,9 +327,9 @@ font-size: 16px;
     I must do a bg image, too!  So I'm duplicating the pointer.gif
     image, and positioning it so that it doesn't show up
     within the box */
-    background: #f26d7d url('../images/icones/hintpointer.png') no-repeat -10px 5px;
+    background: #FFFF99 url('../images/icones/hintpointer.png') no-repeat -10px 5px;
 	
-	border: 2px solid #f26d7d;
+	border: 2px solid #FFFF00;
 	-moz-border-radius: 5px; 
 	-webkit-border-radius: 5px;
 
@@ -341,55 +379,6 @@ font-size: 16px;
 
 /* Formulaire d'inscription */
 
-#tbx_username_hint {
-  	display: none;
-    position: absolute;
-    right: 0px;
-    top: -45px;
-    width: 200px;
-    margin-top: -4px;
-    padding: 10px 12px;
-    /* to fix IE6, I can't just declare a background-color,
-    I must do a bg image, too!  So I'm duplicating the pointer.gif
-    image, and positioning it so that it doesn't show up
-    within the box */
-    background: #FFFF99 url('../images/hintpointer.png') no-repeat -10px 5px;
-	
-	border: 2px solid #FFFF00;
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px;
-
-	font-family:Helvetica, Arial, sans-serif;
-	font-size:12px;
-	color:#000000;
-	z-index:5;
-	font-weight: normal; 
-}
-
-#tbx_email_hint {
-  	display: none;
-    position: absolute;
-    right: 0px;
-    top: -45px;
-    width: 200px;
-    margin-top: -4px;
-    padding: 10px 12px;
-    /* to fix IE6, I can't just declare a background-color,
-    I must do a bg image, too!  So I'm duplicating the pointer.gif
-    image, and positioning it so that it doesn't show up
-    within the box */
-    background: #FFFF99 url('../images/hintpointer.png') no-repeat -10px 5px;
-	
-	border: 2px solid #FFFF00;
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px;
-
-	font-family:Helvetica, Arial, sans-serif;
-	font-size:12px;
-	color:#000000;
-	z-index:5;
-	font-weight: normal; 
-}
 
 #tbx_username_err{display:none; width: 100%;}
 #tbx_email_err{display:none; width: 100%;}

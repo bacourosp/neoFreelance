@@ -13,20 +13,21 @@ include('../scriptes.php');
 <?
 include('../menu.php');
 ?>
-<div class="c9d-tabcnt">
+<div class="content">
 
 <div id="inscriptionContainer">
 
 <br>
-<h1>Formulaire d'inscription</h1>
-
+<h1>Formulaire d'inscription</h1> <p>Aucune inscription n'est possible pour l'instant, merci de votre compréhension</p>
+<br>
 <form method="post" action="https://boudeffa.me/coworking/membres/surinscription.php" id="signup-form">
 <a name="sec1"></a>
 <div class="half_column" style="position:relative; height:90px">
 	<label for="username"><b>Nouveau Pseudo :</b></label><br>
+	<span id="check_username_exist"></span><span id="tbx_username_err" class="err-msg"></span>
 	<input type="text" class="gaf_textbox" name="newusername" id="tbx_username" value="" onMouseOver="showHint('tbx_username_hint');" onMouseOut="hideHint('tbx_username_hint');" onBlur="showError10('tbx_username','tbx_username_err')">&nbsp;
 	<span id="tbx_username_hint" class="hint">Entrez s'il vous plait 3-16 caractères alphanumeric [a-z 0-9] commençant par une lettre<span class="hint-pointer">&nbsp;</span></span><br>
-	<span id="check_username_exist"></span><span id="tbx_username_err" class="err-msg"></span>
+	
 </div>
 <div class="half_column" style="position:relative; height:90px">
 	<label for="gafEmail"><b>Adresse Email :</b></label><br>
@@ -130,11 +131,13 @@ display: inline-block;
 </table>
 <div style="padding-left:5px;">
 	En cliquant sur rejoindre, vous indiquez que vous avez lu et agréer les 
-	<a href='javascript: void()' onclick='window.open("../infos/termes.html","","width=500, height=450, left=100,top=100,menu=no, toolbar=no,scrollbars=yes,resizable=yes");return false;'>Termes &amp; Conditions</a> et la  
-	<a href='javascript: void()' onclick='window.open("../infos/politique.html","","width=700, height=550, left=0,top=0,menu=no, toolbar=no,scrollbars=yes,resizable=yes");return false;'>Politique de confidentialité</a>
+	<a href='javascript: void()' onclick='window.open("../infos/termes.html","","width=500, height=450, left=100,top=100,menu=no, toolbar=no,scrollbars=yes,resizable=yes");return false;'>Termes &amp; Conditions</a> et le  
+	<a href='javascript: void()' onclick='window.open("../infos/reglement.html","","width=700, height=550, left=0,top=0,menu=no, toolbar=no,scrollbars=yes,resizable=yes");return false;'>Réglement</a>
 </div>
 <br>
+<center>
 <button class="ns_btn ns_blue" type="submit" value="post">Rejoindre le réseau</button>
+</center>
 </form>
 </div>
 </div>
