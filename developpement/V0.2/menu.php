@@ -64,7 +64,7 @@ echo '<a id="login" onClick="showLoginArea();"><span>Mon bureau virtuel</span></
 					<a href="/dossier/freelances.php"><span>Trouver un Freelance</span></a>					
 				</li>
 				<li>
-					<a href="/projets/derniers.php"><span>Explorer les Projets</span></a>					
+					<a href="/projets/derniers.php?nombre=50"><span>Explorer les Projets</span></a>					
 				</li>
 				
 			</ul>

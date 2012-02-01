@@ -1,3 +1,11 @@
+function verifPasswd() {
+if (document.getElementById('passwd1').value == document.getElementById('passwd2').value )
+{
+	showHint('passwd_match_msg');
+} else {
+    hideHint('passwd_match_msg');
+}
+}
 
 (function($){
 

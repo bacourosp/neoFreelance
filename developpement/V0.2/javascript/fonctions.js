@@ -1,5 +1,4 @@
 // JavaScript Document
-
 function permute1(val)
 {
 	

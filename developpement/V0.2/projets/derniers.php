@@ -22,6 +22,11 @@ include('../menu.php');
 </br>
 <div id="consultprojectContainer">
 
+<?
+include('competences.php');
+?>
+</br>
+
 <h1>Derniers Projets</h1>
 
 </div>

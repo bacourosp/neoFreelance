@@ -8,6 +8,7 @@ session_start();
 <?
 include('../scriptes.php');
 ?>
+<script src="/javascript/password.js" type="text/javascript"></script>
 </head>
 <body id="sky">
 <?
@@ -20,7 +21,7 @@ include('../menu.php');
 <br>
 <h1>Formulaire d'inscription</h1> <p>Aucune inscription n'est possible pour l'instant, merci de votre compréhension</p>
 <br>
-<form method="post" action="https://boudeffa.me/coworking/membres/surinscription.php" id="signup-form">
+<form method="post" action="surinscription.php" id="signup-form">
 <a name="sec1"></a>
 <div class="half_column" style="position:relative; height:90px">
 	<label for="username"><b>Nouveau Pseudo :</b></label><br>
@@ -81,7 +82,7 @@ display: inline-block;
 
 	function isValidPassword() {
 		var hint_msg = /^[a-z0-9]{6,16}$/i; 
-		if (hint_msg.test(jq('#passwd').val())) {
+		if (hint_msg.test(jq('#passwd1').val())) {
 			return true;
 		}
 		return false;
@@ -104,9 +105,9 @@ display: inline-block;
 			res=false;
 		}
 
-		if (document.getElementById('passwd').value!='' && !isPasswordStrongEnough()) {
+		if (document.getElementById('passwd1').value!='' && !isPasswordStrongEnough()) {
 			msg=((msg==null)?'':msg+"\n")+'Please make sure you enter a stronger password (at least Average level)';
-			document.getElementById('passwd').focus();
+			document.getElementById('passwd1').focus();
 			res=false;
 		}
 
@@ -120,7 +121,7 @@ display: inline-block;
 </div>
 <div class="half_column" style="height:90px">
 	<label for="passwd1"><b>Repeter mot de Passe :</b></label>&nbsp;<span id="pwd-err-rhs" style="display:none;color:red;"></span><br>
-	<input type="password" class="gaf_textbox" name="newuserpasswd1" id="passwd2" value=""><br>
+	<input type="password" class="gaf_textbox" name="newuserpasswd1" id="passwd2" value="" onChange="verifPasswd();"><br>
 	<span id='passwd_match_msg' class="ok-mess">Les mots de passes sont semblables&nbsp;<img src="../images/icones/icon_check.png"></span>
 </div>
 <table width="100%" border="0" height="40px">

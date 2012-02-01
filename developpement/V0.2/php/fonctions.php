@@ -26,6 +26,11 @@ function string2url($chaine) {
     else   
 	    $limite=0;
 
+   if(isset($_GET['nombre']))
+        $nombre=$_GET['nombre'];
+    else   
+	    $nombre=50;
+
 
 function verifLimite($limite,$total,$nombre) {
 
@@ -101,19 +106,18 @@ function affichePages($nb,$page,$total) {
         $numeroPages = 1;
         $compteurPages = 1;
         $limite  = 0;
-		echo '<a name="navig-table"></a>';
-        echo '<table border = "0" ><tr>'."\n";
-		echo '<td>Page :</td>';
+		
+		echo '<span>Page :</span>';
         if ($_GET['limite'] != 0){
 		$Precedent = $_GET['limite'] - $nb;
-		echo '<td ><span class="paginate_button"><a style="text-decoration:none;" href = "'.$page.'?limite='.$Precedent.'#navig-table">'.'Précédent'.'</a></span></td>'."\n";
+		echo '<span class="paginate_button"><a style="text-decoration:none;" href = "'.$page.'?limite='.$Precedent.'& nombre='.$nb.'#navig-table">'.'Précédent'.'</a></span>'."\n";
         };
         //Anciennement while($numeroPages <= $nbpages) ensuite pour n'avoir que 5 pages pas index.php
 		while($numeroPages <= $nbpages) {
         if ($limite == $_GET['limite']){
-        echo '<td ><span class="paginate_button paginate_active"><a style="text-decoration:none;" href = "'.$page.'?limite='.$limite.'#navig-table">'.$numeroPages.'</a></span></td>'."\n";
+        echo '<span class="paginate_button paginate_active"><a style="text-decoration:none;" href = "'.$page.'?limite='.$limite.'& nombre='.$nb.'#navig-table">'.$numeroPages.'</a></span>'."\n";
 		} else {
-		echo '<td ><span class="paginate_button"><a style="text-decoration:none;" href = "'.$page.'?limite='.$limite.'#navig-table">'.$numeroPages.'</a></span></td>'."\n";
+		echo '<span class="paginate_button"><a style="text-decoration:none;" href = "'.$page.'?limite='.$limite.'& nombre='.$nb.'#navig-table">'.$numeroPages.'</a></span>'."\n";
         };
 		$limite = $limite + $nb;
         $numeroPages = $numeroPages + 1;
@@ -124,7 +128,7 @@ function affichePages($nb,$page,$total) {
             }
         }
 		$Suivant = $_GET['limite'] + $nb;
-		echo '<td ><span class="paginate_button"><a style="text-decoration:none;" href = "'.$page.'?limite='.$Suivant.'#navig-table">'.'Suivant'.'</a></span></td>'."\n";
-        echo '</tr></table>'."\n";
+		echo '<span class="paginate_button"><a style="text-decoration:none;" href = "'.$page.'?limite='.$Suivant.'& nombre='.$nb.'#navig-table">'.'Suivant'.'</a></span></td>'."\n";
+        echo '</div>'."\n";
 }
 ?>
