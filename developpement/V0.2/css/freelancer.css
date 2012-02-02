@@ -519,7 +519,7 @@ Bottom banner
 #ns_bootom-banner-wrapper{height:300px; background:url(../images/menu.png) 0px -400px no-repeat;padding-top:20px;margin-bottom:10px; } 
 #ns_bottom-banner{width:920px; position:relative; background:url(../images/menu.png) bottom left no-repeat; color:#FFF; clear:both; margin-top:-10px; float:left; *margin-bottom:-20px;font-size:16px;}
 
-.span-one-third{width:250px}
+.span-one-third{width:200px}
 .span-one-half{width:450px}
 .row > [class*="span"] {
 display: inline;
@@ -546,3 +546,32 @@ LibertyLand.tv
 	text-align:left;
 	margin-top:15px;
 	}
+	
+.submit{
+     border:none;
+     color:#fff;
+     width:50px;
+     height:23px;
+}
+
+.selectT {
+font-family: Helvetica,Arial,sans-serif; 
+font-size: 14px; 
+width: 300px;
+margin-top: 4px; 
+/* margin-left: 4px; */ 
+padding: 4px; 
+-moz-border-radius: 5px 5px 5px 5px; 
+border: 2px solid rgb(217, 217, 217); 
+}
+
+.selectP {
+font-family: Helvetica,Arial,sans-serif; 
+font-size: 14px; 
+/*width: 300px;*/
+margin-top: 4px; 
+margin-left: 4px; 
+padding: 4px; 
+-moz-border-radius: 5px 5px 5px 5px; 
+border: 2px solid rgb(217, 217, 217); 
+}

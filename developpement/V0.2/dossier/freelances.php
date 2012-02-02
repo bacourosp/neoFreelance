@@ -22,7 +22,7 @@ include('../menu.php');
 </br>
 <div id="freelancesContainer">
 
-<h1>Derniers Projets</h1>
+<h1>Freelances dans le réseau</h1>
 
 </div>
 

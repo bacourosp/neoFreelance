@@ -16,6 +16,7 @@ include('scriptes.php');
 <?
 include('menu.php');
 ?>
+
 <div class="content">
 
 <br>
@@ -45,6 +46,7 @@ include('menu.php');
 
 
 
+
 <br>
 <h1 style="padding:0px 0px 0px 20px; ">Quoi de neuf sur neofreelance ?</h1>
 
@@ -53,7 +55,7 @@ include('menu.php');
 <div class="span-one-third">
 <strong>Informations ></strong><br />
 
-<a href="/infos/termes.html">Termes &amp; Conditions d'utilisation</a><br />
+<a href="/infos/termes.html">Termes &amp; Conditions</a><br />
 <a href="/infos/reglement.html">Réglement du site</a><br />
 <a href="/infos/infos.html">Infos investisseurs</a> <br />&nbsp;
 
@@ -77,11 +79,19 @@ include('menu.php');
 
 </div>
 
+<div class="span-one-third">
+<?
+include('chat/connectes.php');
+?>
+<strong>Chat > Il y a <? echo $connectes; if ($connectes ==1) { echo ' connecté'; } else {echo ' connectés';} ?></strong><br />
+<?
+include('chat/chat.php');
+?>
+
+</div>
 </div>
 
 </div> <!-- Fin de la marge -->
-
-
 
 </body>
 </html>

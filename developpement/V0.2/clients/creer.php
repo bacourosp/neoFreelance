@@ -100,7 +100,7 @@ document.write('<input type="hidden" value="" size="45" maxlength="60" name="SKI
 
 <div id="budgetDiv" class="ns_pad-t">
 		<label for="budget"><b>Budget du projet :</b></label><br/>
-		<select name=budget id="budget" style="font-family: Helvetica,Arial,sans-serif; font-size: 14px; width: 300px; margin-top: 4px; margin-left: 4px; padding: 4px; -moz-border-radius: 5px 5px 5px 5px; border: 2px solid rgb(217, 217, 217);">
+		<select name=budget id="budget" class="selectT">
 						
 			<option value='0' >
 				Projet simple

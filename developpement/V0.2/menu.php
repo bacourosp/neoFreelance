@@ -28,11 +28,11 @@ echo '<a id="login" onClick="showLoginArea();"><span>Mon bureau virtuel</span></
 
 				<form class="form" action="/membres/procederconnexion.php" method="post" >
 					<div class="field">
-						<label for="email" class="hide">Email:</label>
-						<input class="projectFormTextField" type="text" value="email" name="login" maxlength="150" id="username"  onFocus="javascript:this.value=''">	
+						<label for="email" class="hide">Email</label>
+						<input class="projectFormTextField" type="text" value="Email" name="login" maxlength="150" id="username"  onFocus="javascript:this.value=''">	
 					</div>
 					<div class="field">
-						<label for="passwd" class="hide">Password:</label>				
+						<label for="passwd" class="hide">Password</label>				
 						<input class="projectFormTextField"  type="password" value="mot de passe" name="passwd" maxlength="150" id="passwd" onFocus="javascript:this.value=''">
 						<a class="forgot" href="/membres/oubli.php">Oublié ?</a>
 					</div>

@@ -22,7 +22,7 @@ echo '<a name="navig-table"></a>';
 echo "\n";
 ?>
 <span>
-<select size="1" name="project_table_length" onChange="window.location='derniers.php?nombre='+this.value">
+<select size="1" name="project_table_length" class="selectP" onChange="window.location='derniers.php?nombre='+this.value">
 <option value="10" <? if ($_GET[nombre]==10) { echo 'selected';}; ?> >10</option>
 <option value="50" <? if ($_GET[nombre]==50) { echo 'selected';}; ?> >50</option>
 <option value="100" <? if ($_GET[nombre]==100) { echo 'selected';}; ?>>100</option>
