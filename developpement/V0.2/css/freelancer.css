@@ -90,18 +90,17 @@ th {
 
 #logout{cursor:pointer; margin:20px 0px 0px 0px; padding:10px 10px; border:#fff solid 1px; color:#999999 !important; }
 
-#box-login{display:none; width:280px; position:absolute; top:57px; right:0px; border:#CCC solid 5px; background:#FFF; z-index:10; padding:25px 30px 10px 30px;}
-
 #profil{cursor:pointer; margin:20px 0px 0px 0px; padding:10px 10px; border:#fff solid 1px; color:#333 !important; }
 .profil{ margin:0 auto; position: relative; display:block;  width:920px;}
 
 #box-profil{display:none; width:280px; position:absolute; top:57px; right:0px; border:#CCC solid 5px; background:#FFF; z-index:10; padding:25px 30px 10px 30px;}
 
+#box-login{display:none; width:280px; position:absolute; top:57px; right:0px; border:#CCC solid 5px; background:#FFF; z-index:10; padding:25px 30px 10px 30px;}
 #box-login .field{padding-bottom:10px !important;}
 #box-login .remember{float:left; padding-top:12px;}
 #username{width:260px;}
 #passwd{width:190px;}
-#box-login .forgot{position:absolute; top:8px; right:0px;}
+#box-login .forgot{position: relative; left:2px; top:8px; right:0px;}
 #loginpermanent {vertical-align: middle;}
 #box-login-icon { background-image:url(../images/icon_close1.png); position:absolute; top : 0; left: 0;}
 #box-login a {color:#00CCCC;}
@@ -130,9 +129,12 @@ th {
 	border-top-right-radius: 10px; 
 }
 
-.content{ margin:0 auto; position:relative; border:none; width:920px; background:#fff; border-top:none;
+.content{ padding: 0px 10px 0px 10px; margin: 0 auto; position:relative; border:none; width:920px; background:#fff; border-top:none;
 
--moz-border-radius-topleft: 10px;
+}
+.menu-content{ padding: 10px 10px 0px 10px; margin:0 auto; position:relative; border:none; width:920px; background:#fff; border-top:none;
+
+    -moz-border-radius-topleft: 10px;
 	-webkit-border-top-left-radius: 10px;
 	-o-border-radius-topleft: 10px;
 	-o-border-top-left-radius: 10px;
@@ -142,7 +144,7 @@ th {
 	-khtml-border-top-left-radius: 10px;
  	border-top-left-radius: 10px;
 
--moz-border-radius-topright: 10px;
+    -moz-border-radius-topright: 10px;
 	-webkit-border-top-right-radius: 10px;
 	-o-border-radius-topright: 10px;
 	-o-border-top-right-radius: 10px;
@@ -518,6 +520,15 @@ Bottom banner
 */
 #ns_bootom-banner-wrapper{height:300px; background:url(../images/menu.png) 0px -400px no-repeat;padding-top:20px;margin-bottom:10px; } 
 #ns_bottom-banner{width:920px; position:relative; background:url(../images/menu.png) bottom left no-repeat; color:#FFF; clear:both; margin-top:-10px; float:left; *margin-bottom:-20px;font-size:16px;}
+
+#banner{width:920px; position:relative; background:url(../images/menu.png) bottom left no-repeat; color:#000; clear:both; margin-top:-10px; float:left; *margin-bottom:-20px;font-size:16px;}
+#banner .ns_copy{padding:30px 0 105px 20px;}
+#banner h1 {text-shadow:0 -1px 1px rgba(0, 0, 0, 0.25); font-family: NeoSansMedium, Arial, Sans-serif!important; font-size:40px!important; letter-spacing:-1px; margin-bottom:0px; font-weight:normal; line-height:1em; color:#000!important; border:none!important; padding-bottom:0!important;}
+#banner ul{margin-bottom:20px; padding:0px; list-style-type:none;}
+#banner ul li{margin:5px 0px; background:url(../img/sprite-icons.png?24) 0px -4192px no-repeat; height:20px; padding-left:25px; }
+#banner p{margin-bottom:15px;}
+#banner a.ns_bigbtn{width:235px;}
+
 
 .span-one-third{width:200px}
 .span-one-half{width:450px}

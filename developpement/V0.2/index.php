@@ -25,15 +25,15 @@ include('menu.php');
 <div id="ns_banner-wrapper">
  <div id="ns_banner">
 
-  <h1>Qu'est-ce que neoFreelance ?</h1>
+  <h1 style="padding:0px 0px 0px 20px;">Qu'est-ce que neoFreelance ?</h1>
+  <br>
   <ul>
-  <li>Un réseau social de freelances télétravailleurs</li>
+  
   <li>Une place de marché pour trouver les meilleurs prestataires frealances</li>
-  <li>Une plateforme gratuite de télétravail et de coworking</li>
-  <li>Une utilisation simple pour réussir vos projets</li>
-  <li>Un coût minimal pour vos projets, pas d'abonnement !</li>
+  <li>Une plateforme gratuite de télétravail et de coworking, rejoignez le réseau</li>
+  <li>Un coût minimal pour vos projets ! Postez vos projets et recevez des devis</li>
   </ul>
-
+  <br>
   <ul>
   <li>
   <a href="https://www.facebook.com/pages/neoFreelance/153022051480674?sk=wall"><img src="images/logos/logo-facebook.png" width="90"></a>
@@ -49,6 +49,14 @@ include('menu.php');
 
 <br>
 <h1 style="padding:0px 0px 0px 20px; ">Quoi de neuf sur neofreelance ?</h1>
+
+<div id="banner">
+<ul>
+<li>Il ya actuellement "" Projets en télétravail</li>
+<li>Le réseau comporte "" membres</li>
+<li>Les Freelances ont généré "" € de chiffre d'affaire</li>
+</ul>
+</div>
 
 <div class="row show-grid">
 
@@ -83,15 +91,17 @@ include('menu.php');
 <?
 include('chat/connectes.php');
 ?>
+<a name="chat"></a>
 <strong>Chat > Il y a <? echo $connectes; if ($connectes ==1) { echo ' connecté'; } else {echo ' connectés';} ?></strong><br />
 <?
 include('chat/chat.php');
 ?>
-
-</div>
 </div>
 
+<div style="margin-left : 40px; float:left"><img src="images/copyright/images.jpg" width="64"><img src="images/copyright/cc-logo.jpg" width="64"><img src="images/copyright/by.png"><img src="images/copyright/no_commercial.png"><img src="images/copyright/no_derivative.png"><img src="images/copyright/share_alike.png"></div>
 </div> <!-- Fin de la marge -->
+
+</div>
 
 </body>
 </html>

@@ -95,7 +95,7 @@ if(!$verifLimite)  {
 
 //=========================================
 
-  $select = 'SELECT ID,NOMPROJET,COMPETENCES,DATE,DUREESOUMISSION FROM PROJETS ORDER BY DATE DESC limit '.$limite.','.$nombre;
+  $select = 'SELECT ID,NOM,COMPETENCES, DESCRIPTION, DATE,TEMPS FROM PROJETS ORDER BY DATE DESC limit '.$limite.','.$nombre;
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   $total = mysql_num_rows($result);
 
@@ -147,17 +147,21 @@ if($totalEnregistrements > $nombre) {
 	} else { 
 	   $date = date("d/m/Y", strtotime($row["DATE"]));
 	};
-	if ($row["DUREESOUMISSION"]==0) {
+	if ($row["TEMPS"]==0) {
 	   $duree ='Indéfini';
 	} else 
-	if ($row["DUREESOUMISSION"]==1) {
+	if ($row["TEMPS"]==1) {
 	   $duree ='Urgent';
 	} else {
-	   $duree =$row["DUREESOUMISSION"];
+	   $duree =$row["TEMPS"];
 	};
+	$IDClassProjet = "'"."Project-".$row["ID"]."'";
+	$Description = coupe($row["DESCRIPTION"]);
     if ($var==0){ //Affiche le projet numéro .$row["ID"].
-        echo '<tr bgcolor="#FFFFFF">';
-        echo '<td><a href="/projets/projet.php?ID='.$row["ID"].'">'.$row["NOMPROJET"].'</a></td>';
+        echo '<tr bgcolor="#FFFFFF">';	
+        echo '<td><a href="/projets/projet.php?ID='.$row["ID"].'" onMouseOver="showHint('.$IDClassProjet.');" onMouseOut="hideHint('.$IDClassProjet.');">'.$row["NOM"].'</a>';
+		echo '<span id="Project-'.$row["ID"].'" class="hint">'.$Description.'<span class="hint-pointer">&nbsp;</span></span>';
+		echo '</td>';
 		echo '<td>'.$row["COMPETENCES"].'</td>';
         echo '<td>'.$date.'</td>';
         echo '<td>'.$duree.'</td>';
@@ -166,7 +170,9 @@ if($totalEnregistrements > $nombre) {
 		}
 		else{
 		echo '<tr  bgcolor="#EEEEEE">';
-        echo '<td><a href="/projets/projet.php?ID='.$row["ID"].'">'.$row["NOMPROJET"].'</a></td>';
+        echo '<td><a href="/projets/projet.php?ID='.$row["ID"].'" onMouseOver="showHint('.$IDClassProjet.');" onMouseOut="hideHint('.$IDClassProjet.');">'.$row["NOM"].'</a>';
+		echo '<span id="Project-'.$row["ID"].'" class="hint">'.$Description.'<span class="hint-pointer">&nbsp;</span></span>';
+		echo '</td>';
         echo '<td>'.$row["COMPETENCES"].'</td>';
 		echo '<td>'.$date.'</td>';
         echo '<td>'.$duree.'</td>';

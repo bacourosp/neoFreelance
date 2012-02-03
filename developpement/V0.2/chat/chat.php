@@ -43,7 +43,7 @@ function AddText(startTag,defaultText,endTag)
 
 <textarea
    rows="5"
-   cols="25"
+   style="width: 100%"
    name="stream"
    wrap="virtual" readonly class="projectFormTextField"
    onmouseover="this.focus();">
@@ -97,7 +97,7 @@ catch(Exception $e)
 </textarea><br>
 <div>
 <span>
-<input type="text" name="message" id="mess" value="Tapez un message, puis Enter !" onFocus="javascript:this.value=''" class="projectFormTextField" size="28">
+<input type="text" name="message" id="mess" value="Tapez un message, puis Enter !" onFocus="javascript:this.value=''" class="projectFormTextField" style="width: 100%">
 </span>
 <span>
 <input type="submit" name="soumettre" value="Envoyer" style=" display:none;">

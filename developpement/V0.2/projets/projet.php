@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Untitled Document</title>
+<title>Description du Projet</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <?
 include('../scriptes.php');
@@ -47,19 +47,32 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
 
 //=========================================
 
-  $select = 'SELECT NOMPROJET,COMPETENCES,DATE,DUREESOUMISSION FROM PROJETS WHERE ID='.$_GET["ID"].';';   
+  $select = 'SELECT ID, NOM, COMPETENCES, DESCRIPTION, MIN, MAX, DATE, TEMPS FROM PROJETS WHERE ID='.$_GET["ID"].';';   
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   $total = mysql_num_rows($result);
 
 if($total) {
  $row = mysql_fetch_array($result);
- echo '<div class="c9d-tabcnt">';
+ echo '<div class="content">';
  echo '</br>';
- echo '<h1>'.$row["NOMPROJET"].'</h1>';
+ echo '<div>';
+ echo '<span style="width:700px; float:left;"><h1>'.$row["NOM"].'</h1></span>';
+ echo '<span style="width:200px; float:right;">';
+ echo '<form action="soumettre.php">';
+ echo '<button class="ns_btn ns_blue" type="submit" value="post">Soumissionner</button>';
+ echo '</form>';
+ echo '</span>';
  echo '</div>';
- echo '<form>'
- echo '<button class="ns_btn ns_blue" type="submit" value="post" onClick="Soumissionner();">Soumissionner</button>'
- echo '</form>'
+ 
+ echo '<br>';
+ echo '<div style="width:700px;">';
+ echo '<span><b>ID : </b></span><span>'.$row["ID"].'</span>';
+ echo '<br>';
+ echo '<span><b>Compétences : </b></span><span>'.$row["COMPETENCES"].'</span>';
+ echo '<br>';
+ echo '<span><b>Déscription du projet : </b></span><br><p>'.$row["DESCRIPTION"].'</p>';
+ echo '</div>';
+
 }
 ?>
 </body>

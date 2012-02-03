@@ -28,22 +28,26 @@ echo '<a id="login" onClick="showLoginArea();"><span>Mon bureau virtuel</span></
 
 				<form class="form" action="/membres/procederconnexion.php" method="post" >
 					<div class="field">
-						<label for="email" class="hide">Email</label>
-						<input class="projectFormTextField" type="text" value="Email" name="login" maxlength="150" id="username"  onFocus="javascript:this.value=''">	
+					  <label for="email" class="hide">Email</label>
+					  <input class="projectFormTextField" type="text" value="Email" name="login" maxlength="150" id="username"  onFocus="javascript:this.value=''" onBlur="if (this.value == '') {this.value='Email'};">	
 					</div>
 					<div class="field">
-						<label for="passwd" class="hide">Password</label>				
-						<input class="projectFormTextField"  type="password" value="mot de passe" name="passwd" maxlength="150" id="passwd" onFocus="javascript:this.value=''">
-						<a class="forgot" href="/membres/oubli.php">Oublié ?</a>
+					  <label for="passwd" class="hide">Password</label>				
+					  <input class="projectFormTextField"  type="password" value="password" name="passwd" maxlength="150" id="passwd" onFocus="javascript:this.value=''" onBlur="if (this.value == '') {this.value='password'};">
+					  <a class="forgot" href="/membres/oubli.php">Oublié ?</a>
 					</div>
 					<div class="field">
-						<button class="ns_btn-small ns_blue ns_right ns_margin-none" type="submit" value="Login">OK</button>
-						<div class="remember">
-							<input type="checkbox" tabindex="3" name="savelogin" id="loginpermanent"> <label for="loginpermanent" class="inline">Retenir mes informations ?</label>
-						</div>
+					  <div class="remember">
+					  <input type="checkbox" tabindex="3" name="savelogin" id="loginpermanent"> <label for="loginpermanent" class="inline">Retenir mes informations ?</label>
+				      </div>
+					  <button class="ns_btn-small ns_blue" style="margin-left: 25px;" type="submit" value="Login">Entrer</button>
+					<div class="field">
+					<br>
+					  <p>Rejoindre le réseau ? <a href="/membres/inscription.php">Créez un compte !</a></p>
 					</div>
-					</br>
-               <p>Rejoindre le réseau ? <a href="/membres/inscription.php">Créez un compte !</a></p>
+					</div>
+					
+               
 			   </form>
 			   </div>
 
@@ -54,6 +58,7 @@ echo '<a id="login" onClick="showLoginArea();"><span>Mon bureau virtuel</span></
 
 			   
 <!-- Menu Principal -->	
+<div class="menu-content">
 <div id="nav-main-wrap" class="grid_12">
 					
 			<ul id="nav-main">
@@ -69,7 +74,7 @@ echo '<a id="login" onClick="showLoginArea();"><span>Mon bureau virtuel</span></
 				
 			</ul>
 </div>
-
+</div>
 <!-- A revoir
 <?
 if (isset($_SESSION['pseudo'])) {

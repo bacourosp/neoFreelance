@@ -1,4 +1,43 @@
 <?
+/******************************************************************************/
+/*                                                                            */
+/*                       __        ____                                       */
+/*                 ___  / /  ___  / __/__  __ _____________ ___               */
+/*                / _ \/ _ \/ _ \_\ \/ _ \/ // / __/ __/ -_|_-<               */
+/*               / .__/_//_/ .__/___/\___/\_,_/_/  \__/\__/___/               */
+/*              /_/       /_/                                                 */
+/*                                                                            */
+/*                                                                            */
+/******************************************************************************/
+/*                                                                            */
+/* Titre          : Couper une chaine au n caractere et...                    */
+/*                                                                            */
+/* URL            : http://www.phpsources.org/scripts104-PHP.htm              */
+/* Auteur         : Matt                                                      */
+/* Date édition   : 28 Déc 2004                                               */
+/* Website auteur : http://www.france-relations.com                           */
+/*                                                                            */
+/******************************************************************************/
+ 
+function coupe($chaine){
+  // Nombre de caractère
+  $max=100;
+  if(strlen($chaine)>=$max)
+  {
+  // Met la portion de chaine dans $chaine
+  $chaine=substr($chaine,0,$max); 
+  // position du dernier espace
+  $espace=strrpos($chaine," "); 
+  // test si il ya un espace
+  if($espace)
+  // si ya 1 espace, coupe de nouveau la chaine
+  $chaine=substr($chaine,0,$espace);
+  // Ajoute ... à la chaine
+  $chaine .= '...';
+  }
+return $chaine;
+}
+
 /*
 Voici une fonction en PHP qui peut être assez pratique, surtout quand on fait de l'URL Rewriting. 
 
@@ -110,14 +149,14 @@ function affichePages($nb,$page,$total) {
 		echo '<span>Page :</span>';
         if ($_GET['limite'] != 0){
 		$Precedent = $_GET['limite'] - $nb;
-		echo '<span class="paginate_button"><a style="text-decoration:none;" href = "'.$page.'?limite='.$Precedent.'& nombre='.$nb.'#navig-table">'.'Précédent'.'</a></span>'."\n";
+		echo '<span><a style="text-decoration:none;" class="paginate_button" href = "'.$page.'?limite='.$Precedent.'& nombre='.$nb.'#navig-table">'.'Précédent'.'</a></span>'."\n";
         };
         //Anciennement while($numeroPages <= $nbpages) ensuite pour n'avoir que 5 pages pas index.php
 		while($numeroPages <= $nbpages) {
         if ($limite == $_GET['limite']){
-        echo '<span class="paginate_button paginate_active"><a style="text-decoration:none;" href = "'.$page.'?limite='.$limite.'& nombre='.$nb.'#navig-table">'.$numeroPages.'</a></span>'."\n";
+        echo '<span><a style="text-decoration:none;"  class="paginate_button paginate_active" href = "'.$page.'?limite='.$limite.'& nombre='.$nb.'#navig-table">'.$numeroPages.'</a></span>'."\n";
 		} else {
-		echo '<span class="paginate_button"><a style="text-decoration:none;" href = "'.$page.'?limite='.$limite.'& nombre='.$nb.'#navig-table">'.$numeroPages.'</a></span>'."\n";
+		echo '<span><a style="text-decoration:none;" class="paginate_button" href = "'.$page.'?limite='.$limite.'& nombre='.$nb.'#navig-table">'.$numeroPages.'</a></span>'."\n";
         };
 		$limite = $limite + $nb;
         $numeroPages = $numeroPages + 1;
@@ -128,7 +167,7 @@ function affichePages($nb,$page,$total) {
             }
         }
 		$Suivant = $_GET['limite'] + $nb;
-		echo '<span class="paginate_button"><a style="text-decoration:none;" href = "'.$page.'?limite='.$Suivant.'& nombre='.$nb.'#navig-table">'.'Suivant'.'</a></span></td>'."\n";
+		echo '<span><a style="text-decoration:none;" class="paginate_button" href = "'.$page.'?limite='.$Suivant.'& nombre='.$nb.'#navig-table">'.'Suivant'.'</a></span></td>'."\n";
         echo '</div>'."\n";
 }
 ?>

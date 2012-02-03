@@ -27,9 +27,12 @@ try
     $requete = "INSERT INTO CHAT VALUES('','".$date."','".$message."');";
     mysql_query($requete);
     // Redirection du visiteur vers la page du minichat
+
+
     echo '<SCRIPT LANGUAGE="JavaScript">';
-    echo 'document.location.href="../index.php"'; /* vous pouvez aussi mettre http://www.monsite.com */
+    echo 'document.location.href="../index.php#chat"';
     echo '</SCRIPT>';
+
 }
 catch(Exception $e)
 {
