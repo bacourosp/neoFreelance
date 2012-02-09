@@ -69,6 +69,11 @@ function string2url($chaine) {
         $nombre=$_GET['nombre'];
     else   
 	    $nombre=50;
+		
+	if(isset($_GET['PageAffichee']))
+        $pagesaffichees=$_GET['PageAffichee'];
+    else   
+	    $pagesaffichees=0;
 
 
 function verifLimite($limite,$total,$nombre) {
@@ -140,19 +145,29 @@ echo  '</tr></table>'."\n";
 
 */
 
-function affichePages($nb,$page,$total) {
-        $nbpages=ceil($total/$nb);
+
+/*
+$nb est le nombre d'enregistrements par page
+$total est le nombre total d'enregistrements
+
+*/
+function affichePages($nb,$page,$total,$nbpagesAffichees) {
+        
+		$nbpages=ceil($total/$nb);
         $numeroPages = 1;
         $compteurPages = 1;
         $limite  = 0;
-		
-		echo '<span>Page :</span>';
-        if ($_GET['limite'] != 0){
+
+		if ($_GET['limite'] != 0){
 		$Precedent = $_GET['limite'] - $nb;
 		echo '<span><a style="text-decoration:none;" class="paginate_button" href = "'.$page.'?limite='.$Precedent.'& nombre='.$nb.'#navig-table">'.'Précédent'.'</a></span>'."\n";
         };
+		//Affin de pouvoir afficher l derniere page correctement et afficher les .. avant elle
+		
+		$nbpagesAffichees--;
+		
         //Anciennement while($numeroPages <= $nbpages) ensuite pour n'avoir que 5 pages pas index.php
-		while($numeroPages <= $nbpages) {
+		while ($numeroPages < ($_GET['limite'] / $nb)+$nbpagesAffichees && $numeroPages < $nbpages ) {
         if ($limite == $_GET['limite']){
         echo '<span><a style="text-decoration:none;"  class="paginate_button paginate_active" href = "'.$page.'?limite='.$limite.'& nombre='.$nb.'#navig-table">'.$numeroPages.'</a></span>'."\n";
 		} else {
@@ -160,14 +175,22 @@ function affichePages($nb,$page,$total) {
         };
 		$limite = $limite + $nb;
         $numeroPages = $numeroPages + 1;
-        $compteurPages = $compteurPages + 1;
-            if($compteurPages == 10) {
-            $compteurPages = 1;
-            echo '<br>'."\n";
-            }
-        }
+        };
+		
 		$Suivant = $_GET['limite'] + $nb;
+		
+		if (($_GET['limite']*$nbpages) < ceil($total/$nb)){
+		
+		echo '<span>.</span></td>'."\n";
+        echo '<span>.</span></td>'."\n";
+        
+		echo '<span><a style="text-decoration:none;" class="paginate_button" href = "'.$page.'?limite='.$limite.'& nombre='.$nb.'#navig-table">'.$nbpages.'</a></span></td>'."\n";
+
 		echo '<span><a style="text-decoration:none;" class="paginate_button" href = "'.$page.'?limite='.$Suivant.'& nombre='.$nb.'#navig-table">'.'Suivant'.'</a></span></td>'."\n";
-        echo '</div>'."\n";
+        
+		}else{
+		echo '<span><a style="text-decoration:none;" class="paginate_button" href = "'.$page.'?limite='.$limite.'& nombre='.$nb.'#navig-table">'.$nbpages.'</a></span></td>'."\n";
+        };
+		
 }
 ?>

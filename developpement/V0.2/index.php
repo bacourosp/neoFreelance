@@ -38,7 +38,7 @@ include('menu.php');
   <li>
   <a href="https://www.facebook.com/pages/neoFreelance/153022051480674?sk=wall"><img src="images/logos/logo-facebook.png" width="90"></a>
 
-  <a href="https://github.com/boudeffa/neoFreelance"><img src="images/logos/logo-github.png"></a>
+  <a href="https://github.com/boudeffa/neoFreelance/wiki"><img src="images/logos/logo-github.png"></a>
   </li>
   </ul>
  </div>

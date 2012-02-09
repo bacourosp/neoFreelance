@@ -28,11 +28,11 @@ include('competences.php');
 
 </br>
 
-<h1>Derniers Projets</h1>
+<h1>Tout les Projets</h1>
 
 </div>
 <?
-include('explore-tout.php');
+include('explore.php');
 ?>
 </div>
 </body>

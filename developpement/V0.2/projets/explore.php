@@ -5,10 +5,7 @@
 
 //=========================================
 
-$host = 'mysql51-46.perso';
-$user = 'boudeffacowo';
-$pass = 'zoOPwOb8';
-$db = 'boudeffacowo';
+include ('../../db.php');
 
 //=========================================
 
@@ -110,8 +107,8 @@ if(!$verifLimite)  {
 if($totalEnregistrements > $nombre) {
 
     // affichage des liens vers les pages
-
-    affichePages($nombre,$page,$totalEnregistrements);
+    $nbpagesaffichees=10;
+    affichePages($nombre,$page,$totalEnregistrements,$nbpagesaffichees);
 
     // affichage des boutons
 

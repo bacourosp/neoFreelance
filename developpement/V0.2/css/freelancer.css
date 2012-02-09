@@ -210,20 +210,31 @@ th {
 .dataTable tbody tr { height: 35px; }
 
 /* Numbered paging pour la pagination des pages pas encore de paginate active */
+.pager {
+height: 28px;
+display: inline-block;
+padding: 0 8px 0 6px;
+line-height: 28px;
+font-family: Arial,Helvetica,sans-serif;
+font-weight: bold;
+font-size: 14px;
+color: #343434;
+}
+
 .paginate_button {
-	border: 1px solid #AAA;
+	border: 2px solid #AAA;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
     -o-border-radius: 5px;
 	-ms-border-radius: 5px;
 	-khtml-border-radius: 5px;
 	border-radius: 5px;
-	padding: 2px 5px;
+	padding: 5px 8px;
 	margin: 0 3px;
 	cursor: pointer;
 }
 
-.paginate_button { background-color: #DDD; }
+.paginate_button { background-color: #FFF; }
 .paginate_button:hover { background-color: #CCC; }
 .paginate_active { background-color: #99B3FF; }
 
