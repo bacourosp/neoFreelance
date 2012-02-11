@@ -35,16 +35,7 @@ include('../menu.php');
 <?
 echo '<div id="center">';
 
-//=========================================
-
-// information pour la connection à le DB
-
-//=========================================
-
-$host = 'mysql51-46.perso';
-$user = 'boudeffacowo';
-$pass = 'zoOPwOb8';
-$db = 'boudeffacowo';
+include('../../db.php');
 
 //=========================================    
 

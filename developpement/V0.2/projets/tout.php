@@ -32,7 +32,7 @@ include('competences.php');
 
 </div>
 <?
-include('explore.php');
+include('explore-tout.php');
 ?>
 </div>
 </body>

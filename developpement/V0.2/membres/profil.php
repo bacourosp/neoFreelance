@@ -21,17 +21,7 @@ include('../menu.php');
 
 <?
 
-//=========================================
-
-// information pour la connection à le DB
-
-//=========================================
-
-$host = 'mysql51-46.perso';
-$user = 'boudeffacowo';
-$pass = 'zoOPwOb8';
-$db = 'boudeffacowo';
-
+include('../../db.php');
 //=========================================    
 
 // connection à la DB
@@ -48,13 +38,15 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
 // d'enregistrement necessaire à l'affichage.
 
 //=========================================
+$email = $_SESSION["email"];
 
-  $select = "SELECT PSEUDO,PROFIL,COMPETENCES FROM MEMBRES WHERE EMAIL='".$_SESSION['email']."';";
+  $select = "SELECT PSEUDO,EMAIL,PROFIL,COMPETENCES FROM MEMBRES WHERE EMAIL='".$email."';";
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   $total = mysql_num_rows($result);
 
+
 $row = mysql_fetch_array($result);
-$email = $row["EMAIL"];
+
 $default = "http://www.gravatar.com/avatar/00000000000000000000000000000000";
 $size = 80;
 
@@ -62,6 +54,11 @@ $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) 
 
 echo '<div>';
 echo '<img src="'.$grav_url.'" alt="" />';
+
+echo '<div> PSEUDO : '; echo $row["PSEUDO"]; echo '</div>'; 
+echo '<div>Login ou Email : '; echo $email; echo '</div>';
+echo '<div>Compétences : '.$row["COMPETENCES"]; echo '</div>';
+
 echo '</div>';
 
 ?>

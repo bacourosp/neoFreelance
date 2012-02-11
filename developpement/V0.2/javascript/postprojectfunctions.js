@@ -3,6 +3,21 @@
 jq = jQuery.noConflict();
 var job_ids = [];
 
+function compter(f) {
+   var max=4000;
+   var txt=f.description.value +1;
+   var nb=txt.length;
+   var reste=max-nb;
+if (nb>max) { 
+      alert("Vous avez dépassé le nombre maximal de caractères qui est de " + max +".");
+      f.description.value=txt.substring(0,max);
+      nb=max;
+   }
+   //f.nbcar.value=nb;
+   //f.restcar.value=reste;
+   document.getElementById("proj-descr-char-count").innerHTML=reste;
+}
+
 function removeByValue(myarray, val) {
 	
 	for(var i=0; i < myarray.length; i++) {

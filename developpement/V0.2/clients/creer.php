@@ -83,15 +83,16 @@ document.write('<input type="hidden" value="" size="45" maxlength="60" name="SKI
 		<tr>
 			<td colspan="2">
 			<div style="width:790px; margin-bottom:15px; position:relative;">
-			<textarea style="width:764px;" name="DESCRIPTION" rows="13" id="project-description" class="projectFormTextField" onMouseOver="showHint('project-description-hint');" onMouseOut="hideHint('project-description-hint');" onBlur="showError10('project-description','project-description-err');"></textarea>&nbsp;
+			<textarea style="width:764px;" name="description" rows="13" id="project-description" class="projectFormTextField" onMouseOver="showHint('project-description-hint');" onMouseOut="hideHint('project-description-hint');" onBlur="showError10('project-description','project-description-err');" onkeypress="compter(this.form);"></textarea>&nbsp;
 			<span id="project-description-hint" class="hint">Plus vous détaillez votre projet, plus vous aurez de chance d'avoir exactement ce que vous cherchez après un minimum de temps.<span class="hint-pointer">&nbsp;</span></span>
 			</div>
 			</td>
 		</tr>
 		<tr>
-			<td height="20" class="projectDescriptionWarning"><strong>IMPORTANT!</strong> Pour l'instant vous pouvez mettre vos informations de contact.</td>
+			<td class="projectDescriptionWarning"></td>
 			<td class="divProjectCharLeft">
-			<img src="../img/icons/icon_charleftpencil.png" width="8" height="8" alt="character left">&nbsp;<span id="proj-descr-char-count">4000</span> Caractères<span id="proj-descr-char-s"></span> Maximum</td>
+			<img src="../images/icones/crayon.jpg" width="20" height="20" alt="character left">&nbsp;<span id="proj-descr-char-count">4000</span> Restants<span id="proj-descr-char-s"></span>
+			</td>
 		</tr>
 	</table>
 </div>

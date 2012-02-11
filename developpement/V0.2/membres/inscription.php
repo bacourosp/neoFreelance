@@ -27,7 +27,7 @@ include('../menu.php');
 	<label for="username"><b>Nouveau Pseudo :</b></label><br>
 	<span id="check_username_exist"></span><span id="tbx_username_err" class="err-msg"></span>
 	<input type="text" class="gaf_textbox" name="newusername" id="tbx_username" value="" onMouseOver="showHint('tbx_username_hint');" onMouseOut="hideHint('tbx_username_hint');" onBlur="showError10('tbx_username','tbx_username_err')">&nbsp;
-	<span id="tbx_username_hint" class="hint">Entrez s'il vous plait 3-16 caractères alphanumeric [a-z 0-9] commençant par une lettre<span class="hint-pointer">&nbsp;</span></span><br>
+	<span id="tbx_username_hint" class="hint">Entrez s'il vous plait 4-20 caractères alphanumeric [a-z 0-9] commençant par une lettre<span class="hint-pointer">&nbsp;</span></span><br>
 	
 </div>
 <div class="half_column" style="position:relative; height:90px">
@@ -39,7 +39,7 @@ include('../menu.php');
 <div class="clear"></div>
 <div class="half_column" style="height:90px">
 	<label for="passwd"><b>Mot de passe :</b></label>&nbsp;<span id="pwd-err-lhs" class="err-mess"></span><br>
-	<input type="password" class="gaf_textbox" name="newuserpasswd" id="passwd1" value="">&nbsp;<br>
+	<input type="password" class="gaf_textbox" name="newuserpasswd1" id="passwd1" value="">&nbsp;<br>
 	<span id='passwd_hint_id'></span>
 <style>
 .password_strength {
@@ -121,13 +121,13 @@ display: inline-block;
 </div>
 <div class="half_column" style="height:90px">
 	<label for="passwd1"><b>Repeter mot de Passe :</b></label>&nbsp;<span id="pwd-err-rhs" style="display:none;color:red;"></span><br>
-	<input type="password" class="gaf_textbox" name="newuserpasswd1" id="passwd2" value="" onChange="verifPasswd();"><br>
+	<input type="password" class="gaf_textbox" name="newuserpasswd2" id="passwd2" value="" onKeyDown="verifPasswd(this.form);"><br>
 	<span id='passwd_match_msg' class="ok-mess">Les mots de passes sont semblables&nbsp;<img src="../images/icones/icon_check.png"></span>
 </div>
 <table width="100%" border="0" height="40px">
 	<tr>
 		<td width="3%"><input type="checkbox" name="chkbox_notifications_email_notify" checked></td>
-		<td width="97%" id="notify_msg">Je veux recevoir des notifications par email sur des projets en rapport avec mes compétences.</td>
+		<td width="97%" id="notify_msg">Je veux recevoir des notifications par email sur des projets qui m'intéressent.</td>
 	</tr>
 </table>
 <div style="padding-left:5px;">

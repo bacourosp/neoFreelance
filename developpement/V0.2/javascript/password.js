@@ -1,5 +1,7 @@
-function verifPasswd() {
-if (document.getElementById('passwd1').value == document.getElementById('passwd2').value )
+function verifPasswd(f) {
+var pass1=f.newuserpasswd1.value;
+var pass2=f.newuserpasswd2.value;
+if ( pass1==pass2 )
 {
 	showHint('passwd_match_msg');
 } else {

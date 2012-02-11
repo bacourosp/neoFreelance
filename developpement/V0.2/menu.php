@@ -1,11 +1,11 @@
 <!-- Header -->
 <div id="header" class="wrap">
 
-	<a class="logo" href="/index.php"><span>Place de marché</span></a>
+	<a class="logo" href="/index.php"><span>neoFreelance</span></a>
 
 <div class="login">
 <?
-if ($_SESSION['connected']==1) {
+if ($_SESSION['connected']==TRUE) {
 echo '<a id="login" onClick="showProfilArea();"><span>Profil et Compte</span></a>';
 } else {
 echo '<a id="login" onClick="showLoginArea();"><span>Mon bureau virtuel</span></a>';
