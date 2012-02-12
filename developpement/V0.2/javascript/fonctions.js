@@ -41,7 +41,6 @@ function hideLoginArea(){
 	
 }
 
-// JavaScript Document
 function showProfilArea(){
 	
 	document.getElementById('box-profil').style.display = 'block';
@@ -53,14 +52,7 @@ function hideProfilArea(){
 	document.getElementById('box-profil').style.display = 'none';
 	
 }
-
-function showHideLoginArea(){
- if (document.getElementById('box-login').style.display == 'none')
- document.getElementById('box-login').style.display = 'block'
- else
- document.getElementById('box-login').style.display = 'none';
-
-}
+// JavaScript Document
 
 function showHint(elementId){
 	

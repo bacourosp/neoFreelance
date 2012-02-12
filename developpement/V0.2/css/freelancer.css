@@ -24,12 +24,18 @@ img {
 body {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:12px;
-	color:#111111;
-	
-	
+	color:#111111;	
 }
 
-h1{ font-family:Arial, Verdana, Sans-serif; font-size:36px; color:#008BCB; font-weight:normal; padding-bottom:5px; margin-bottom:20px; letter-spacing:-1px; /* border-bottom:#008bcb solid 1px; */}
+h1{ 
+    font-family:Arial, Verdana, Sans-serif;
+	font-size:36px;
+	color:#008BCB;
+	font-weight:normal;
+	padding-bottom:5px;
+	margin-bottom:20px;
+	letter-spacing:-1px; /* border-bottom:#008bcb solid 1px; */
+}
 
 .div_product_title h1.product_name_big {font-size:16px; font-weight:bold; letter-spacing: normal; color: #362F2D !important; text-decoration: underline;} /*Free Market h2 fix*/
 
@@ -59,14 +65,13 @@ th {
 
 .omega {margin-right: 0;}
 
-#skill-container {  }
+.hide {
+	display:none;
+}
 
 #wrapper{background:#fff; width:1000px; margin:0 auto; -webkit-box-shadow: 0px 0px 10px 3px #c8d9e9; -moz-box-shadow: 0px 0px 10px 3px #c8d9e9; box-shadow: 0px 0px 10px 3px #c8d9e9; }
 #sky{background:url(../images/ciel.png) repeat-x #ecf6ff;}
 
-.hide{
-	display:none;
-	}
 /* 
  * --------------- Style de Header ---------------
  */
@@ -74,65 +79,62 @@ th {
 #header .logo-drop {width:280px; list-style: none; float:left}
 #header .logo-drop li ul {display:none}
 #header .logo-drop:hover ul {display:block !important}
-#logo{height:100px; display:block; background:url(../images/menu.png); background-position:0px 0px; text-indent:-9999px;}
 #header .grid_12.head {z-index:1000}
 
 .wrap{margin:0 auto; position:relative; width:920px;}
-.header{ background:url(hab/header.png) repeat-x top left; height:78px;}
 .logo{ background:url(../images/menu.png) no-repeat top left; display:block; height:100px; left:20px; overflow:hidden; position:absolute; text-indent:-290486px; top:0; width:240px;}
 
 /* Login box */
-#login{cursor:pointer; margin:20px 0px 0px 0px; padding:10px 10px; border:#fff solid 1px; color:#333 !important; }
-.login{ margin:0 auto; position: relative; display:block;  width:920px;}
+#login-wrap{ margin:0 auto; position: relative; display:block;  width:920px;}
+#login{cursor:pointer; margin:20px 0px 0px 0px; padding:10px 10px; border:#fff solid 1px; background-color:#008cc9 !important; }
+#login{outline:none; float:right;}
 
-#account{outline:none; float:right; margin:60px 0px 0px 0px; padding:7px 10px; border:#fff solid 1px; color:#333 !important; }
-.account{ background:no-repeat top right; display:block; height:28px; position:absolute; right:100; top:25px; width:60px;}
+#profil{cursor:pointer; margin:20px 0px 0px 0px; padding:10px 10px; border:#fff solid 1px; background-color:#008cc9 !important; }
+#profil{outline:none; float:right;}
 
-#logout{cursor:pointer; margin:20px 0px 0px 0px; padding:10px 10px; border:#fff solid 1px; color:#999999 !important; }
-
-#profil{cursor:pointer; margin:20px 0px 0px 0px; padding:10px 10px; border:#fff solid 1px; color:#333 !important; }
-.profil{ margin:0 auto; position: relative; display:block;  width:920px;}
 
 #box-profil{display:none; width:280px; position:absolute; top:57px; right:0px; border:#CCC solid 5px; background:#FFF; z-index:10; padding:25px 30px 10px 30px;}
 
 #box-login{display:none; width:280px; position:absolute; top:57px; right:0px; border:#CCC solid 5px; background:#FFF; z-index:10; padding:25px 30px 10px 30px;}
 #box-login .field{padding-bottom:10px !important;}
 #box-login .remember{float:left; padding-top:12px;}
-#username{width:260px;}
-#passwd{width:190px;}
 #box-login .forgot{position: relative; left:2px; top:8px; right:0px;}
-#loginpermanent {vertical-align: middle;}
 #box-login-icon { background-image:url(../images/icon_close1.png); position:absolute; top : 0; left: 0;}
 #box-login a {color:#00CCCC;}
+
+#username{width:260px;}
+#passwd{width:190px;}
+#loginpermanent {vertical-align: middle;}
 .field {position:relative;}
-/* main tab */
-.c9d-tabcnt{ margin:0 auto; position:relative; border:none; width:920px; background:#fff; border-top:none;
 
--moz-border-radius-topleft: 10px;
-	-webkit-border-top-left-radius: 10px;
-	-o-border-radius-topleft: 10px;
-	-o-border-top-left-radius: 10px;
-	-ms-border-radius-topleft: 10px;
-	-ms-border-top-left-radius: 10px;
-	-khtml-border-radius-topleft: 10px;
-	-khtml-border-top-left-radius: 10px;
- 	border-top-left-radius: 10px;
+/* Contenu des pages */
 
--moz-border-radius-topright: 10px;
-	-webkit-border-top-right-radius: 10px;
-	-o-border-radius-topright: 10px;
-	-o-border-top-right-radius: 10px;
-	-ms-border-radius-topright: 10px;
-	-ms-border-top-right-radius: 10px;
-	-khtml-border-radius-topright: 10px;
-	-khtml-border-top-right-radius: 10px;
-	border-top-right-radius: 10px; 
+.content{ 
+padding: 0px 10px 10px 10px;
+margin: 0 auto; 
+position:relative; 
+border:none; 
+width:920px; 
+background:#fff; 
+border-top:none;
+
+    -webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-left-radius: 10px;	
+	
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-bottom-right-radius: 10px;
 }
 
-.content{ padding: 0px 10px 0px 10px; margin: 0 auto; position:relative; border:none; width:920px; background:#fff; border-top:none;
-
-}
-.menu-content{ padding: 10px 10px 0px 10px; margin:0 auto; position:relative; border:none; width:920px; background:#fff; border-top:none;
+.menu-content{ 
+padding: 10px 10px 0px 10px; 
+margin:0 auto; 
+position:relative; 
+border:none; 
+width:920px; 
+background:#fff; 
+border-top:none;
 
     -moz-border-radius-topleft: 10px;
 	-webkit-border-top-left-radius: 10px;
@@ -155,13 +157,94 @@ th {
 	border-top-right-radius: 10px; 
 }
 
+#footer{ 
+padding: 10px 10px 0px 10px; 
+margin:0 auto;
+position:relative; 
+border:none; 
+width:920px; height:160px;
+background:#fff; 
+border-top:none;
 
-/* Compétences */
+    -moz-border-radius-topleft: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-o-border-radius-topleft: 10px;
+	-o-border-top-left-radius: 10px;
+	-ms-border-radius-topleft: 10px;
+	-ms-border-top-left-radius: 10px;
+	-khtml-border-radius-topleft: 10px;
+	-khtml-border-top-left-radius: 10px;
+ 	border-top-left-radius: 10px;
+
+    -moz-border-radius-topright: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-o-border-radius-topright: 10px;
+	-o-border-top-right-radius: 10px;
+	-ms-border-radius-topright: 10px;
+	-ms-border-top-right-radius: 10px;
+	-khtml-border-radius-topright: 10px;
+	-khtml-border-top-right-radius: 10px;
+	border-top-right-radius: 10px; 
+
+    -webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-left-radius: 10px;	
+	
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-bottom-right-radius: 10px;
+
+}
+
+#footer a{text-decoration:none; color:#00CCCC;}
+#footer a:hover{color:#008cc9;}
+
+#footer2{ 
+padding: 10px 10px 0px 10px; 
+margin:0 auto;
+position:relative; 
+border:none; 
+width:920px; height:70px;
+background:#fff; 
+border-top:none;
+
+    -moz-border-radius-topleft: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-o-border-radius-topleft: 10px;
+	-o-border-top-left-radius: 10px;
+	-ms-border-radius-topleft: 10px;
+	-ms-border-top-left-radius: 10px;
+	-khtml-border-radius-topleft: 10px;
+	-khtml-border-top-left-radius: 10px;
+ 	border-top-left-radius: 10px;
+
+    -moz-border-radius-topright: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-o-border-radius-topright: 10px;
+	-o-border-top-right-radius: 10px;
+	-ms-border-radius-topright: 10px;
+	-ms-border-top-right-radius: 10px;
+	-khtml-border-radius-topright: 10px;
+	-khtml-border-top-right-radius: 10px;
+	border-top-right-radius: 10px; 
+
+    -webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-left-radius: 10px;	
+	
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-bottom-right-radius: 10px;
+
+}
+/* ---------------- Compétences --------------------*/
+
 #box-skills{display:none; width:250px; height:250px; position:absolute; top:51px; right:0px; border:#CCC solid 5px; background:#FFF; z-index:10; padding:25px 30px 10px 30px;}
 
 #chosen-skill{background:#FFF; border:#CCC solid 2px; padding:25px 30px 10px 30px;}
 
 .skill{cursor: pointer;}
+
 /*
  * --------------- Table des Projets -------------------
  */
@@ -223,15 +306,15 @@ color: #343434;
 
 .paginate_button {
 	border: 2px solid #AAA;
+	border-radius: 5px;
+	padding: 5px 8px;
+	margin: 0 3px;
+	cursor: pointer;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
     -o-border-radius: 5px;
 	-ms-border-radius: 5px;
 	-khtml-border-radius: 5px;
-	border-radius: 5px;
-	padding: 5px 8px;
-	margin: 0 3px;
-	cursor: pointer;
 }
 
 .paginate_button { background-color: #FFF; }
@@ -239,13 +322,7 @@ color: #343434;
 .paginate_active { background-color: #99B3FF; }
 
 /* 
- * --------------- Connexion ---------------
- */
-
-#login{outline:none; float:right; margin:26px 0px 0px 0px; padding:7px 10px; border:#fff solid 1px; color:#333 !important; }
-
-/* 
- * --------------- Navigation Principale ---------------
+ * --------------- Navigation dans le menu Principal ---------------
  */
 #nav-main-login-wrap{outline:none; float:right; margin:26px 0px 0px 0px; height:40px; background:url(../images/menu.png) no-repeat 0 -250px; z-index:8; clear:both; font-size:14px; color:#333333;}
 #nav-main-login{list-style:none; font-size:15px; margin-left:15px; position:relative;}
@@ -256,26 +333,26 @@ color: #343434;
 #nav-main-login li.first{border-left:none;}
 #nav-main-login li li.last{border-bottom:#009be2 solid 1px;}
 
-#nav-main-wrap{height:50px; background:url(../images/menu.png) no-repeat 0 -140px;  position:relative; z-index:8; clear:both; font-size:14px; color:#333333;}
-#nav-main{list-style:none; font-size:15px; margin-left:15px;}
-#nav-main a:hover{text-decoration:none;}
-#nav-main li{float:left; position:relative; border-right:#45b6ea solid 1px; border-top:solid 1px #009be2; border-bottom:solid 1px #31aee8; margin:0px;}
-#nav-main li a{color:#ffffff; padding:15px 15px; display:block; cursor:pointer; line-height: 18px; text-decoration: none;}
-#nav-main li a:hover{color:#008cc9;}
-#nav-main li:hover, #nav-main li.selected, #nav-main li.over{text-decoration:none; background:#ffffff; color:#333333;}
-#nav-main li:hover a{color:#333333;}
-#nav-main li:hover a span.arrow-downWhite{background-position:100% -4673px !important; padding-right:15px;}
-#nav-main li.first{border-left:none;}
-#nav-main .icon-tiny{position:absolute; top:22px; right:12px; background-position:-1000px -17px;}
+#menu-wrap{height:50px; background:url(../images/menu.png) no-repeat 0 -140px;  position:relative; z-index:8; clear:both; font-size:14px; color:#333333;}
 
-/* Navigation Hover */
-#nav-main li ul{display:none; position: absolute; z-index: 10; margin-left:-1px; margin-top:0; border-top:0px; background:#FFFFFF; width:200px; list-style:none;}
-#nav-main li:hover ul, #nav-main li.over ul {display: block;}
-#nav-main li li{border:#45b6ea solid 1px; border-bottom:0px; background:#FFFFFF; width: 100%; font-size:13px;}
-#nav-main li li a{line-height:20px; padding-top:8px; padding-bottom:8px; font-weight:normal; color:#008cc9;}
-#nav-main li li a:hover{background:#e0f2fe;color:#008cc9;}
-#nav-main li li a:active{background:#fff;}
-#nav-main li li.last{border-bottom:#009be2 solid 1px;}
+#menu {list-style:none; font-size:15px; margin-left:15px;}
+#menu a:hover{text-decoration:none;}
+#menu li{float:left; position:relative; border-right:#45b6ea solid 1px; border-top:solid 1px #009be2; border-bottom:solid 1px #31aee8; margin:0px;}
+#menu li a{color:#ffffff; padding:15px 15px; display:block; cursor:pointer; line-height: 18px; text-decoration: none;}
+#menu li a:hover{color:#008cc9;}
+#menu li:hover, #nav-main li.selected, #nav-main li.over{text-decoration:none; background:#ffffff; color:#333333;}
+#menu li:hover a{color:#333333;}
+#menu li:hover a span.arrow-downWhite{background-position:100% -4673px !important; padding-right:15px;}
+#menu li.first{border-left:none;}
+#menu .icon-tiny{position:absolute; top:22px; right:12px; background-position:-1000px -17px;}
+
+#menu li ul{display:none; position: absolute; z-index: 10; margin-left:-1px; margin-top:0; border-top:0px; background:#FFFFFF; width:200px; list-style:none;}
+#menu li:hover ul, #nav-main li.over ul {display: block;}
+#menu li li{border:#45b6ea solid 1px; border-bottom:0px; background:#FFFFFF; width: 100%; font-size:13px;}
+#menu li li a{line-height:20px; padding-top:8px; padding-bottom:8px; font-weight:normal; color:#008cc9;}
+#menu li li a:hover{background:#e0f2fe;color:#008cc9;}
+#menu li li a:active{background:#fff;}
+#menu li li.last{border-bottom:#009be2 solid 1px;}
 	
 /*
 --------------------- Création d'un projet-----------------------------------
@@ -541,13 +618,14 @@ Bottom banner
 #banner a.ns_bigbtn{width:235px;}
 
 
-.span-one-third{width:200px}
+.span-un-quart{width:200px}
 .span-one-half{width:450px}
 .row > [class*="span"] {
 display: inline;
 float: left;
 margin-left: 20px;
 }
+
 /*
 LibertyLand.tv
 */

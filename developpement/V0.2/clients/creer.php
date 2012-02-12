@@ -190,10 +190,7 @@ $DATE= date('c');
 
 
 // information pour la connection à le DB
-$host = 'mysql51-46.perso';
-$user = 'boudeffacowo';
-$pass = 'zoOPwOb8';
-$db = 'boudeffacowo';
+include('../../db.php');
 
 // connection à la DB
 $link = mysql_connect ($host,$user,$pass) or die ('Erreur : '.mysql_error() );

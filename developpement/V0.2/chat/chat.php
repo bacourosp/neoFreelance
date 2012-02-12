@@ -1,8 +1,3 @@
-<html>
-<head>
-<title>Ajouter du texte au milieu d'un textarea</title>
-</head>
-<body>
 <form name="poster"
    onSubmit="AddText('',document.poster.mess.value,'');" method="post" action="/chat/envoyer.php">
 
@@ -40,7 +35,17 @@ function AddText(startTag,defaultText,endTag)
    }
 }
 </script>
+<?
+//=========================================
 
+// information pour la connection à le DB
+
+//=========================================
+include('../db.php');
+?>
+<span>
+<input type="text" name="message" id="mess" value="Tapez un message, puis Enter !" onFocus="javascript:this.value=''" class="projectFormTextField" style="width: 100%">
+</span>
 <textarea
    rows="5"
    style="width: 100%"
@@ -49,17 +54,6 @@ function AddText(startTag,defaultText,endTag)
    onmouseover="this.focus();">
 Mini Stream :
 <?
-//=========================================
-
-// information pour la connection à le DB
-
-//=========================================
-
-$host = 'mysql51-46.perso';
-$user = 'boudeffacowo';
-$pass = 'zoOPwOb8';
-$db = 'boudeffacowo';
-
 //=========================================    
 
 // connection à la DB
@@ -97,15 +91,7 @@ catch(Exception $e)
 </textarea><br>
 <div>
 <span>
-<input type="text" name="message" id="mess" value="Tapez un message, puis Enter !" onFocus="javascript:this.value=''" class="projectFormTextField" style="width: 100%">
-</span>
-<span>
 <input type="submit" name="soumettre" value="Envoyer" style=" display:none;">
 </span>
 </div>
 </form>
-
-
-
-</body>
-</html>

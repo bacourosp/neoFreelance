@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>neoFreelance, coworking et télétravail</title>
+<title>neoFreelance, télétravail et coworking</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 
 <?
@@ -44,23 +44,23 @@ include('menu.php');
  </div>
 </div>
 
-
-
-
 <br>
+
+
 <h1 style="padding:0px 0px 0px 20px; ">Quoi de neuf sur neofreelance ?</h1>
 
-<div id="banner">
-<ul>
-<li>Il ya actuellement "" Projets en télétravail</li>
-<li>Le réseau comporte "" membres</li>
-<li>Les Freelances ont généré "" € de chiffre d'affaire</li>
-</ul>
+
+<p style="margin-left:20px; font-size:16px">Il ya actuellement "" Projets en télétravail. Le réseau comporte "" membres. Les Freelances ont généré "" € de chiffre d'affaire.</p>
+
+
 </div>
 
-<div class="row show-grid">
+<br>
 
-<div class="span-one-third">
+<div id="footer">
+<div class="row">
+
+<div class="span-un-quart">
 <strong>Informations ></strong><br />
 
 <a href="/infos/termes.html">Termes &amp; Conditions</a><br />
@@ -69,7 +69,7 @@ include('menu.php');
 
 </div>
 
-<div class="span-one-third">
+<div class="span-un-quart">
 <strong>A propos ></strong><br />
 
 <a href="http://www.aldaffah.biz">Qui sommes nous ?</a><br />
@@ -78,7 +78,7 @@ include('menu.php');
 
 </div>
 
-<div class="span-one-third">
+<div class="span-un-quart">
 <strong>Actions ></strong><br />
 
 <a href="http://neofreelance.com/clients/creer.php">Poster un projet</a><br />
@@ -87,7 +87,7 @@ include('menu.php');
 
 </div>
 
-<div class="span-one-third">
+<div class="span-un-quart">
 <?
 include('chat/connectes.php');
 ?>
@@ -98,10 +98,16 @@ include('chat/chat.php');
 ?>
 </div>
 
-<div style="margin-left : 40px; float:left"><img src="images/copyright/images.jpg" width="64"><img src="images/copyright/cc-logo.jpg" width="64"><img src="images/copyright/by.png"><img src="images/copyright/no_commercial.png"><img src="images/copyright/no_derivative.png"><img src="images/copyright/share_alike.png"></div>
+</div>
+
+</div><!-- footer -->
+
+<br>
+
+<div id="footer2">
+<img src="images/copyright/images.jpg" width="64"><img src="images/copyright/cc-logo.jpg" width="64"><img src="images/copyright/by.png"><img src="images/copyright/no_commercial.png"><img src="images/copyright/no_derivative.png"><img src="images/copyright/share_alike.png"></div>
 </div> <!-- Fin de la marge -->
 
-</div>
 
 </body>
 </html>

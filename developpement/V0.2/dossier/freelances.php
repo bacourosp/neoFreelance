@@ -24,8 +24,6 @@ include('../menu.php');
 
 <h1>Freelances dans le réseau</h1>
 
-</div>
-
 <div id="left">
 
 <? include('competences.php'); ?>
