@@ -105,7 +105,7 @@ include('chat/chat.php');
 <br>
 
 <div id="footer2">
-<img src="images/copyright/images.jpg" width="64"><img src="images/copyright/cc-logo.jpg" width="64"><img src="images/copyright/by.png"><img src="images/copyright/no_commercial.png"><img src="images/copyright/no_derivative.png"><img src="images/copyright/share_alike.png"></div>
+<a href="/infos/copyrights.html" style="text-decoration:none; color:#fff">Copyrights 2012, Al Daffah Creative Commons</a>
 </div> <!-- Fin de la marge -->
 
 

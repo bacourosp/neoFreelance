@@ -75,18 +75,18 @@ th {
 /* 
  * --------------- Style de Header ---------------
  */
-#header{position:relative; z-index:1000; font-size:14px; line-height:1; clear:both; color:#333; height:105px;}
-#header .logo-drop {width:280px; list-style: none; float:left}
+#header{position:relative; z-index:1000; font-size:14px; line-height:1; clear:both; color:#333; height:80px;}
+#header .logo-drop {width:600px; list-style: none; float:left}
 #header .logo-drop li ul {display:none}
 #header .logo-drop:hover ul {display:block !important}
 #header .grid_12.head {z-index:1000}
 
 .wrap{margin:0 auto; position:relative; width:920px;}
-.logo{ background:url(../images/menu.png) no-repeat top left; display:block; height:100px; left:20px; overflow:hidden; position:absolute; text-indent:-290486px; top:0; width:240px;}
+.logo{ background:url(../images/Logo-neoFreelance/Logo-neoFreelance.png) no-repeat top left;background-size: 100%; display:block; height:60px; left:20px; overflow:hidden; position:absolute; text-indent:-290486px; top:0; width:250px; margin-top:10px; margin-bottom:10px;}
 
 /* Login box */
 #login-wrap{ margin:0 auto; position: relative; display:block;  width:920px;}
-#login{cursor:pointer; margin:20px 0px 0px 0px; padding:10px 10px; border:#fff solid 1px; background-color:#008cc9 !important; }
+#login{cursor:pointer; margin:20px 0px 0px 0px; padding:10px 10px; border:#fff solid 1px; background-color:#0d9bdd !important;color:#ffffff;}
 #login{outline:none; float:right;}
 
 #profil{cursor:pointer; margin:20px 0px 0px 0px; padding:10px 10px; border:#fff solid 1px; background-color:#008cc9 !important; }
@@ -204,8 +204,8 @@ padding: 10px 10px 0px 10px;
 margin:0 auto;
 position:relative; 
 border:none; 
-width:920px; height:70px;
-background:#fff; 
+width:920px; height:25px;
+background:#0d9bdd; 
 border-top:none;
 
     -moz-border-radius-topleft: 10px;
