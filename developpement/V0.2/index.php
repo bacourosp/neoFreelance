@@ -83,7 +83,7 @@ include('menu.php');
 
 <a href="http://neofreelance.com/clients/creer.php">Poster un projet</a><br />
 <a href="http://neofreelance.com/membres/inscription.php">Ouvrir un bureau</a><br />
-<a href="support@neofreelance.com">Nous contacter</a><br />&nbsp;
+<a href="mailto:support@neofreelance.com">Contacter le support</a><br />&nbsp;
 
 </div>
 

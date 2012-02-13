@@ -5,10 +5,7 @@
 
 //=========================================
 
-$host = 'mysql51-46.perso';
-$user = 'boudeffacowo';
-$pass = 'zoOPwOb8';
-$db = 'boudeffacowo';
+include('../../db.php');
 
 //=========================================    
 
