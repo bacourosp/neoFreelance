@@ -52,17 +52,36 @@ $size = 80;
 
 $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
 
-echo '<div>';
-echo '<img src="'.$grav_url.'" alt="" />';
+
+echo '<div class="dashboard">';
+
+echo '<div class="module mini-profile">';
+echo '<div class"account-group"><img src="'.$grav_url.'" alt="" /></div>';
+echo 'aaaa';
+echo '<div class="spacer"> </div>';
+echo '</div>';
+
+echo '<div class="module">';
+echo '<ul>';
+echo '<li>Compte</li>';
+echo '<li>Mot de passe</li>';
+echo '<li>Notifications</li>';
+echo '<li>Profil</li>';
+echo '</ul>';
+echo '</div>';
+
+echo '</div>';//dashboard
+
+echo '<div class="content-main">';
 
 echo '<div> PSEUDO : '; echo $row["PSEUDO"]; echo '</div>'; 
 echo '<div>Login ou Email : '; echo $email; echo '</div>';
 echo '<div>Compétences : '.$row["COMPETENCES"]; echo '</div>';
 
-echo '</div>';
+echo '</div>';//content-main
 
 ?>
-      
+<div class="spacer"> </div>
 </div>
 </div>
 </body>

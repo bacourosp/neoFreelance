@@ -40,7 +40,7 @@ while($rowCategorie = mysql_fetch_array($resultCategorie)) {
      
 	 $Categorie = string2url($rowCategorie["CATEGORIE"]);
 	 
-  echo '<div><div id="'.$Categorie.'" onclick="javascript:permute1(this.id);" class="plus">[<span id="s'.$Categorie.'">+</span>] '.$rowCategorie["CATEGORIE"].'</div>';
+  echo '<div><div id="'.$Categorie.'" onclick="javascript:permute1(this.id);" class="plus list-link">[<span id="s'.$Categorie.'">+</span>] '.$rowCategorie["CATEGORIE"].'</div>';
   echo '<div class="left_c" id="c'.$Categorie.'" style="display:none">';
      
      $selectCompetence = 'SELECT DISTINCT ID,COMPETENCE FROM COMPETENCES WHERE CATEGORIE ="'.$Categorie.'";';
@@ -52,8 +52,10 @@ while($rowCategorie = mysql_fetch_array($resultCategorie)) {
      while($rowCompetence = mysql_fetch_array($resultCompetence)) {
     
 	 $Competence = string2url($rowCompetence["ID"]);
-     echo '<li class="skill" id="'.$Competence.'" onClick="ajouterCompetence(this.id);">';
-     echo ''.$rowCompetence["COMPETENCE"].'';
+     echo '<li class="skill list-link" id="'.$Competence.'">';
+     echo '<a href="freelances.php?competence='.$rowCompetence["COMPETENCE"].'">';
+	 echo ''.$rowCompetence["COMPETENCE"].'';
+	 echo '</a>';
      echo '</li>';
      }
      }

@@ -25,7 +25,7 @@ include('menu.php');
 <div id="ns_banner-wrapper">
  <div id="ns_banner">
 
-  <h1 style="padding:0px 0px 0px 20px;">Qu'est-ce que neoFreelance ?</h1>
+  <h1 style="padding:0px 0px 0px 20px;">neoFreelance.com c'est quoi ?</h1>
   <br>
   <ul>
   
@@ -47,10 +47,10 @@ include('menu.php');
 <br>
 
 
-<h1 style="padding:0px 0px 0px 20px; ">Quoi de neuf sur neofreelance ?</h1>
+<h1 style="padding:0px 0px 0px 20px; ">Quoi de neuf sur neoFreelance.com ?</h1>
 
 
-<p style="margin-left:20px; font-size:16px">Il ya actuellement "" Projets en télétravail. Le réseau comporte "" membres. Les Freelances ont généré "" € de chiffre d'affaire.</p>
+<p style="margin-left:20px; font-size:16px">Il ya actuellement # Projets en télétravail. Le réseau comporte # membres. Les Freelances ont généré # € de chiffre d'affaire.</p>
 
 
 </div>
@@ -73,7 +73,7 @@ include('menu.php');
 <strong>A propos ></strong><br />
 
 <a href="http://www.aldaffah.biz">Qui sommes nous ?</a><br />
-<a href="https://www.facebook.com/pages/neoFreelance/153022051480674?sk=wall">Suivez nou sur Facebook</a><br />
+<a href="https://www.facebook.com/pages/neoFreelance/153022051480674?sk=wall">Suivez nous sur Facebook</a><br />
 <a href="https://github.com/boudeffa/neoFreelance ">Code source GitHub</a><br />&nbsp;
 
 </div>

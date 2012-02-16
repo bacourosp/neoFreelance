@@ -4,7 +4,7 @@ session_start();
 // Redirige l'utilisateur s'il est déjà identifié
 if(isset($_COOKIE["ID_UTILISATEUR"]))
   {
-  header("Location: profil.php");
+  header("Location: /accueil/index.php");
   }
   else
   {
@@ -69,7 +69,7 @@ if(isset($_COOKIE["ID_UTILISATEUR"]))
 	      $_SESSION["email"]=$_POST["login"];
 		  echo '<script language="Javascript">
           <!--
-          document.location.replace("../membres/profil.php");
+          document.location.replace("../accueil/index.php");
           // -->
           </script>';
           }//MDP

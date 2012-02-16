@@ -5,7 +5,7 @@ session_start();
 
 if(isset($_COOKIE["ID_UTILISATEUR"]))
 {
-     header("Location: profil.php");
+     header("Location: /accueil/index.php");
 }
 
 else {
