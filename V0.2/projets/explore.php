@@ -19,7 +19,7 @@ echo '<a name="navig-table"></a>';
 echo "\n";
 ?>
 <span>
-<select size="1" name="project_table_length" class="selectP" onChange="window.location='derniers.php?nombre='+this.value">
+<select size="1" name="project_table_length" class="selectP" onChange="window.location='projets.php?nombre='+this.value">
 <option value="10" <? if ($_GET[nombre]==10) { echo 'selected';}; ?> >10</option>
 <option value="50" <? if ($_GET[nombre]==50) { echo 'selected';}; ?> >50</option>
 <option value="100" <? if ($_GET[nombre]==100) { echo 'selected';}; ?>>100</option>
@@ -92,7 +92,7 @@ if(!$verifLimite)  {
 
 //=========================================
 
-  $select = 'SELECT ID,NOM,COMPETENCES, DESCRIPTION, DATE,TEMPS FROM PROJETS ORDER BY DATE DESC limit '.$limite.','.$nombre;
+  $select = 'SELECT ID, DESIGNATION, COMPETENCES, DESCRIPTION, DATE_LANCEMENT, DUREE_SOUMISSION FROM PROJETS ORDER BY DATE_LANCEMENT DESC limit '.$limite.','.$nombre;
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   $total = mysql_num_rows($result);
 
@@ -129,50 +129,54 @@ if($totalEnregistrements > $nombre) {
     echo '<table id="projets-recents" class="dataTable" width="920">'."\n";
         // première ligne on affiche les titres prénom et surnom dans 2 colonnes
         echo '<thead><tr>';
-        echo '<th width=""><b><u>Nom du projet</u></b></th>';
-        echo '<th width="200"><b><u>Compétences</u></b></th>';
-        echo '<th width="200"><b><u>Date</u></b></th>';
-		echo '<th width="200"><b><u>Durée Soumission</u></b></th>';
+        echo '<th width=""><b><u>Projet</u></b></th>';
+        echo '<th width="200"><b><u>Valeur Moy.</u></b></th>';
+        echo '<th width="200"><b><u>Date de début</u></b></th>';
+		echo '<th width="200"><b><u>Date limite</u></b></th>';
         
         echo '</tr></thead>'."\n";
 		
     // lecture et affichage des résultats sur 2 colonnes, 1 résultat par ligne.    
     $var=0; 
 	while($row = mysql_fetch_array($result)) {
-    if ($row["DATE"]==date('c')) { 
+    if (date("d-m-Y",strtotime($row["DATE_LANCEMENT"]))==date("d-m-Y")) { 
 	   $date='Aujourdhui'; 
 	} else { 
-	   $date = date("d/m/Y", strtotime($row["DATE"]));
+	   $date = date("d/m/Y", strtotime($row["DATE_LANCEMENT"]));
 	};
-	if ($row["TEMPS"]==0) {
+	if ($row["DUREE_SOUMISSION"]==0) {
 	   $duree ='Indéfini';
 	} else 
-	if ($row["TEMPS"]==1) {
+	if ($row["DUREE_SOUMISSION"]==1) {
 	   $duree ='Urgent';
 	} else {
-	   $duree =$row["TEMPS"];
+	   $duree = $row["DUREE_SOUMISSION"];
 	};
 	$IDClassProjet = "'"."Project-".$row["ID"]."'";
 	$Description = coupe($row["DESCRIPTION"]);
     if ($var==0){ //Affiche le projet numéro .$row["ID"].
         echo '<tr bgcolor="#FFFFFF">';	
-        echo '<td><a href="/projets/projet.php?ID='.$row["ID"].'" onMouseOver="showHint('.$IDClassProjet.');" onMouseOut="hideHint('.$IDClassProjet.');">'.$row["NOM"].'</a>';
+        echo '<td><a href="/projets/projet.php?ID='.$row["ID"].'" onMouseOver="showHint('.$IDClassProjet.');" onMouseOut="hideHint('.$IDClassProjet.');">'.$row["DESIGNATION"].'</a>';
+		echo '<br>';
+		echo $row["COMPETENCES"];
 		echo '<span id="Project-'.$row["ID"].'" class="hint">'.$Description.'<span class="hint-pointer">&nbsp;</span></span>';
 		echo '</td>';
-		echo '<td>'.$row["COMPETENCES"].'</td>';
+		echo '<td>'.$valeur_moyenne.'</td>';
         echo '<td>'.$date.'</td>';
-        echo '<td>'.$duree.'</td>';
+        echo '<td>'.$date_limite.'</td>';
         echo '</tr>'."\n";
 		$var=1;
 		}
 		else{
 		echo '<tr  bgcolor="#EEEEEE">';
-        echo '<td><a href="/projets/projet.php?ID='.$row["ID"].'" onMouseOver="showHint('.$IDClassProjet.');" onMouseOut="hideHint('.$IDClassProjet.');">'.$row["NOM"].'</a>';
+        echo '<td><a href="/projets/projet.php?ID='.$row["ID"].'" onMouseOver="showHint('.$IDClassProjet.');" onMouseOut="hideHint('.$IDClassProjet.');" >'.$row["DESIGNATION"].'</a>';
 		echo '<span id="Project-'.$row["ID"].'" class="hint">'.$Description.'<span class="hint-pointer">&nbsp;</span></span>';
+		echo '<br>';
+		echo $row["COMPETENCES"];
 		echo '</td>';
-        echo '<td>'.$row["COMPETENCES"].'</td>';
+        echo '<td>'.$valeur_moyenne.'</td>';
 		echo '<td>'.$date.'</td>';
-        echo '<td>'.$duree.'</td>';
+        echo '<td>'.$date_limite.'</td>';
         echo '</tr>'."\n";
 		$var=0;
 		}

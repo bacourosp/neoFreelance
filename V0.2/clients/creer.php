@@ -1,6 +1,83 @@
 <?
 session_start();
 ?>
+<?
+
+if (!isset($_POST["projectname"]) or !isset($_POST["description"]) or !isset($_POST["duree"])) {
+$masquer_formulaire = false;
+$message = "Veuller renseigner tout les champs, merci <br>";
+} else {
+		if (!isset($_SESSION["ID_UTILISATEUR"])){
+        $PROPRIETAIREPROJET = 'ANONYME' ;
+	   	} else {
+		$PROPRIETAIREPROJET =$_SESSION['ID_UUTILISATEUR'];
+	    };
+		
+		$NOMPROJET = $_POST['projectname'];
+		$DESCRIPTION = $_POST['description'];
+		$BUDGET = $_POST['budget'];
+		$DUREESOUMISSION = $_POST['duree'];  
+
+		switch ($BUDGET) {
+			case 0 :  $MONTANTMIN= 30; 
+          	$MONTANTMAX= 250;
+		  	break;
+			case 1 :  $MONTANTMIN= 250; 
+          	$MONTANTMAX= 750;
+		  	break;
+			case 2 :  $MONTANTMIN= 750; 
+          	$MONTANTMAX= 1500;
+		  	break;
+			case 3 :  $MONTANTMIN= 1500; 
+          	$MONTANTMAX= 3000;
+		  	break;
+			case 4 :  $MONTANTMIN= 3000; 
+          	$MONTANTMAX= 5000;
+		  	break;
+			case 5 :  $MONTANTMIN= 5000; 
+          	$MONTANTMAX= 100000;
+		  	break;
+		}
+
+		$DATE= date("c");
+
+
+			// information pour la connection à le DB
+			include('../../db.php');
+
+			// connection à la DB
+			$link = mysql_connect ($host,$user,$pass) or die ('Erreur : '.mysql_error() );
+			mysql_select_db($db) or die ('Erreur :'.mysql_error());
+
+			//TRAITEMENT DU TABLEAU DE COMPETENCES
+			$COMPETENCES = explode(",",$_POST['SKILLS']);
+			$TABcompetences = array();
+			foreach ($COMPETENCES as $IDcompetence){
+
+  			$selectcomp = 'SELECT COMPETENCE FROM COMPETENCES WHERE ID="'.$IDcompetence.'";';
+  			$resultcomp = mysql_query($selectcomp,$link) or die ('Erreur : '.mysql_error() );
+  			$totalcomp = mysql_num_rows($resultcomp);
+  
+  			if ($totalcomp){
+  			$rowcomp = mysql_fetch_row($resultcomp);
+  			$TABcompetences[]=$rowcomp[0];
+  				};
+			};
+			$comp=implode(",",$TABcompetences);
+			//FIN TRAITEMENT
+
+
+
+		
+			$requete = "insert into PROJETS values('','".$PROPRIETAIREPROJET."', '".$NOMPROJET."', '".$comp."', '".$DESCRIPTION."', '".$MONTANTMIN."','".$MONTANTMAX."', '".$DATE."', '".$DUREESOUMISSION."');" ;
+			mysql_query($requete);
+		
+		$masquer_formulaire = true;
+
+	  
+}
+
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,13 +106,27 @@ include('../menu.php');
 
 <br>
 <h1>Nouveau Projet</h1>
+<? 
+if(isset($message)) {
+      echo '<p>';
+      echo $message;
+      echo '</p>';
+	  } else {
+	  echo '<p>';
+	  echo 'Votre projet a été créé';
+	  echo '</p>';
+}; 
+?>
+<br>
+<? if($masquer_formulaire != true) { ?>
+
 
 <form name="neoprojet" method="post" action="creer.php">
 <div id="divProjectName" style="position: relative ">
 	<label for="projectName"><b>Nom du Projet :</b></label>&nbsp;
 	<span id="project-name-err" class="err-msg">Entrez un nom à votre projet (minimum 10 caractères)</span>
 	<br>
-	<input type="text" value="" size="45" maxlength="60" name="NOMPROJET" id="project-name" class="projectFormTextField big-textbox" onMouseOver="showHint('project-name-hint');" onMouseOut="hideHint('project-name-hint');" onBlur="showError10('project-name','project-name-err');">&nbsp;
+	<input type="text" value="" size="45" maxlength="45" name="projectname" id="project-name" class="projectFormTextField big-textbox" onMouseOver="showHint('project-name-hint');" onMouseOut="hideHint('project-name-hint');" onBlur="showError10('project-name','project-name-err');">&nbsp;
 	<span id="project-name-hint" class="hint" style="display:none;">Le nom de votre projet est important car c'est ce qui va attirer les freelances à soumissionner. Vous devez clairement décrire vos besoins en aussi peu de mots que possible.<span class="hint-pointer">&nbsp;</span></span>
 </div>
 <div class="clear"></div>
@@ -46,7 +137,7 @@ include('../menu.php');
 <div>
 <span><b>Compétences requises : <a style="color:#008BCB; text-decoration:underline; cursor:pointer" onClick="showBoxSkills();">Explorer <img src="../images/icones/loupe.png" width="20"></a></b></span>
 <br>
-<input type="text" value="Fonction non encore disponible, Explorez !" size="45" maxlength="60" id="skill-input" class="projectFormTextField big-textbox" style="vertical-align: text-bottom" onMouseOver="showHint('skill-input-hint');" onMouseOut="hideHint('skill-input-hint');" disabled/>
+<input type="text" value="Fonction non encore disponible, Explorez !" size="45" maxlength="45" id="skill-input" class="projectFormTextField big-textbox" style="vertical-align: text-bottom" onMouseOver="showHint('skill-input-hint');" onMouseOut="hideHint('skill-input-hint');" disabled/>
 <span id="skill-input-hint" class="hint">Selon ce que demande votre projet, les freelances du réseau sauront postuler à votre projet.<span class="hint-pointer">&nbsp;</span></span>
 </div>
 </br>
@@ -83,7 +174,7 @@ document.write('<input type="hidden" value="" size="45" maxlength="60" name="SKI
 		<tr>
 			<td colspan="2">
 			<div style="width:790px; margin-bottom:15px; position:relative;">
-			<textarea style="width:764px;" name="description" rows="13" id="project-description" class="projectFormTextField" onMouseOver="showHint('project-description-hint');" onMouseOut="hideHint('project-description-hint');" onBlur="showError10('project-description','project-description-err');" onkeypress="compter(this.form);"></textarea>&nbsp;
+			<textarea style="width:764px;" name="description" rows="13" maxlength="4000" id="project-description" class="projectFormTextField" onMouseOver="showHint('project-description-hint');" onMouseOut="hideHint('project-description-hint');" onBlur="showError10('project-description','project-description-err');" onkeypress="compter(this.form);"></textarea>&nbsp;
 			<span id="project-description-hint" class="hint">Plus vous détaillez votre projet, plus vous aurez de chance d'avoir exactement ce que vous cherchez après un minimum de temps.<span class="hint-pointer">&nbsp;</span></span>
 			</div>
 			</td>
@@ -140,9 +231,9 @@ document.write('<input type="hidden" value="" size="45" maxlength="60" name="SKI
 
 <div id="bidPeriodDiv"  style="position:relative" >
         <label for="subCategory"><b>Temps de soumission ?</b></label><br>
-        <input type="text" class="projectFormTextField small-textbox" name="DUREESOUMISSION" id="bidperiod" maxlength="3" size="3" value="0" style="vertical-align:middle;" onMouseOver="showHint('bidperiod-hint');" onMouseOut="hideHint('bidperiod-hint');" onBlur="showError('bidperiod','bidperiod-err');">
-        <span id="bidperiod-hint" class="hint">Donnez vous 1-60 jours pour recevoir des soumissions et choisir un freelance si vous séléctionnez 1 votre projet sera marqué URGENT!<span class="hint-pointer">&nbsp;</span></span>
-        <label>Jours</label> (maximum 60 jours, 0 pour une période indéfinie) &nbsp;<span id="bidperiod-err" class="err-msg">Entrez une période de soumission s'il vous plait.</span>
+        <input type="text" class="projectFormTextField small-textbox" name="duree" id="bidperiod" maxlength="2" size="3" value="0" style="vertical-align:middle;" onMouseOver="showHint('bidperiod-hint');" onMouseOut="hideHint('bidperiod-hint');" onBlur="showError('bidperiod','bidperiod-err');">
+        <span id="bidperiod-hint" class="hint">Donnez vous 1-99 jours pour recevoir des soumissions et choisir un freelance si vous séléctionnez 1 votre projet sera marqué URGENT!<span class="hint-pointer">&nbsp;</span></span>
+        <label>Jours</label> (maximum 99 jours, 0 pour une période indéfinie) &nbsp;<span id="bidperiod-err" class="err-msg">Entrez une période de soumission s'il vous plait.</span>
 </div>
 
 </br>
@@ -151,78 +242,11 @@ document.write('<input type="hidden" value="" size="45" maxlength="60" name="SKI
 <button class="ns_btn ns_blue" type="submit" value="post" onClick="ajouterSkills();">Créer</button>
 </center>
 </form>
+
+<? } ?>
 </br>
 </br>
-<?
 
-$NOMPROJET = $_POST['NOMPROJET'];
-$DESCRIPTION = $_POST['DESCRIPTION'];
-$BUDGET = $_POST['BUDGET'];
-$DUREESOUMISSION = $_POST['DUREESOUMISSION'];  
-
-if (isset($_SESSION['EMAIL'])) 
-   {$PROPRIETAIREPROJET =$_SESSION['EMAIL'];}
-else 
-   {$PROPRIETAIREPROJET = 'ANONYME' ;}
-
-switch ($BUDGET) {
-case 0 :  $MONTANTMIN= 30; 
-          $MONTANTMAX= 250;
-		  break;
-case 1 :  $MONTANTMIN= 250; 
-          $MONTANTMAX= 750;
-		  break;
-case 2 :  $MONTANTMIN= 750; 
-          $MONTANTMAX= 1500;
-		  break;
-case 3 :  $MONTANTMIN= 1500; 
-          $MONTANTMAX= 3000;
-		  break;
-case 4 :  $MONTANTMIN= 3000; 
-          $MONTANTMAX= 5000;
-		  break;
-case 5 :  $MONTANTMIN= 5000; 
-          $MONTANTMAX= 100000;
-		  break;
-}
-
-$DATE= date('c');
-
-
-// information pour la connection à le DB
-include('../../db.php');
-
-// connection à la DB
-$link = mysql_connect ($host,$user,$pass) or die ('Erreur : '.mysql_error() );
-mysql_select_db($db) or die ('Erreur :'.mysql_error());
-
-//TRAITEMENT DU TABLEAU DE COMPETENCES
-$COMPETENCES = explode(",",$_POST['SKILLS']);
-$TABcompetences = array();
-foreach ($COMPETENCES as $IDcompetence){
-
-  $selectcomp = 'SELECT COMPETENCE FROM COMPETENCES WHERE ID="'.$IDcompetence.'";';
-  $resultcomp = mysql_query($selectcomp,$link) or die ('Erreur : '.mysql_error() );
-  $totalcomp = mysql_num_rows($resultcomp);
-  
-  if ($totalcomp){
-  $rowcomp = mysql_fetch_row($resultcomp);
-  $TABcompetences[]=$rowcomp[0];
-  };
-};
-$comp=implode(",",$TABcompetences);
-//FIN TRAITEMENT
-
-
-
-if (!$NOMPROJET == '' and !$DESCRIPTION == '') {
-
-$requete = "insert into PROJETS values('', '".$NOMPROJET."', '".$comp."', '".$DESCRIPTION."', '".$MONTANTMIN."','".$MONTANTMAX."', '".$DATE."', '".$DUREESOUMISSION."');" ;
-mysql_query($requete);
-
-}
-
-?>
 </div>
 </div>
 

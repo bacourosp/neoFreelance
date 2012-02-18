@@ -54,7 +54,7 @@ while($rowCategorie = mysql_fetch_array($resultCategorie)) {
 	 $Competence= string2url($rowCompetence["ID"]);
      echo '<span class="skill" id="'.$Competence.'">';
 	 echo '<a';
-     echo ' href="./tout.php?competence='.$rowCompetence["COMPETENCE"].'"';
+     echo ' href="./projets.php?competence='.$rowCompetence["COMPETENCE"].'&nombre=10"';
      echo '>'.$rowCompetence["COMPETENCE"].'</a>';
 	 echo '</span>';
 	 echo '<span>()</span>';
