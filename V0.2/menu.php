@@ -3,7 +3,7 @@
 
 <div id="menu-wrap" class="wrap">
 					
-			<ul class="menu">
+			<ul class="menu gauche">
 			<li>
 			<?
             if ($_SESSION['connected']==TRUE) {
@@ -13,14 +13,11 @@
             };
             ?>
 			</li>
-            
+            </ul>
+			
+			<ul class="menu">
 			<li>
-			 <a href="/projets/projets.php?nombre=50"><span>Projets</span></a>	
-			     <ul>
-				 <li>
-                 <a href="/clients/creer.php"><span><b>Créer un Projet</b></span></a>
-                 </li>
-				 </ul>				
+			 <a href="/projets/projets.php?nombre=50"><span>Projets</span></a>		
 			</li>
 			     
 			<li>
@@ -46,12 +43,10 @@
 			    	
 			
 			<ul>
-			
-            
-            <li><a href="/parametres/compte.php">Paramètres</a></li>
-            
+			                                 
             <li><a href="/membres/deconnexion.php">Déconnexion</a></li>
-            </ul>
+            
+			</ul>
 			
             
 			';

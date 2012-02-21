@@ -14,6 +14,7 @@ include('../scriptes.php');
 <body id="sky">
 <?
 include('../menu.php');
+
 ?>
 
 <?
@@ -51,14 +52,12 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
 if($total) {
  $row = mysql_fetch_array($result);
  echo '<div class="content">';
+include('sous-menu.php');
+
  echo '</br>';
  echo '<div>';
  echo '<span style="width:700px; float:left;"><h1>'.$row["DESIGNATION"].'</h1></span>';
- echo '<span style="width:200px; float:right;">';
- echo '<form action="soumettre.php">';
- echo '<button class="ns_btn ns_blue" type="submit" value="post">Faire une offre</button>';
- echo '</form>';
- echo '</span>';
+ 
  echo '</div>';
  
  echo '<br>';
