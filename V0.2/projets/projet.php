@@ -52,7 +52,7 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
 if($total) {
  $row = mysql_fetch_array($result);
  echo '<div class="content">';
-include('sous-menu.php');
+
 
  echo '</br>';
  echo '<div>';

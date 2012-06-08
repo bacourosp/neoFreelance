@@ -12,7 +12,8 @@ include('scriptes.php');
 ?>
 </head>
 
-<body id="sky">
+<body id="background">
+
 <?
 include('menu.php');
 ?>
@@ -20,12 +21,12 @@ include('menu.php');
 <div class="content">
 
 <br>
-<h1 style="padding:0px 0px 0px 20px;">Bienvenue Anonyme</h1>
+<h1>Bienvenue Anonyme</h1>
 
 <div id="ns_banner-wrapper">
  <div id="ns_banner">
 
-  <h1 style="padding:0px 0px 0px 20px;">neoFreelance.com c'est quoi ?</h1>
+  <h1>neoFreelance.com c'est quoi ?</h1>
   <br>
   <ul>
   
@@ -42,52 +43,54 @@ include('menu.php');
   </li>
   </ul>
  </div>
-</div>
 
-<br>
-
-
-<h1 style="padding:0px 0px 0px 20px; ">Quoi de neuf sur neoFreelance.com ?</h1>
-
-
-<p style="margin-left:20px; font-size:16px">Il ya actuellement # Projets en télétravail. Le réseau comporte # membres. Les Freelances ont généré # € de chiffre d'affaire.</p>
 
 
 </div>
 
-<br>
+<?
+// Pour afficher le nombre de projets et le nombre de membres
 
-<div id="footer">
+include('../db.php');
+
+//=========================================    
+
+// connection à la DB
+
+//=========================================
+
+$link = mysql_connect ($host,$user,$pass) or die ('Erreur : '.mysql_error() );
+mysql_select_db($db) or die ('Erreur :'.mysql_error());
+
+//=========================================
+
+// requête SQL qui ne prend que le nombre 
+
+// d'enregistrement necessaire à l'affichage.
+
+//=========================================
+
+  $select = "SELECT COUNT(*) FROM MEMBRES";
+  $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
+  $membres = mysql_fetch_row($result);
+  
+  $select = "SELECT COUNT(*) FROM PROJETS";
+  $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
+  $projets = mysql_fetch_row($result); 
+  
+?>
+
+<div id="quoi">
 <div class="row">
 
-<div class="span-un-quart">
-<strong>Informations ></strong><br />
+<div class="span-one-half">
+<h1 >Quoi de neuf ?</h1>
 
-<a href="/infos/termes.html">Termes &amp; Conditions</a><br />
-<a href="/infos/reglement.html">Réglement du site</a><br />
-<a href="/infos/infos.html">Infos investisseurs</a> <br />&nbsp;
 
+<p style="margin-left:20px; font-size:24px"><ul><li>Il ya actuellement <? echo $projets[0]; ?> Projets en télétravail.</li><li> Le réseau comporte <? echo $membres[0]; ?> membres.</li> </ul></p>
 </div>
 
-<div class="span-un-quart">
-<strong>A propos ></strong><br />
-
-<a href="http://www.aldaffah.biz">Qui sommes nous ?</a><br />
-<a href="https://www.facebook.com/pages/neoFreelance/153022051480674?sk=wall">Suivez nous sur Facebook</a><br />
-<a href="https://github.com/boudeffa/neoFreelance ">Code source GitHub</a><br />&nbsp;
-
-</div>
-
-<div class="span-un-quart">
-<strong>Actions ></strong><br />
-
-<a href="http://neofreelance.com/clients/creer.php">Poster un projet</a><br />
-<a href="http://neofreelance.com/membres/inscription.php">Ouvrir un bureau</a><br />
-<a href="mailto:support@neofreelance.com">Contacter le support</a><br />&nbsp;
-
-</div>
-
-<div class="span-un-quart">
+<div class="span-one-half">
 <?
 include('chat/connectes.php');
 ?>
@@ -97,6 +100,46 @@ include('chat/connectes.php');
 include('chat/chat.php');
 ?>
 </div>
+
+</div>
+</div>
+
+<br>
+
+</div>
+
+<br>
+
+<div id="footer">
+<div class="row">
+
+<div class="span-one-third">
+<strong>Informations ></strong><br />
+
+<a href="/infos/termes.html">Termes &amp; Conditions</a><br />
+<a href="/infos/reglement.html">Réglement du site</a><br />
+<a href="/infos/infos.html">Infos investisseurs</a> <br />&nbsp;
+
+</div>
+
+<div class="span-one-third">
+<strong>A propos ></strong><br />
+
+<a href="http://www.aldaffah.biz">Qui sommes nous ?</a><br />
+<a href="https://www.facebook.com/pages/neoFreelance/153022051480674?sk=wall">Suivez nous sur Facebook</a><br />
+<a href="https://github.com/boudeffa/neoFreelance ">Code source GitHub</a><br />&nbsp;
+
+</div>
+
+<div class="span-one-third">
+<strong>Actions ></strong><br />
+
+<a href="http://neofreelance.com/clients/creer.php">Poster un projet</a><br />
+<a href="http://neofreelance.com/membres/inscription.php">Ouvrir un bureau</a><br />
+<a href="mailto:support@neofreelance.com">Contacter le support</a><br />&nbsp;
+
+</div>
+
 
 </div>
 
