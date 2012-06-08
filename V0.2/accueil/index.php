@@ -15,9 +15,7 @@ include('../scriptes.php');
 include('../menu.php');
 ?>
 <div class="content">
-<?
-include('sous-menu.php');
-?>
+
 <div id="profilContainer">
 <br>
 <h1>Accueil</h1>

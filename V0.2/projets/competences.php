@@ -52,9 +52,10 @@ while($rowCategorie = mysql_fetch_array($resultCategorie)) {
      while($rowCompetence = mysql_fetch_array($resultCompetence)) {
      
 	 $Competence= string2url($rowCompetence["ID"]);
+	 $nbpages=$_SESSION['NBPAGES'];
      echo '<span class="skill" id="'.$Competence.'">';
 	 echo '<a';
-     echo ' href="./projets.php?competence='.$rowCompetence["COMPETENCE"].'&nombre=10"';
+     echo ' href="./projets.php?competence='.$rowCompetence["COMPETENCE"].'&nombre='.$nbpages.'"';
      echo '>'.$rowCompetence["COMPETENCE"].'</a>';
 	 echo '</span>';
 	 echo '<span>()</span>';
