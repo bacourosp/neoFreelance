@@ -96,8 +96,9 @@ height:50px;
 /* Login box */
 #login-wrap{ position:relative; display:block; right:0px; top:50px;}
 
-#login{cursor:pointer; margin:0px 0px 0px 0px; background-color:#0d9bdd ;color:#ffffff;}
+#login{cursor:pointer; margin:0px 0px 0px 0px; color:#000000;}
 #login{outline:none; float:right;}
+#login a:hover{color:#000000;}
 
 #profil{cursor:pointer; margin:0px 0px 0px 0px; border:#fff solid 1px; background-color:#008cc9 ;color:#ffffff;}
 #profil{outline:none; float:right;}

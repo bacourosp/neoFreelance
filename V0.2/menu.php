@@ -43,9 +43,11 @@
 			    	
 			
 			<ul>
-			                                 
+			
+			<li><a href="/parametres/compte.php">Paramètres</a></li>                                 
             <li><a href="/membres/deconnexion.php">Déconnexion</a></li>
             
+			
 			</ul>
 			
             
@@ -54,40 +56,13 @@
 			echo '<a id="profil" onClick="showhideLoginArea(this.id);"><span>Profil</span></a>';
             */
 			} else {
-            echo '<a id="login" onClick="showhideLoginArea(this.id);"><span>Mon bureau virtuel <img src="images/icones/toggle.png" width="7px" height="7px"></span></a>';
+            echo '<a id="login" href="/membres/connecter.php"><span>Login</span></a>';
             };
 			
             ?>
             </li>
 					     
-            <!-- Login box -->
-
-            <div id="box-login" style="display:none"> <a style="position:absolute; top:0; right:0;" onClick="showhideLoginArea('login');"><img src="../images/icones/icon_close1.png"></a>
-
-            <form class="form" action="/membres/connecter.php" method="post" >
-            <div class="field">
-            <label for="email" class="hide">Email ou Pseudo</label>
-            <input class="projectFormTextField" type="text" value="Email ou Pseudo" name="login" maxlength="150" id="username"  onFocus="javascript:this.value=''" onBlur="if (this.value == '') {this.value='Email ou Pseudo'};">	
-            </div>
-            <div class="field">
-            <label for="passwd" class="hide">Password</label>				
-            <input class="projectFormTextField"  type="password" value="password" name="passwd" maxlength="150" id="passwd" onFocus="javascript:this.value=''" onBlur="if (this.value == '') {this.value='password'};">
-            <a class="forgot" href="/membres/oubli.php">Oublié ?</a>
-            </div>
-            <div class="field">
-            <span class="remember">
-            <input type="checkbox" tabindex="3" name="savelogin" id="loginpermanent"> <label for="loginpermanent" class="inline">Retenir mes informations ?</label>
-            </span>
-            <button class="ns_btn-small ns_blue" "type="submit" value="Login">Entrer</button>       
-			</div>
-			<br>
-			<div class="field">       
-            <p>Rejoindre le réseau ? <a href="/membres/inscription.php">Créez un compte !</a></p>
-            </div>
             
-     
-            </form>
-            </div>
 				
 			
 			</ul>
