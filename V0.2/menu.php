@@ -17,7 +17,8 @@
 			
 			<ul class="menu">
 			<li>
-			 <a href="/projets/projets.php?nombre=50"><span>Projets</span></a>		
+			 <a href="/projets/projets.php?nombre=50"><span>Projets</span></a>
+			 <ul><li><a href="/clients/creer.php"><span>Créer</span></a></li></ul>		
 			</li>
 			     
 			<li>
