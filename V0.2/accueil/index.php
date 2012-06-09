@@ -19,19 +19,8 @@ include('../menu.php');
 <div id="profilContainer">
 <br>
 <h1>Accueil</h1>
-<?
-echo '<div class="dashboard">';
-
-echo '<div class="module">';
-echo '<ul>';
-echo '<li class="active"><a class="list-link" href="encours.php">Projets en cours</a></li>';
-echo '<li><a class="list-link" href="soumis.php">Projets soumissionés</a></li>';
-echo '<li><a class="list-link" href="coworking.php">Réunions de coworking</a></li>';
-echo '</ul>';
-echo '</div>';
-
-echo '</div>';
-?>
+<br>
+<p>Voici la liste des projets auquels vous participez</p>
 </div>
 </div>
 </body>

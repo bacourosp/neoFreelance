@@ -8,6 +8,14 @@ session_start();
 <?
 include('../scriptes.php');
 ?>
+<script language="Javascript"> 
+function ajouterSkills() {
+var skills = job_ids.join(",");
+document.neoprojet.SKILLS.value=skills;
+}
+document.write('<input type="hidden" value="" size="45" maxlength="60" name="SKILLS" id="project-skills">'); 
+</script>
+
 </head>
 <body id="sky">
 
@@ -21,60 +29,41 @@ include('../menu.php');
 
 <?
 
-include('../../db.php');
-//=========================================    
-
-// connection à la DB
-
-//=========================================
-
-$link = mysql_connect ($host,$user,$pass) or die ('Erreur : '.mysql_error() );
-mysql_select_db($db) or die ('Erreur :'.mysql_error());
-
-//=========================================
-
-// requête SQL qui ne prend que le nombre 
-
-// d'enregistrement necessaire à l'affichage.
-
-//=========================================
-$email = $_SESSION["email"];
-
-  $select = "SELECT PSEUDO,EMAIL,PROFIL,COMPETENCES FROM MEMBRES WHERE EMAIL='".$email."';";
-  $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
-  $total = mysql_num_rows($result);
-
-
-$row = mysql_fetch_array($result);
-
-$default = "http://www.gravatar.com/avatar/00000000000000000000000000000000";
-$size = 80;
-
-$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
-
+include('mini-profil.php');
 
 echo '<div class="dashboard">';
 
 echo '<div class="module mini-profile">';
 echo '<div class"account-group"><img src="'.$grav_url.'" alt="" /></div>';
-echo 'aaaa';
+
 echo '<div class="spacer"> </div>';
 echo '</div>';
 
-echo '<div class="module">';
-echo '<ul>';
-echo '<li><a class="list-link" href="compte.php">Compte</a></li>';
-echo '<li><a class="list-link" href="pass.php">Mot de passe</a></li>';
-echo '<li><a class="list-link" href="notifications.php">Notifications</a></li>';
-echo '<li class="active"><a class="list-link" href="profil.php">Profil</a></li>';
-echo '</ul>';
-echo '</div>';
+include('menu-gauche.php');
 
 echo '</div>';//dashboard
 
 echo '<div class="content-main">';
 
-echo '<div>Compétences : '.$row["COMPETENCES"]; echo '</div>';
+echo '
+<form name="profil" method="post" action="profil.php">
+
+<INPUT type=radio name="profil" value="Anonymous"> Rester Anonyme sur neoFreelance
+	<br>
+<INPUT type=radio name="profil" value="Gravatar"> Utiliser <a href="http://fr.gravatar.com/">Gravatar</a>
+
+</form>';
+
+
+
+echo '<div class="clear"></div>';
+echo '
+</br>
+<center>
+<button class="ns_btn ns_blue" type="submit" value="post">Modifier</button>
+</center>
+</form>
+';
 
 echo '</div>';//content-main
 

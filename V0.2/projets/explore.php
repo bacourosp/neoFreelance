@@ -159,7 +159,7 @@ if($totalEnregistrements > $nombre) {
         echo '<td><a href="/projets/projet.php?ID='.$row["ID"].'" onMouseOver="showHint('.$IDClassProjet.');" onMouseOut="hideHint('.$IDClassProjet.');">'.$row["DESIGNATION"].'</a>';
 		echo '<br>';
 		echo $row["COMPETENCES"];
-		echo '<span id="Project-'.$row["ID"].'" class="hint">'.$Description.'<span class="hint-pointer">&nbsp;</span></span>';
+		echo '<span id="Project-'.$row["ID"].'" class="hint2">'.$Description.'<span class="hint-pointer2">&nbsp;</span></span>';
 		echo '</td>';
 		echo '<td>'.$valeur_moyenne.'</td>';
         echo '<td>'.$date.'</td>';
@@ -170,7 +170,7 @@ if($totalEnregistrements > $nombre) {
 		else{
 		echo '<tr  bgcolor="#EEEEEE">';
         echo '<td><a href="/projets/projet.php?ID='.$row["ID"].'" onMouseOver="showHint('.$IDClassProjet.');" onMouseOut="hideHint('.$IDClassProjet.');" >'.$row["DESIGNATION"].'</a>';
-		echo '<span id="Project-'.$row["ID"].'" class="hint">'.$Description.'<span class="hint-pointer">&nbsp;</span></span>';
+		echo '<span id="Project-'.$row["ID"].'" class="hint2">'.$Description.'<span class="hint-pointer2">&nbsp;</span></span>';
 		echo '<br>';
 		echo $row["COMPETENCES"];
 		echo '</td>';
