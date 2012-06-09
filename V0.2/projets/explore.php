@@ -20,13 +20,13 @@ echo "\n";
 ?>
 <span>
 <select size="1" name="project_table_length" class="selectP" onChange="window.location='projets.php?nombre='+this.value">
-<option value="10" <? if ($_GET[nombre]==10) { echo 'selected'; }; ?> >10</option>
-<option value="50" <? if ($_GET[nombre]==50) { echo 'selected';}; ?> >50</option>
-<option value="100" <? if ($_GET[nombre]==100) { echo 'selected';}; ?>>100</option>
+<option value="10" <? if ($_GET['nombre']==10) { echo 'selected'; }; ?> >10</option>
+<option value="50" <? if ($_GET['nombre']==50) { echo 'selected';}; ?> >50</option>
+<option value="100" <? if ($_GET['nombre']==100) { echo 'selected';}; ?>>100</option>
 </select>
 </span>
 <?
-$_SESSION['NBPAGES']=$_GET[nombre];
+
 // si limite n'existe pas on l'initialise à zéro
 
 //if (!$limite) $limite = 0; 

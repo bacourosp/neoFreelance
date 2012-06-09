@@ -168,6 +168,16 @@ border-top:none;
 	border-top-right-radius: 10px; 
 }
 
+#quoi{ 
+padding: 10px 10px 0px 10px; 
+margin:0 auto;
+position:relative; 
+border:none; 
+width:900px; height:200px;
+background:#fff; 
+border-top:none;
+}
+
 #footer{ 
 padding: 10px 10px 0px 10px; 
 margin:0 auto;
@@ -683,8 +693,8 @@ Bottom banner
 #banner a.ns_bigbtn{width:235px;}
 
 
-.span-un-quart{width:200px}
-.span-one-half{width:450px}
+.span-one-third{width:250px}
+.span-one-half{width:390px}
 .row > [class*="span"] {
 display: inline;
 float: left;

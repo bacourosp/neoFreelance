@@ -57,7 +57,7 @@
 			echo '<a id="profil" onClick="showhideLoginArea(this.id);"><span>Profil</span></a>';
             */
 			} else {
-            echo '<a id="login" href="/membres/connecter.php"><span>Login</span></a>';
+            echo '<a id="login" href="/membres/connexion.php"><span>Login</span></a>';
             };
 			
             ?>

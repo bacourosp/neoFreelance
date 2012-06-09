@@ -12,7 +12,7 @@ include('scriptes.php');
 ?>
 </head>
 
-<body id="background">
+<body id="sky">
 
 <?
 include('menu.php');
@@ -87,7 +87,7 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
 <h1 >Quoi de neuf ?</h1>
 
 
-<p style="margin-left:20px; font-size:24px"><ul><li>Il ya actuellement <? echo $projets[0]; ?> Projets en télétravail.</li><li> Le réseau comporte <? echo $membres[0]; ?> membres.</li> </ul></p>
+<p><ul><li>Il ya actuellement <? echo $projets[0]; ?> Projets en télétravail.</li><li> Le réseau comporte <? echo $membres[0]; ?> membres.</li> </ul></p>
 </div>
 
 <div class="span-one-half">
@@ -107,6 +107,7 @@ include('chat/chat.php');
 <br>
 
 </div>
+
 
 <br>
 
