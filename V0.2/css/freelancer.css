@@ -909,3 +909,5 @@ padding-left: 10px;
 .content-main .in-reply-to .expansion-container .tweet:first-child{border-bottom:1px solid #ddd;}
 .content-main .in-reply-to .expansion-container:last-child .tweet:first-child{border-bottom:0;}
 .content-main .in-reply-to .content-divider{top:auto;bottom:-1px;left:35px;}
+
+#Offre{display:none; width:500px; height:500px; position:absolute; top:51px;  border:#CCC solid 5px; background:#FFF; z-index:10; padding:25px 30px 10px 30px; }

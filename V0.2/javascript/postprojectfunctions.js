@@ -77,6 +77,20 @@ function hideBoxSkills(){
 	
 	document.getElementById('box-skills').style.display = 'none';	
 }
+function showOffre(){
+
+//$(document).ready(function() {
+//  $('#box-skills').draggable();
+//});	
+
+document.getElementById('Offre').style.display = 'block';	
+
+}
+
+function hideOffre(){
+	
+	document.getElementById('Offre').style.display = 'none';	
+}
 
 function showProject() {
 }
