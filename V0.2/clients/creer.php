@@ -8,7 +8,7 @@ $masquer_formulaire = false;
 $message = "Veuller renseigner tout les champs, merci <br>";
 } else {
 		if (!isset($_SESSION["ID_UTILISATEUR"])){
-        $PROPRIETAIREPROJET = 'ANONYME' ;
+        $PROPRIETAIREPROJET = 'Anonyme' ;
 	   	} else {
 		$PROPRIETAIREPROJET =$_SESSION['ID_UUTILISATEUR'];
 	    };
