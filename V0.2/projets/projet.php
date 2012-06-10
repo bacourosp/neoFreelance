@@ -125,7 +125,7 @@ if($total) {
     if ($var==0){ //Affiche le projet numéro .$row["ID"].
         echo '<tr bgcolor="#FFFFFF">';	
         
-		echo '<td>'.$FREELANCE.'</td>';
+		echo '<td><a href="/membres/profil.php?ID='.$row["ID_FREELANCE"].'">'.$FREELANCE.'</a></td>';
         echo '<td>'.$row["MONTANT"].'</td>';
         echo '<td>'.$row["DUREE"].'</td>';
 		echo '<td><a href="detail.php?OFFRE='.$row["ID"].'">En savoir +</a></td>';
@@ -134,7 +134,7 @@ if($total) {
 		}
 		else{
 		echo '<tr  bgcolor="#EEEEEE">';
-        echo '<td>'.$FREELANCE.'</td>';
+        echo '<td><a href="/membres/profil.php?ID='.$row["ID_FREELANCE"].'">'.$FREELANCE.'</a></td>';
         echo '<td>'.$row["MONTANT"].'</td>';
         echo '<td>'.$row["DUREE"].'</td>';
 		echo '<td><a href="detail.php?OFFRE='.$row["ID"].'">En savoir +</a></td>';

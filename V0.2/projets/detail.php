@@ -52,7 +52,12 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
 if($total) {
  $row = mysql_fetch_array($result);
  echo '<div class="content">';
-
+ 
+ $selectfreelance = 'SELECT * FROM MEMBRES WHERE ID ='.$row["ID_FREELANCE"].'';
+ $resultfreelance = mysql_query($selectfreelance,$link) or die ('Erreur : '.mysql_error() );
+ $totalfreelance = mysql_num_rows($resultfreelance);
+ if (totalfreelance)  {$rowfreelance = mysql_fetch_array($resultfreelance); $FREELANCE=$rowfreelance["PSEUDO"];};
+	
  echo '</br>';
  echo '<div>';
  echo '<span style="width:700px; float:left;"><h1>Détail de l offre</h1></span>';
@@ -61,11 +66,11 @@ if($total) {
  
  echo '<br>';
  echo '<div style="width:700px;">';
- echo '<span><b>Propriètaire : </b></span><span>ANONYME A DEFINIR</span>';
+ echo '<span><b>Soumissionnaire : </b><a href="/membres/profil.php?ID='.$row["ID_FREELANCE"].'">'.$FREELANCE.'</a></span>';
  echo '<br>';
- echo '<span><b>Montant de la réalisation : </b></span><span>'.$row["MONTANT"].'</span>';
+ echo '<span><b>Montant de la réalisation : </b></span>'.$row["MONTANT"].'</span>';
  echo '<br>';
- echo '<span><b>Durée de la réalisation: </b></span><span>'.$row["DUREE"].'</span>';
+ echo '<span><b>Durée de la réalisation: </b></span>'.$row["DUREE"].'</span>';
  echo '<br>';
  echo '<span><b>Déscription de l offre : </b></span><br><p>'.$row["DESCRIPTION"].'</p>';
  echo '</div>';

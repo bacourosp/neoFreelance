@@ -50,12 +50,14 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
 
 //=========================================
 
-  $select = "SELECT PSEUDO, EMAIL, COMPETENCES FROM MEMBRES WHERE COMPETENCES LIKE '%".$_GET['competence']."%'";
+  $select = "SELECT * FROM MEMBRES WHERE COMPETENCES LIKE '%".$_GET['competence']."%'";
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   $total = mysql_num_rows($result);
 echo '<ul id="freelancer-list" class="ns_freelancer-list">';
 while($row = mysql_fetch_array($result)) {
 echo '<li>';
+
+
 
 $email = $row["EMAIL"];
 $default = "http://www.gravatar.com/avatar/00000000000000000000000000000000";
@@ -65,8 +67,10 @@ $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) 
 
 echo '<div class="module mini-profil">';
 echo '<img src="'.$grav_url.'" alt="" />';
-echo $row["PSEUDO"];
+echo '<div>';
+echo '<a href="/membres/profil.php?ID='.$row["ID"].'" style="color:blue;">'.$row["PSEUDO"].'</a>';
 echo '<p>'.$row["COMPETENCES"].'</p>';
+echo '</div>';
 echo '<div class="spacer"></div>';
 echo '</div>';
 

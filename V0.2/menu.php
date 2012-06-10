@@ -40,7 +40,7 @@
             
 			
 			    
-			<a href="/membres/profil.php"><span>Profil et Compte <img src="images/icones/toggle.png" width="7px" height="7px"></span></a> 
+			<a href="/membres/profil.php?ID='.$_SESSION[ID_UTILISATEUR].'"><span>Profil</span></a> 
 			    	
 			
 			<ul>

@@ -38,45 +38,43 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
 // d'enregistrement necessaire à l'affichage.
 
 //=========================================
-$email = $_SESSION["email"];
 
-  $select = "SELECT PSEUDO,EMAIL,PROFIL,COMPETENCES FROM MEMBRES WHERE EMAIL='".$email."';";
+  $ID_MEMBRE=$_GET["ID"];
+  
+  $select = "SELECT * FROM MEMBRES WHERE ID='".$ID_MEMBRE."';";
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   $total = mysql_num_rows($result);
 
 
 $row = mysql_fetch_array($result);
 
+$EMAIL=$row["EMAIL"];
+
 $default = "http://www.gravatar.com/avatar/00000000000000000000000000000000";
 $size = 80;
 
-$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
+$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $EMAIL ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
 
 
 echo '<div class="dashboard">';
 
 echo '<div class="module mini-profile">';
 echo '<div class"account-group"><img src="'.$grav_url.'" alt="" /></div>';
-echo 'aaaa';
-echo '<div class="spacer"> </div>';
-echo '</div>';
 
-echo '<div class="module">';
-echo '<ul>';
-echo '<li>Compte</li>';
-echo '<li>Mot de passe</li>';
-echo '<li>Notifications</li>';
-echo '<li>Profil</li>';
-echo '</ul>';
+echo '<div class="spacer"> </div>';
 echo '</div>';
 
 echo '</div>';//dashboard
 
 echo '<div class="content-main">';
 
-echo '<div> PSEUDO : '; echo $row["PSEUDO"]; echo '</div>'; 
-echo '<div>Login ou Email : '; echo $email; echo '</div>';
+echo '<div> Pseudo : '; echo $row["PSEUDO"]; echo '</div>'; 
+
 echo '<div>Compétences : '.$row["COMPETENCES"]; echo '</div>';
+
+echo '<div>Date Inscription : '; echo date("d/m/Y", strtotime($row["DEPUIS"])); echo '</div>';
+
+echo '<div>Description : '.$row["DESCRIPTION"]; echo '</div>';
 
 echo '</div>';//content-main
 
