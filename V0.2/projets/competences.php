@@ -47,10 +47,17 @@ while($rowCategorie = mysql_fetch_array($resultCategorie)) {
      $resultCompetence = mysql_query($selectCompetence,$link) or die ('Erreur : '.mysql_error() );
      $totalCompetence = mysql_num_rows($resultCompetence);
 
+
+
      if ($totalCompetence) {
 
      while($rowCompetence = mysql_fetch_array($resultCompetence)) {
      
+	 $selReq='SELECT count(*) AS NBCOMP FROM PROJETS WHERE COMPETENCES LIKE "%'.$rowCompetence["COMPETENCE"].'%"';
+	 $reqCompetence = mysql_query($selReq,$link) or die ('Erreur : '.mysql_error() );
+     $data = mysql_fetch_assoc($reqCompetence);
+	 
+	 
 	 $Competence= string2url($rowCompetence["ID"]);
 	 $nbpages=$_GET['nombre'];
      echo '<span class="skill" id="'.$Competence.'">';
@@ -58,7 +65,7 @@ while($rowCategorie = mysql_fetch_array($resultCategorie)) {
      echo ' href="./projets.php?competence='.$rowCompetence["COMPETENCE"].'&nombre='.$nbpages.'"';
      echo '>'.$rowCompetence["COMPETENCE"].'</a>';
 	 echo '</span>';
-	 echo '<span>()</span>';
+	 echo '<span>('.$data["NBCOMP"].')</span>';
 	 echo ' | ';
      }
      }
