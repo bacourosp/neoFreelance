@@ -41,6 +41,9 @@ include('../menu.php');
                
 			   </form>
 </div>
+<br>
+<h2 style="margin: 20px;">A la recherche de testeurs <a href="inscription.php">Rejoindre le réseau</a></h2>
+<br>
 </div>
 
 </body>

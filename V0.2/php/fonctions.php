@@ -1,4 +1,18 @@
 <?
+ /*
+exemple : 
+$dateDo = ("2009-09-07");
+$nbrJours = 3 ;
+datePlus($dateDo,$nbrJours) = "2009-09-10"
+*/
+ 
+function datePlus($dateDo,$nbrJours)
+{
+$timeStamp = strtotime($dateDo); 
+$timeStamp += 24 * 60 * 60 * $nbrJours;
+$newDate = date("d-m-Y", $timeStamp);
+return  $newDate;
+}
 /******************************************************************************/
 /*                                                                            */
 /*                       __        ____                                       */

@@ -92,7 +92,7 @@ if(!$verifLimite)  {
 
 //=========================================
 
-  $select = 'SELECT ID, DESIGNATION, COMPETENCES, DESCRIPTION, DATE_LANCEMENT, DUREE_SOUMISSION FROM PROJETS ORDER BY DATE_LANCEMENT DESC limit '.$limite.','.$nombre;
+  $select = 'SELECT ID, DESIGNATION, COMPETENCES, DESCRIPTION, DATE_LANCEMENT, DUREE_SOUMISSION FROM PROJETS WHERE COMPETENCES LIKE "%'.$_GET["competence"].'%" ORDER BY DATE_LANCEMENT DESC limit '.$limite.','.$nombre;
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   $total = mysql_num_rows($result);
 
@@ -130,7 +130,7 @@ if($totalEnregistrements > $nombre) {
         // première ligne on affiche les titres prénom et surnom dans 2 colonnes
         echo '<thead><tr>';
         echo '<th width=""><b><u>Projet</u></b></th>';
-        echo '<th width="200"><b><u>Valeur Moy.</u></b></th>';
+        echo '<th width="200"><b><u>Montant Moyen</u></b></th>';
         echo '<th width="200"><b><u>Date de début</u></b></th>';
 		echo '<th width="200"><b><u>Date limite</u></b></th>';
         
@@ -145,13 +145,22 @@ if($totalEnregistrements > $nombre) {
 	   $date = date("d/m/Y", strtotime($row["DATE_LANCEMENT"]));
 	};
 	if ($row["DUREE_SOUMISSION"]==0) {
-	   $duree ='Indéfini';
+	   $date_limite ='Open';
 	} else 
 	if ($row["DUREE_SOUMISSION"]==1) {
-	   $duree ='Urgent';
+	   $date_limite ='Urgent';
 	} else {
-	   $duree = $row["DUREE_SOUMISSION"];
+	   $date_l = datePlus($row["DATE_LANCEMENT"],$row["DUREE_SOUMISSION"]);
+	   $date_limite = date("d/m/Y",strtotime($date_l));
 	};
+	
+	$selectmoy = 'SELECT AVG(MONTANT) FROM SOUMISSIONS WHERE ID_PROJET='.$row["ID"];
+    $resultmoy = mysql_query($selectmoy,$link) or die ('Erreur : '.mysql_error() );
+    $totalmoy = mysql_num_rows($resultmoy);
+	$moyenne = mysql_result($resultmoy,0);
+    $valeur_moyenne=(int)($moyenne); 
+
+	
 	$IDClassProjet = "'"."Project-".$row["ID"]."'";
 	$Description = coupe($row["DESCRIPTION"]);
     if ($var==0){ //Affiche le projet numéro .$row["ID"].
