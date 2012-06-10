@@ -26,7 +26,7 @@ include('../menu.php');
 <div id="profilContainer">
 <br>
 <h1>Profil</h1>
-
+<p>Paramètre non encore disponible</p>
 <?
 
 include('mini-profil.php');

@@ -9,7 +9,7 @@ $message ='Modification de votre compte<br />';
 } else {
 
 
-if ($notification[0]==1)
+if ($notification=='1')
 {$notification = 1;}
 else
 {$notification = 0;};
@@ -46,7 +46,7 @@ include('../menu.php');
 <div id="profilContainer">
 <br>
 <h1>Notifications</h1>
-
+<p>Paramètre non encore disponible</p>
 <?
 include('mini-profil.php');
 
@@ -76,11 +76,16 @@ echo '
 			   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
                $total = mysql_num_rows($result);
 
-if ($total["NOTIFICATION"]==1)
-echo'<INPUT type="checkbox" name="notification[]" value="1" checked="checked"> Je souhaite être informé des projets en rapport avec mes compétences';
-else
-echo'<INPUT type="checkbox" name="notification[]" value="0"> Je souhaite être informé des projets en rapport avec mes compétences';
+if ($total) {
 
+$row = mysql_fetch_array($result);
+
+if ($row["NOTIFICATION"]==1)
+echo'<INPUT type="checkbox" name="notification" value="1" checked="checked"> Je souhaite être informé des projets en rapport avec mes compétences';
+else
+echo'<INPUT type="checkbox" name="notification" value="0"> Je souhaite être informé des projets en rapport avec mes compétences';
+
+};
 echo '<div class="clear"></div>';
 echo '
 </br>
