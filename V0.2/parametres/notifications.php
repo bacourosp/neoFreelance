@@ -1,6 +1,34 @@
 <?
 session_start();
 ?>
+<?
+if (!isset($_POST['notification'])) {
+
+$message ='Modification de votre compte<br />';
+
+} else {
+
+
+if ($notification[0]==1)
+{$notification = 1;}
+else
+{$notification = 0;};
+
+ include('../../db.php');
+$link = mysql_connect ($host,$user,$pass) or die ('Erreur : '.mysql_error() );
+                    mysql_select_db($db) or die ('Erreur :'.mysql_error());
+
+                    $result = mysql_query("
+                              UPDATE MEMBRES
+                              SET NOTIFICATION = '".$notification."'
+                              WHERE ID = '".$_SESSION["ID_UTILISATEUR"]."'
+                              ");
+			        if(!$result)
+                    {
+                    $message = "Une erreur est survenue lors de l'activation de votre compte utilisateur";
+                    }
+}
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -38,11 +66,21 @@ echo '<div class="content-main">';
 
 echo '
 <form name="notifs" method="post" action="notifications.php">
-
-<INPUT type="checkbox" name="choix1" value="1"> Je suohaite être informé des nouveaux projets
-<br>
-<INPUT type="checkbox" name="choix2" value="2"> Je suohaite être informé des projets en rapport avec mes compétences
 ';
+               
+			   include('../../db.php');
+               $link = mysql_connect ($host,$user,$pass) or die ('Erreur : '.mysql_error() );
+               mysql_select_db($db) or die ('Erreur :'.mysql_error());
+               $select = 'SELECT * FROM MEMBRES WHERE ID ='.$_SESSION["ID_UTILISATEUR"] ;
+                   
+			   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
+               $total = mysql_num_rows($result);
+
+if ($total["NOTIFICATION"]==1)
+echo'<INPUT type="checkbox" name="notification[]" value="1" checked="checked"> Je souhaite être informé des projets en rapport avec mes compétences';
+else
+echo'<INPUT type="checkbox" name="notification[]" value="0"> Je souhaite être informé des projets en rapport avec mes compétences';
+
 echo '<div class="clear"></div>';
 echo '
 </br>

@@ -1,6 +1,31 @@
 <?
 session_start();
 ?>
+<?
+
+if (!isset($_POST['competences'])) {
+
+$message ='Modification de votre compte<br />';
+
+} else {
+
+$competences_text = implode(', ',$competences);
+
+ include('../../db.php');
+$link = mysql_connect ($host,$user,$pass) or die ('Erreur : '.mysql_error() );
+                    mysql_select_db($db) or die ('Erreur :'.mysql_error());
+
+                    $result = mysql_query("
+                              UPDATE MEMBRES
+                              SET COMPETENCES = '".$competences_text."'
+                              WHERE ID = '".$_SESSION["ID_UTILISATEUR"]."'
+                              ");
+			        if(!$result)
+                    {
+                    $message = "Une erreur est survenue lors de l'activation de votre compte utilisateur";
+                    }
+}
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,13 +33,6 @@ session_start();
 <?
 include('../scriptes.php');
 ?>
-<script language="Javascript"> 
-function ajouterSkills() {
-var skills = job_ids.join(",");
-document.neoprojet.SKILLS.value=skills;
-}
-document.write('<input type="hidden" value="" size="45" maxlength="60" name="SKILLS" id="project-skills">'); 
-</script>
 
 </head>
 <body id="sky">
@@ -25,8 +43,16 @@ include('../menu.php');
 <div class="content">
 <div id="profilContainer">
 <br>
-<h1>Profil</h1>
+<h1>Compétences</h1>
+<? 
+if(isset($message)) {
+      echo '<p>';
+      echo $message;
+      echo '</p>';
 
+}; 
+?>
+<br>
 <?
 
 include('mini-profil.php');
@@ -46,7 +72,7 @@ echo '</div>';//dashboard
 echo '<div class="content-main">';
 
 echo '
-<form name="profil" method="post" action="profil.php">
+<form name="competences" method="post" action="competences.php" >
 ';
 
 //=========================================
@@ -113,13 +139,22 @@ while($rowCategorie = mysql_fetch_array($resultCategorie)) {
 
      while($rowCompetence = mysql_fetch_array($resultCompetence)) {
      
-	 $Competence= string2url($rowCompetence["ID"]);
-	 echo '<INPUT type="checkbox" name="'.$Competence.'" value="'.$Competence.'"> '.$rowCompetence["COMPETENCE"];
+	 $selReq='SELECT count(*) AS NBCOMP FROM MEMBRES WHERE COMPETENCES LIKE "%'.$rowCompetence["COMPETENCE"].'%"';
+	 $reqCompetence = mysql_query($selReq,$link) or die ('Erreur : '.mysql_error() );
+     $data = mysql_fetch_assoc($reqCompetence);
+	 
+	 if ($data["NBCOMP"] > 0) {
+	 $Competence= $rowCompetence["COMPETENCE"];
+	 echo '<INPUT type="checkbox" name="competences[]" value="'.$Competence.'" checked="checked"> '.$rowCompetence["COMPETENCE"];
      echo '<br>';
-	 //echo '<li class="skill" id="'.$Competence.'" onClick="ajouterCompetence(this.id);">';
-     //echo ''.$rowCompetence["COMPETENCE"].'';
-     //echo '</li>';
-     }
+	 }
+	 else {
+	 $Competence= $rowCompetence["COMPETENCE"];
+	 echo '<INPUT type="checkbox" name="competences[]" value="'.$Competence.'"> '.$rowCompetence["COMPETENCE"];
+     echo '<br>';
+	 
+     }//else cheked !
+	 }
      }
   echo '</div>';
   echo '</div>';
@@ -135,6 +170,7 @@ while($rowCategorie = mysql_fetch_array($resultCategorie)) {
 
 echo '<div class="clear"></div>';
 echo '
+
 </br>
 <center>
 <button class="ns_btn ns_blue" type="submit" value="post">Modifier</button>
