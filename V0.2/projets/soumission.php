@@ -27,7 +27,7 @@ $DESCRIPTION=$_POST["description"];
 echo '
 <script language="Javascript">
 hideOffre();
-document.location.href="projet.php?ID='.$IDPROJET.'";
+document.location.href="/projets/projet.php?ID='.$IDPROJET.'";
 </script>
 ';
 

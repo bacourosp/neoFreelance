@@ -3,9 +3,9 @@ session_start();
 ?>
 <?
 
-if (!isset($_POST["projectname"]) or !isset($_POST["description"]) or !isset($_POST["duree"])) {
+if (!isset($_POST["projectname"]) or !isset($_POST["description"]) or !isset($_POST["duree"]) or !isset($_POST["email"]) or $_POST["budget"]) {
 $masquer_formulaire = false;
-$message = "Veuller renseigner tout les champs, merci <br>";
+$message = "Veuillez renseigner tout les champs, merci <br>";
 } else {
 		if (!isset($_SESSION["ID_UTILISATEUR"])){
         $PROPRIETAIREPROJET = 'Anonyme' ;
@@ -13,6 +13,7 @@ $message = "Veuller renseigner tout les champs, merci <br>";
 		$PROPRIETAIREPROJET =$_SESSION['ID_UUTILISATEUR'];
 	    };
 		
+		$EMAIL = $_POST["email"];
 		$NOMPROJET = $_POST['projectname'];
 		$DESCRIPTION = $_POST['description'];
 		$BUDGET = $_POST['budget'];
@@ -69,7 +70,7 @@ $message = "Veuller renseigner tout les champs, merci <br>";
 
 
 		
-			$requete = "insert into PROJETS values('','".$PROPRIETAIREPROJET."', '".$NOMPROJET."', '".$comp."', '".$DESCRIPTION."', '".$MONTANTMIN."','".$MONTANTMAX."', '".$DATE."', '".$DUREESOUMISSION."');" ;
+			$requete = "insert into PROJETS values('','".$PROPRIETAIREPROJET."','".$EMAIL."','".$NOMPROJET."', '".$comp."', '".$DESCRIPTION."', '".$MONTANTMIN."','".$MONTANTMAX."', '".$DATE."', '".$DUREESOUMISSION."');" ;
 			mysql_query($requete);
 		
 		$masquer_formulaire = true;
@@ -194,12 +195,12 @@ document.write('<input type="hidden" value="" size="45" maxlength="60" name="SKI
 		<label for="budget"><b>Budget du projet :</b></label><br/>
 		<select name=budget id="budget" class="selectT">
 						
-			<option value='0' >
+			<option value='0' selected>
 				Projet simple
 			    (30-250 EUR)
 			</option>
 			
-			<option value='1' selected>
+			<option value='1' >
 				Très petit projet
 			    (250-750 EUR)
 			</option>
@@ -235,7 +236,17 @@ document.write('<input type="hidden" value="" size="45" maxlength="60" name="SKI
         <span id="bidperiod-hint" class="hint">Donnez vous 1-99 jours pour recevoir des soumissions et choisir un freelance si vous séléctionnez 1 votre projet sera marqué URGENT!<span class="hint-pointer">&nbsp;</span></span>
         <label>Jours</label> (maximum 99 jours, 0 pour une période indéfinie) &nbsp;<span id="bidperiod-err" class="err-msg">Entrez une période de soumission s'il vous plait.</span>
 </div>
+</br>
+</br>
 
+<div id="emaildDiv"  style="position:relative" >
+        <label for="subCategory"><b>Email de contact :</b></label>
+		<span id="email-err" class="err-msg">Entrez un Email s'il vous plait.</span>
+		<br>
+        <input type="text" class="projectFormTextField big-textbox" name="email" id="email" maxlength="45" size="45" value="" style="vertical-align:middle;" onMouseOver="showHint('email-hint');" onMouseOut="hideHint('email-hint');" onBlur="showError('email','email-err');">
+        <span id="email-hint" class="hint">Cet Email servira pour recevoir des notifications quand un Freelance soumissionne<span class="hint-pointer">&nbsp;</span></span>
+        &nbsp;
+</div>
 </br>
 </br>
 <center>

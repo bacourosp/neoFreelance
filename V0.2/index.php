@@ -30,13 +30,15 @@ include('menu.php');
   <br>
   <ul>
   
-  <li>Une place de marché pour trouver les meilleurs prestataires frealances</li>
-  <li>Une plateforme gratuite de télétravail et de coworking, rejoignez le réseau</li>
-  <li>Un coût minimal pour vos projets ! Postez vos projets et recevez des devis</li>
+  <li>Une platteforme de télétravail</li>
+  <li>Un réseau de Freelances. <a href="/membres/inscription.php">Rejoidre le réseau !</a></li>
+  <li>Postez vos projets et recevez des devis gratuitement !</li>
   </ul>
   <br>
   <ul>
   <li>
+  <img src="images/Logo-neoFreelance/Logo-neoF.png" width="90">
+  
   <a href="https://www.facebook.com/pages/neoFreelance/153022051480674?sk=wall"><img src="images/logos/logo-facebook.png" width="90"></a>
 
   <a href="https://github.com/boudeffa/neoFreelance/wiki"><img src="images/logos/logo-github.png"></a>
@@ -86,8 +88,14 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
 <div class="span-one-half">
 <h1 >Quoi de neuf ?</h1>
 
+<div style="font-size:20px ">
 
-<p><ul><li>Il ya actuellement <? echo $projets[0]; ?> Projets en télétravail.</li><li> Le réseau comporte <? echo $membres[0]; ?> membres.</li> </ul></p>
+<ul>
+<li><? echo $projets[0]; ?> projets en télétravail</li>
+<li><? echo $membres[0]; ?> membres dans le réseau</li> 
+</ul>
+</div>
+
 </div>
 
 <div class="span-one-half">
@@ -111,7 +119,9 @@ include('chat/chat.php');
 
 <br>
 
-<div id="footer">
+
+
+<div id="footer" style="background-image:url(images/tente-berbere-sahara.jpg); background-position:bottom; background-repeat:no-repeat;">
 <div class="row">
 
 <div class="span-one-third">

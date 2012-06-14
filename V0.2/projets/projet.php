@@ -74,7 +74,7 @@ if($total) {
 
 };
 if ($_SESSION['connected']==TRUE) {
-echo '<a style="color:#008BCB; text-decoration:underline; cursor:pointer" onClick="showOffre();">Faire une offre</a>';
+echo '<div ><a id="FaireOffre" onClick="showOffre();">Faire une offre</a></div>';
 echo '<div id="Offre" ><a style="position:absolute; top:0; right:0;" onClick="hideOffre();"><img src="../images/icones/icon_close1.png"></a>';
 
 include('offre.php');
@@ -95,7 +95,7 @@ echo '<p>Pour faire une offre vous devez être connecté !</p>';
 
 //=========================================
 
-  $select = 'SELECT * FROM SOUMISSIONS ORDER BY MONTANT DESC';
+  $select = 'SELECT * FROM SOUMISSIONS WHERE ID_PROJET ='.$row["ID"].' ORDER BY MONTANT DESC';
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   $total = mysql_num_rows($result);
 

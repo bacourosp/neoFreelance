@@ -9,19 +9,14 @@ $message ='Modification de votre compte<br />';
 } else {
 
 
-if ($notification=='1')
-{$notification = 1;}
-else
-{$notification = 0;};
-
- include('../../db.php');
+include('../../db.php');
 $link = mysql_connect ($host,$user,$pass) or die ('Erreur : '.mysql_error() );
                     mysql_select_db($db) or die ('Erreur :'.mysql_error());
 
                     $result = mysql_query("
                               UPDATE MEMBRES
-                              SET NOTIFICATION = '".$notification."'
-                              WHERE ID = '".$_SESSION["ID_UTILISATEUR"]."'
+                              SET NOTIFICATION ='".$_POST["notification"]."'
+                              WHERE ID ='".$_SESSION["ID_UTILISATEUR"]."'
                               ");
 			        if(!$result)
                     {
@@ -80,10 +75,14 @@ if ($total) {
 
 $row = mysql_fetch_array($result);
 
-if ($row["NOTIFICATION"]==1)
+if ($row["NOTIFICATION"]=='1')
+{
 echo'<INPUT type="checkbox" name="notification" value="1" checked="checked"> Je souhaite être informé des projets en rapport avec mes compétences';
+}
 else
+{
 echo'<INPUT type="checkbox" name="notification" value="0"> Je souhaite être informé des projets en rapport avec mes compétences';
+};
 
 };
 echo '<div class="clear"></div>';
