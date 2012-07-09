@@ -68,13 +68,47 @@ $message = "Veuillez renseigner tout les champs, merci <br>";
 			//FIN TRAITEMENT
 
 
+//Ceci découle de mon souhait d'avoir des client Anonymes
+// Génération de la clef d'activation
+                   $caracteres = array("a", "b", "c", "d", "e", "f", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+                   $caracteres_aleatoires = array_rand($caracteres, 8);
+                   $CLEF_ACTIVATION = "";
+                         
+                   foreach($caracteres_aleatoires as $i)
+                    {
+                    $CLEF_ACTIVATION .= $caracteres[$i];
+                    }
 
 		
-			$requete = "insert into PROJETS values('','".$PROPRIETAIREPROJET."','".$EMAIL."','".$NOMPROJET."', '".$comp."', '".$DESCRIPTION."', '".$MONTANTMIN."','".$MONTANTMAX."', '".$DATE."', '".$DUREESOUMISSION."');" ;
+			$requete = "insert into PROJETS values('','".$PROPRIETAIREPROJET."','0','".$CLEF_ACTIVATION."','".$NOMPROJET."', '".$comp."', '".$DESCRIPTION."', '".$MONTANTMIN."','".$MONTANTMAX."', '".$DATE."', '".$DUREESOUMISSION."');" ;
 			mysql_query($requete);
-		
-		$masquer_formulaire = true;
 
+// Envoi du mail d'activation
+                   $sujet = "Validation de votre Projet";
+                              
+                   $message = "Pour valider votre Projet, merci de cliquer sur le lien suivant :\n";
+                   $message .= "http://" . $_SERVER["SERVER_NAME"];
+                   $message .= "/clients/valider-projet.php?id=" . mysql_insert_id();
+                   $message .= "&clef=" . $CLEF_ACTIVATION."\n";
+				   $message .= "Merci d'avoir choisi neoFreelance.";
+                              
+                   // Si une erreur survient
+                   if(!@mail($_POST["email"], $sujet, $message, 'From: noreply@neofreelance.com'."\r\n"))
+                     {
+                     $message = "Une erreur est survenue lors de l'envoi du mail d'activation<br />\n";
+                     $message .= "Veuillez contacter l'administrateur afin d'activer votre compte";
+                     }
+                     else
+                     {
+                                   
+                     // Message de confirmation
+                     $message = "Votre projet a correctement été créer<br />\n";
+                     $message .= "Un email vient de vous être envoyer afin de l'activer";
+                                   
+                     // On masque le formulaire
+                     $masquer_formulaire = true;
+                                   
+                }
 	  
 }
 
@@ -260,6 +294,8 @@ document.write('<input type="hidden" value="" size="45" maxlength="60" name="SKI
 
 </div>
 </div>
-
+<? 
+include('../footer.php');
+?>
 </body>
 </html>

@@ -41,7 +41,6 @@ include('menu.php');
   
   <a href="https://www.facebook.com/pages/neoFreelance/153022051480674?sk=wall"><img src="images/logos/logo-facebook.png" width="90"></a>
 
-  <a href="https://github.com/boudeffa/neoFreelance/wiki"><img src="images/logos/logo-github.png"></a>
   </li>
   </ul>
  </div>
@@ -116,12 +115,10 @@ include('chat/chat.php');
 
 </div>
 
-
 <br>
 
 
-
-<div id="footer" style="background-image:url(images/tente-berbere-sahara.jpg); background-position:bottom; background-repeat:no-repeat;">
+<div id="footer" style="background-image:url(../images/tente-berbere-sahara.jpg); background-position:bottom; background-repeat:no-repeat;">
 <div class="row">
 
 <div class="span-one-third">
@@ -138,8 +135,7 @@ include('chat/chat.php');
 
 <a href="http://www.aldaffah.biz">Qui sommes nous ?</a><br />
 <a href="https://www.facebook.com/pages/neoFreelance/153022051480674?sk=wall">Suivez nous sur Facebook</a><br />
-<a href="https://github.com/boudeffa/neoFreelance ">Code source GitHub</a><br />&nbsp;
-
+<a href="https://github.com/boudeffa/neoFreelance/wiki">Code source du site</a>
 </div>
 
 <div class="span-one-third">
@@ -162,6 +158,12 @@ include('chat/chat.php');
 <a href="/infos/copyrights.html" style="text-decoration:none; color:#fff">Copyrights 2012, Al Daffah Creative Commons</a>
 </div> <!-- Fin de la marge -->
 
+<br>
+
+
+<div id="footer3">
+<a href="https://github.com/boudeffa/neoFreelance/blob/trinity/V0.2<? echo dirname($_SERVER["PHP_SELF"]); echo basename($_SERVER["PHP_SELF"]);?>"><img src="../images/logos/logo-github-panda.png" height="60"></a>
+</div> <!-- Fin de la marge -->
 
 </body>
 </html>

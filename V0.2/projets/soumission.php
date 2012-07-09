@@ -3,6 +3,7 @@ session_start();
 ?>
 <?
 if (!isset($_POST["dureereal"]) or !isset($_POST["montantreal"]) or !isset($_POST["description"])) {
+header("Location: projets.php?projet=".$IDPROJET);
 
 }
 else {
@@ -27,9 +28,7 @@ $DESCRIPTION=$_POST["description"];
 echo '
 <script language="Javascript">
 hideOffre();
-document.location.href="/projets/projet.php?ID='.$IDPROJET.'";
 </script>
 ';
-
 }
 ?>

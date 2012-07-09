@@ -75,7 +75,7 @@ if ($total) {
 
 $row = mysql_fetch_array($result);
 
-if ($row["NOTIFICATION"]=='1')
+if ($row["NOTIFICATION"]==1)
 {
 echo'<INPUT type="checkbox" name="notification" value="1" checked="checked"> Je souhaite être informé des projets en rapport avec mes compétences';
 }

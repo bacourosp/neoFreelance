@@ -92,7 +92,7 @@ if(!$verifLimite)  {
 
 //=========================================
 
-  $select = 'SELECT ID, DESIGNATION, COMPETENCES, DESCRIPTION, DATE_LANCEMENT, DUREE_SOUMISSION FROM PROJETS WHERE COMPETENCES LIKE "%'.$_GET["competence"].'%" ORDER BY DATE_LANCEMENT DESC limit '.$limite.','.$nombre;
+  $select = 'SELECT ID, ACTIF, DESIGNATION, COMPETENCES, DESCRIPTION, DATE_LANCEMENT, DUREE_SOUMISSION FROM PROJETS WHERE ACTIF="1" AND COMPETENCES LIKE "%'.$_GET["competence"].'%" ORDER BY DATE_LANCEMENT DESC limit '.$limite.','.$nombre;
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   $total = mysql_num_rows($result);
 
@@ -129,10 +129,11 @@ if($totalEnregistrements > $nombre) {
     echo '<table id="projets-recents" class="dataTable" width="920">'."\n";
         // première ligne on affiche les titres prénom et surnom dans 2 colonnes
         echo '<thead><tr>';
-        echo '<th width=""><b><u>Projet</u></b></th>';
-        echo '<th width="200"><b><u>Montant Moyen</u></b></th>';
-        echo '<th width="200"><b><u>Date de début</u></b></th>';
-		echo '<th width="200"><b><u>Date limite</u></b></th>';
+        echo '<th width="300"><b><u>Projet</u></b></th>';
+        echo '<th width="100"><b><u>NB Offres</u></b></th>';
+		echo '<th width="100"><b><u>Montant Moyen</u></b></th>';
+        echo '<th width="150"><b><u>Date de début</u></b></th>';
+		echo '<th width="150"><b><u>Date limite</u></b></th>';
         
         echo '</tr></thead>'."\n";
 		
@@ -154,6 +155,10 @@ if($totalEnregistrements > $nombre) {
 	   $date_limite = date("d/m/Y",strtotime($date_l));
 	};
 	
+	$select2 = 'SELECT * FROM SOUMISSIONS WHERE ID_PROJET='.$row["ID"];
+    $result2 = mysql_query($select2,$link) or die ('Erreur : '.mysql_error() );
+	$total2 = mysql_num_rows($result2);
+	
 	$selectmoy = 'SELECT AVG(MONTANT) FROM SOUMISSIONS WHERE ID_PROJET='.$row["ID"];
     $resultmoy = mysql_query($selectmoy,$link) or die ('Erreur : '.mysql_error() );
     $totalmoy = mysql_num_rows($resultmoy);
@@ -170,6 +175,7 @@ if($totalEnregistrements > $nombre) {
 		echo $row["COMPETENCES"];
 		echo '<span id="Project-'.$row["ID"].'" class="hint2">'.$Description.'<span class="hint-pointer2">&nbsp;</span></span>';
 		echo '</td>';
+		echo '<td>'.$total2.'</td>';
 		echo '<td>'.$valeur_moyenne.'</td>';
         echo '<td>'.$date.'</td>';
         echo '<td>'.$date_limite.'</td>';
@@ -183,6 +189,7 @@ if($totalEnregistrements > $nombre) {
 		echo '<br>';
 		echo $row["COMPETENCES"];
 		echo '</td>';
+		echo '<td>'.$total2.'</td>';
         echo '<td>'.$valeur_moyenne.'</td>';
 		echo '<td>'.$date.'</td>';
         echo '<td>'.$date_limite.'</td>';

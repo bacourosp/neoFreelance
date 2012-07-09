@@ -83,5 +83,8 @@ echo '</div>';
 <div class="spacer"> </div>
 </div>
 </div>
+<? 
+include('../footer.php');
+?>
 </body>
 </html>

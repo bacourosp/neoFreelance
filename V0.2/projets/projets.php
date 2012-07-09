@@ -35,5 +35,8 @@ include('competences.php');
 include('explore.php');
 ?>
 </div>
+<? 
+include('../footer.php');
+?>
 </body>
 </html>

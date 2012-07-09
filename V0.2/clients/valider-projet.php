@@ -1,22 +1,8 @@
 <?
-session_start();
-?>
-<?php
-
-
-
-// Redirige l'utilisateur s'il est déjà identifié
-if(isset($_COOKIE["ID_UTILISATEUR"]))
-{
-     header("Location: ../accueil/index.php");
-}
-else
-{
-     
      // Vérifie que de bonnes valeurs sont passées en paramètres
      if(!ereg("^[0-9]+$", $_GET["id"]) || !ereg("^[a-f0-9]{8}$", strtolower($_GET["clef"])))
      {
-          header("Location: profil.php");
+          header("Location: creer.php");
      }
      else
      {
@@ -32,7 +18,7 @@ else
                SELECT ID
                     , ACTIF
                     , CLEF_ACTIVATION
-               FROM MEMBRES
+               FROM PROJETS
                WHERE ID = '".$_GET["id"]."'
                AND CLEF_ACTIVATION = '".strtolower($_GET["clef"])."'
           ");
@@ -48,7 +34,7 @@ else
                // Si aucun enregistrement n'est trouvé
                if(mysql_num_rows($result) == 0)
                {
-                    header("Location: inscription.php");
+                    header("Location: creer.php");
                }
                else
                {
@@ -59,14 +45,14 @@ else
                     // Vérification que le compte ne soit pas déjà activé
                     if($row["ACTIF"] != 0)
                     {
-                         $message = "Votre compte utilisateur a déjà été activé";
+                         $message = "Votre Projet a déjà été activé";
                     }
                     else
                     {
                          
                          // Activation du compte utilisateur
                          $result = mysql_query("
-                              UPDATE MEMBRES
+                              UPDATE PROJETS
                               SET ACTIF = '1'
                               WHERE ID = '".$_GET["id"]."'
                               AND CLEF_ACTIVATION = '".strtolower($_GET["clef"])."'
@@ -75,11 +61,11 @@ else
                          // Si une erreur survient
                          if(!$result)
                          {
-                              $message = "Une erreur est survenue lors de l'activation de votre compte utilisateur";
+                              $message = "Une erreur est survenue lors de l'activation de votre projets";
                          }
                          else
                          {
-                              $message = "Votre compte utilisateur a correctement été activé";
+                              $message = "Votre Projet a correctement été activé";
                          }
                          
                     }
@@ -90,16 +76,13 @@ else
           
           // Fermeture de la connexion à la base de données
           mysql_close();
-          
-     }
-     
 }
-
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Activation</title>
+<title>Validation de votre Projet</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <?
 include('../scriptes.php');
 ?>
@@ -108,13 +91,14 @@ include('../scriptes.php');
 <?
 include('../menu.php');
 ?>
+
 <div class="content">
 
 <div id="inscriptionContainer">
 
 <br>
-<h1>Activation de votre compte</h1>
-<p><?php echo $message; ?></p>
+<h1>Validation de votre projet</h1>
+<p><? echo $message; ?></p>
 
 </div>
 </div>
