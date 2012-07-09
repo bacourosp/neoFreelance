@@ -45,6 +45,8 @@ include('../menu.php');
 <h2 style="margin: 20px;">neoFreelance recherche des testeurs <a href="inscription.php">Rejoindre !</a></h2>
 <br>
 </div>
-
+<? 
+include('../footer.php');
+?>
 </body>
 </html>

@@ -17,7 +17,7 @@
 
 <a href="http://www.aldaffah.biz">Qui sommes nous ?</a><br />
 <a href="https://www.facebook.com/pages/neoFreelance/153022051480674?sk=wall">Suivez nous sur Facebook</a><br />
-
+<a href="https://github.com/boudeffa/neoFreelance/wiki">Code source du site</a>
 </div>
 
 <div class="span-one-third">
@@ -44,5 +44,18 @@
 
 
 <div id="footer3">
+<div class="row">
+<div class="span-one-third">
 <a href="https://github.com/boudeffa/neoFreelance/blob/trinity/V0.2<? echo dirname($_SERVER["PHP_SELF"]);echo"/";echo basename($_SERVER["PHP_SELF"]);?>"><img src="../images/logos/logo-github-panda.png" height="60"></a>
+</div>
+<div class="span-one-third">
+<a href="https://github.com/boudeffa/neoFreelance/blob/trinity/V0.2<? echo dirname($_SERVER["PHP_SELF"]);echo"/";echo basename($_SERVER["PHP_SELF"]);?>">Voir le code source de cette page ...</a>
+</div>
+<div class="span-one-third">
+<?
+	require_once("php/atom.php");
+	echo Atom_Display("https://github.com/boudeffa/neoFreelance/commits/trinity.atom", 4);
+?>
+</div>
+</div>
 </div> <!-- Fin de la marge -->
