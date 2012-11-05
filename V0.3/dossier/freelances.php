@@ -24,7 +24,10 @@ include('../menu.php');
 
 <div id="left" class="module">
 
-<? include('competences.php'); ?>
+<? 
+include('competences.php'); 
+include('../php/member.php');
+?>
 
 </div>
 
@@ -55,24 +58,16 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
   $total = mysql_num_rows($result);
 echo '<ul id="freelancer-list" class="ns_freelancer-list">';
 while($row = mysql_fetch_array($result)) {
+
+$member= new Member();
+$member->email=$row["EMAIL"];
+$member->id=$row["ID"];
+$member->pseudo=$row["PSEUDO"];
+$member->competences=$row["COMPETENCES"];
+
 echo '<li>';
 
-
-
-$email = $row["EMAIL"];
-$default = "http://www.gravatar.com/avatar/00000000000000000000000000000000";
-$size = 80;
-
-$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
-
-echo '<div class="module mini-profil">';
-echo '<img src="'.$grav_url.'" alt="" />';
-echo '<div>';
-echo '<a href="/membres/profil.php?ID='.$row["ID"].'" style="color:blue;">'.$row["PSEUDO"].'</a>';
-echo '<p>'.$row["COMPETENCES"].'</p>';
-echo '</div>';
-echo '<div class="spacer"></div>';
-echo '</div>';
+$member->display_mini_profil_gravatar();
 
 echo '</li>';
 }
