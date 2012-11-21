@@ -112,13 +112,13 @@ if($total) {
  
  echo '<br>';
  echo '<div style="width:700px;">';
- echo '<span><b>Propriï¿½taire : </b></span><span>'.$row["PROPRIETAIRE"].'</span>';
+ echo '<span><b>Propriétaire : </b></span><span>'.$row["PROPRIETAIRE"].'</span>';
  echo '<br>';
  echo '<span><b>ID : </b></span><span>'.$row["ID"].'</span>';
  echo '<br>';
- echo '<span><b>Compï¿½tences recherchï¿½es: </b></span><span>'.$row["COMPETENCES"].'</span>';
+ echo '<span><b>Compétences recherchées : </b></span><span>'.$row["COMPETENCES"].'</span>';
  echo '<br>';
- echo '<span><b>Dï¿½scription du projet : </b></span><br><p>'.$row["DESCRIPTION"].'</p>';
+ echo '<span><b>Déscription du projet : </b></span><br><p>'.$row["DESCRIPTION"].'</p>';
  echo '</div>';
 
 };
@@ -200,6 +200,10 @@ if($total) {
   // on libï¿½re le rï¿½sultat
   mysql_free_result($result);
   
+  echo '</div>';
+?>
+<? 
+include('../footer.php');
 ?>
 </body>
 </html>

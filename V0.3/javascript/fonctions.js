@@ -1,5 +1,28 @@
 // JavaScript Document
 
+/*******************************************
+
+Trouvé dans le site www.shoutcast.com
+
+********************************************/
+
+function populate1(competenceid){
+        targetidsec ="#"+competenceid;
+        $(targetidsec).html('<p class="ajaxloader"></p>');
+        $.ajax({
+          type: "POST",
+          url: "/freelances.php",
+          data: "competence="+competenceid,
+          success: function(html){
+                $(targetidsec).html(html);
+                                        $(targetidsec).slideToggle("2000");
+                                        $("#"+competenceid).find("div").toggleClass("arrowup").addClass("arrowdown");
+          }
+        });
+
+        return false;
+}
+
 var perm=0;
 
 function permute1(val)

@@ -17,7 +17,7 @@ include('../menu.php');
 <div class="content">
 <div id="profilContainer">
 
-<form method="post" action="./parametres.php" id="parameters-form">
+<form method="post" action="./envoyermdp.php" id="parameters-form">
 <br>
 <h1>Oubli ?</h1>
 
@@ -25,7 +25,7 @@ include('../menu.php');
 	<label for="oubli"><b>Entrez votre Email :</b></label>&nbsp;
 	<span id="miss-err" class="err-msg">Entrez un Email valide s'il vous plait.</span>
 	<br>
-	<input type="text" value="" size="45" maxlength="60" name="OUBLI" id="oubli-name" class="oubliFormTextField big-textbox" onMouseOver="showHint('miss-hint');" onMouseOut="hideHint('miss-hint');" onBlur="showError10('miss','miss-err');">&nbsp;
+	<input type="text" value="" size="45" maxlength="60" name="email" id="oubli-name" class="oubliFormTextField big-textbox" onMouseOver="showHint('miss-hint');" onMouseOut="hideHint('miss-hint');" onBlur="showError10('miss','miss-err');">&nbsp;
 	<span id="miss-hint" class="hint" style="display:none;">L'Email que vous entrez doit être celui que vous avez utilisé pour vous inscrire.<span class="hint-pointer">&nbsp;</span></span>
 </div>
 <br>

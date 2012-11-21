@@ -20,7 +20,9 @@ include('../menu.php');
 <br>
 <h1>Accueil</h1>
 <br>
-<p>Voici la liste des projets auquels vous participez</p>
+<p>Cette page va vous afficher les diffèrents projets auquels vous avez soumissionnés</p>
+<p>Il y aura toutes les application disonibles, la création de groupes de travail, pour suivre la vie du site</p>
+<p>D'autres options comme pour la création de réunions de coworking pourrons être développées</p>
 </div>
 </div>
 </body>

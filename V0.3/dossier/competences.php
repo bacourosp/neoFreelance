@@ -37,7 +37,13 @@ $totalCategorie = mysql_num_rows($resultCategorie);
 if ($totalCategorie) {
 
 while($rowCategorie = mysql_fetch_array($resultCategorie)) {
-     
+
+/*
+
+ $skill = new Skill();
+ $skill.display($Category);
+
+*/
 	 $Categorie = string2url($rowCategorie["CATEGORIE"]);
 	 
   echo '<div><div id="'.$Categorie.'" onclick="javascript:permute1(this.id);" class="plus list-link">[<span id="s'.$Categorie.'">+</span>] '.$rowCategorie["CATEGORIE"].'</div>';
@@ -52,8 +58,11 @@ while($rowCategorie = mysql_fetch_array($resultCategorie)) {
      while($rowCompetence = mysql_fetch_array($resultCompetence)) {
     
 	 $Competence = string2url($rowCompetence["ID"]);
-     echo '<li class="skill list-link" id="'.$Competence.'">';
-     echo '<a href="freelances.php?competence='.$rowCompetence["COMPETENCE"].'">';
+     
+	 //echo '<li class="skill list-link" id="'.$Competence.'">';
+     echo '<li class="skill list-link">';
+	 
+	 echo '<a href="freelances.php?competence='.$rowCompetence["COMPETENCE"].'">';
 	 echo ''.$rowCompetence["COMPETENCE"].'';
 	 echo '</a>';
      echo '</li>';

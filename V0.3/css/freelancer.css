@@ -1,5 +1,12 @@
 /* CSS Document */
 
+/*
+bleu foncé #0084C1
+bleu clair #eaf6fd
+orange
+*/
+
+
 * {
 	margin:0;
 	padding:0;
@@ -179,124 +186,112 @@ background:#fff;
 border-top:none;
 }
 
-#footer{ 
-padding: 10px 10px 0px 10px; 
-margin:0 auto;
-position:relative; 
-border:none; 
-width:920px; height:80px;
-background:#fff; 
-border-top:none;
+#footer {
 
-    -moz-border-radius-topleft: 10px;
-	-webkit-border-top-left-radius: 10px;
-	-o-border-radius-topleft: 10px;
-	-o-border-top-left-radius: 10px;
-	-ms-border-radius-topleft: 10px;
-	-ms-border-top-left-radius: 10px;
-	-khtml-border-radius-topleft: 10px;
-	-khtml-border-top-left-radius: 10px;
- 	border-top-left-radius: 10px;
-
-    -moz-border-radius-topright: 10px;
-	-webkit-border-top-right-radius: 10px;
-	-o-border-radius-topright: 10px;
-	-o-border-top-right-radius: 10px;
-	-ms-border-radius-topright: 10px;
-	-ms-border-top-right-radius: 10px;
-	-khtml-border-radius-topright: 10px;
-	-khtml-border-top-right-radius: 10px;
-	border-top-right-radius: 10px; 
-
-    -webkit-border-bottom-left-radius: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	border-bottom-left-radius: 10px;	
-	
-	-webkit-border-bottom-right-radius: 10px;
-	-moz-border-radius-bottomright: 10px;
-	border-bottom-right-radius: 10px;
-
+    color: rgb(99, 99, 99);
+    margin: 45px 0px 0px;
+        margin-top: 45px;
+        margin-right-value: 0px;
+        margin-bottom: 0px;
+        margin-left-value: 0px;
+        margin-left-ltr-source: physical;
+        margin-left-rtl-source: physical;
+        margin-right-ltr-source: physical;
+        margin-right-rtl-source: physical;
+    font-size: 12px;
+    clear: both;
 }
 
-#footer a{text-decoration:none; color:#ffffff;}
-#footer a:hover{color:#00CCCC;}
+#footer h4 {color:#999999;}
+#footer a {text-decoration:none; color:#FFFFFF;}
 
-#footer2{ 
-padding: 10px 10px 0px 10px; 
-margin:0 auto;
-position:relative; 
-border:none; 
-width:920px; height:25px;
-background:#0d9bdd; 
-border-top:none;
+#footer .upper_footer {
 
-    -moz-border-radius-topleft: 10px;
-	-webkit-border-top-left-radius: 10px;
-	-o-border-radius-topleft: 10px;
-	-o-border-top-left-radius: 10px;
-	-ms-border-radius-topleft: 10px;
-	-ms-border-top-left-radius: 10px;
-	-khtml-border-radius-topleft: 10px;
-	-khtml-border-top-left-radius: 10px;
- 	border-top-left-radius: 10px;
-
-    -moz-border-radius-topright: 10px;
-	-webkit-border-top-right-radius: 10px;
-	-o-border-radius-topright: 10px;
-	-o-border-top-right-radius: 10px;
-	-ms-border-radius-topright: 10px;
-	-ms-border-top-right-radius: 10px;
-	-khtml-border-radius-topright: 10px;
-	-khtml-border-top-right-radius: 10px;
-	border-top-right-radius: 10px; 
-
-    -webkit-border-bottom-left-radius: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	border-bottom-left-radius: 10px;	
-	
-	-webkit-border-bottom-right-radius: 10px;
-	-moz-border-radius-bottomright: 10px;
-	border-bottom-right-radius: 10px;
-
+    min-height: 160px;
+    overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    border-top: 1px solid rgb(224, 224, 224);
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgb(224, 224, 224);
+    border-bottom: 1px solid rgb(224, 224, 224);
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(224, 224, 224);
+    box-shadow: 0px -1px 0px rgb(255, 255, 255) inset;
+    background-color: #0084C1;
+	/*
+	background-color: rgb(248, 248, 248);
+	*/
 }
 
-#footer3{ 
-padding: 10px 10px 0px 10px; 
-margin:0 auto;
-position:relative; 
-border:none; 
-width:920px; height:70px;
-background:#ffffff; 
-border-top:none;
+#footer .lower_footer {
+    position: relative;
+    background-color: #0084C1;
+    overflow: hidden;
+    clear: both;
+}
 
-    -moz-border-radius-topleft: 10px;
-	-webkit-border-top-left-radius: 10px;
-	-o-border-radius-topleft: 10px;
-	-o-border-top-left-radius: 10px;
-	-ms-border-radius-topleft: 10px;
-	-ms-border-top-left-radius: 10px;
-	-khtml-border-radius-topleft: 10px;
-	-khtml-border-top-left-radius: 10px;
- 	border-top-left-radius: 10px;
+#footer #logo {
+    height: 130px;
+    width: 164px;
+    float: left;
+    background: url("http://www.neofreelance.com/images/Logo-neoFreelance/Logo-neoF.png") no-repeat scroll 0% 0% transparent;
+        background-color: transparent;
+        background-image: url("http://www.neofreelance.com/images/Logo-neoFreelance/Logo-neoF.png");
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: 0% 0%;
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-size: 50%;
+    text-indent: -5000px;
+    margin: 15px 20px 0px 0px;
+        margin-top: 15px;
+        margin-right-value: 20px;
+        margin-bottom: 0px;
+        margin-left-value: 0px;
+        margin-left-ltr-source: physical;
+        margin-left-rtl-source: physical;
+        margin-right-ltr-source: physical;
+        margin-right-rtl-source: physical;
+}
 
-    -moz-border-radius-topright: 10px;
-	-webkit-border-top-right-radius: 10px;
-	-o-border-radius-topright: 10px;
-	-o-border-top-right-radius: 10px;
-	-ms-border-radius-topright: 10px;
-	-ms-border-top-right-radius: 10px;
-	-khtml-border-radius-topright: 10px;
-	-khtml-border-top-right-radius: 10px;
-	border-top-right-radius: 10px; 
+#footer .container {
+    padding-top: 25px;
+}
 
-    -webkit-border-bottom-left-radius: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	border-bottom-left-radius: 10px;	
-	
-	-webkit-border-bottom-right-radius: 10px;
-	-moz-border-radius-bottomright: 10px;
-	border-bottom-right-radius: 10px;
+.container {
+    width: 920px;
+    margin: 0px auto;
+        margin-top: 0px;
+        margin-right-value: auto;
+        margin-bottom: 0px;
+        margin-left-value: auto;
+        margin-left-ltr-source: physical;
+        margin-left-rtl-source: physical;
+        margin-right-ltr-source: physical;
+        margin-right-rtl-source: physical;
+}
 
+#footer .clearfix {
+    display: block;
+}
+
+#footer .upper_footer ul.footer_nav {
+    position: relative;
+    float: left;
+    width: 164px;
+    margin: 20px 10px;
+        margin-top: 20px;
+        margin-right-value: 10px;
+        margin-bottom: 20px;
+        margin-left-value: 10px;
+        margin-left-ltr-source: physical;
+        margin-left-rtl-source: physical;
+        margin-right-ltr-source: physical;
+        margin-right-rtl-source: physical;
 }
 
 /* ---------------- Comp�tences --------------------*/
@@ -1015,3 +1010,4 @@ position: absolute;
     height: 7px;
     float: left;
 }
+.ajaxloader{background:url(http://cdn6.f-cdn.com/img/ajax-loader.gif);}

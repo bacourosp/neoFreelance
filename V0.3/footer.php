@@ -1,61 +1,42 @@
+<div id="footer">
+
+<div class="upper_footer">
+
+<div class="container clearfix">
+
+<h4 id="logo">Liens</h4>
+
+<ul class="footer_nav">
+<h4>Informations ></h4>
+<li><a href="/infos/termes.html">Termes &amp; Conditions</a></li>
+<li><a href="/infos/reglement.html">Réglement du site</a></li>
+<li><a href="/infos/infos.html">Infos investisseurs</a></li>
+</ul>
+
+<ul class="footer_nav">
+<h4>A propos ></h4>
+<li><a href="http://www.aldaffah.biz">Qui sommes nous ?</a></li>
+<li><a href="https://www.facebook.com/pages/neoFreelance/153022051480674?sk=wall">Suivez nous sur Facebook</a></li>
+<li><a href="https://github.com/boudeffa/neoFreelance/wiki">Code source sur GitHub</a></li>
+</ul>
+
+<ul class="footer_nav">
+<h4>Actions ></h4>
+<li><a href="http://boudeffa.me/spip.php?rubrique22">Commenter mon BLOG !</a></li>
+<li><a href="http://neofreelance.com/membres/inscription.php">Ouvrir un bureau</a></li>
+<li><a href="mailto:support@neofreelance.com">Contacter le support</a></li>
+</ul>
+
+</div>
+</div>
+
 <br>
 
-<div id="footer" style="background-image:url(../images/tente-berbere-sahara.jpg); background-position:bottom; background-repeat:no-repeat;">
-<div class="row">
-
-<div class="span-one-third">
-<strong>Informations ></strong><br />
-
-<a href="/infos/termes.html">Termes &amp; Conditions</a><br />
-<a href="/infos/reglement.html">Réglement du site</a><br />
-<a href="/infos/infos.html">Infos investisseurs</a> <br />&nbsp;
-
+<div class="lower_footer">
+<div class="container clearfix">
+<a href="http://creativecommons.org/licenses/by-nc/3.0/" style="text-decoration:none; color:#fff"><img src="http://www.neofreelance.com/images/copyright/88x31.png">
+Copyrights 2012, Al Daffah Creative Commons</a>
 </div>
-
-<div class="span-one-third">
-<strong>A propos ></strong><br />
-
-<a href="http://www.aldaffah.biz">Qui sommes nous ?</a><br />
-<a href="https://www.facebook.com/pages/neoFreelance/153022051480674?sk=wall">Suivez nous sur Facebook</a><br />
-<a href="https://github.com/boudeffa/neoFreelance/wiki">Code source du site</a>
-</div>
-
-<div class="span-one-third">
-<strong>Actions ></strong><br />
-
-<a href="http://neofreelance.com/clients/creer.php">Poster un projet</a><br />
-<a href="http://neofreelance.com/membres/inscription.php">Ouvrir un bureau</a><br />
-<a href="mailto:support@neofreelance.com">Contacter le support</a><br />&nbsp;
-
-</div>
-
-
-</div>
+</div> <!-- Fin de la marge -->
 
 </div><!-- footer -->
-
-<br>
-
-<div id="footer2">
-<a href="/infos/copyrights.html" style="text-decoration:none; color:#fff">Copyrights 2012, Al Daffah Creative Commons</a>
-</div> <!-- Fin de la marge -->
-
-<br>
-
-
-<div id="footer3">
-<div class="row">
-<div class="span-one-third">
-<a href="https://github.com/boudeffa/neoFreelance/blob/trinity/V0.2<? echo dirname($_SERVER["PHP_SELF"]);echo"/";echo basename($_SERVER["PHP_SELF"]);?>"><img src="../images/logos/logo-github-panda.png" height="60"></a>
-</div>
-<div class="span-one-third">
-<a href="https://github.com/boudeffa/neoFreelance/blob/trinity/V0.2<? echo dirname($_SERVER["PHP_SELF"]);echo"/";echo basename($_SERVER["PHP_SELF"]);?>">Voir le code source de cette page ...</a>
-</div>
-<div class="span-one-third">
-<?
-	require_once("php/atom.php");
-	echo Atom_Display("https://github.com/boudeffa/neoFreelance/commits/trinity.atom", 4);
-?>
-</div>
-</div>
-</div> <!-- Fin de la marge -->

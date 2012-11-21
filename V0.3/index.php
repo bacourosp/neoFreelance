@@ -21,23 +21,24 @@ include('menu.php');
 <div class="content">
 
 <br>
+<a style="position:relative; float:right;" href="http://boudeffa.me/spip.php?article41"><img src="images/buttonedited.jpg" alt="Developpement, Design, Prospections ... " height="60"></a>
+
 <h1>Bienvenue Anonyme</h1>
 
 <div id="ns_banner-wrapper">
  <div id="ns_banner">
 
-  <h1>neoFreelance.com c'est quoi ?</h1>
+  <h1 style="margin-left: 15px; ">neoFreelance.com c'est quoi ?</h1>
   <br>
   <ul>
   
-  <li>Une platteforme de télétravail</li>
-  <li>Un réseau de Freelances. <a href="/membres/inscription.php">Rejoidre le réseau !</a></li>
-  <li>Postez vos projets et recevez des devis gratuitement !</li>
+  <li>Une platteforme et une place de marché pour les projets en télétravail</li>
+  <li>Un réseau de Freelances souhaitant prospecter collectivement, vous souhaitez nous rejoindre ? <a style="color:#FF6600 " href="/membres/inscription.php">ICI</a></li>
+  <li>Vous pouvez postez vos projets et recevoir des devis ! Pour plus d'infos retrouvez nous sur facebook ...</li>
   </ul>
   <br>
   <ul>
   <li>
-  <img src="images/Logo-neoFreelance/Logo-neoF.png" width="90">
   
   <a href="https://www.facebook.com/pages/neoFreelance/153022051480674?sk=wall"><img src="images/logos/logo-facebook.png" width="90"></a>
 
@@ -75,7 +76,7 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   $membres = mysql_fetch_row($result);
   
-  $select = "SELECT COUNT(*) FROM PROJETS";
+  $select = "SELECT COUNT(*) FROM PROJETS WHERE ACTIF ='1'";
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   $projets = mysql_fetch_row($result); 
   
@@ -115,55 +116,10 @@ include('chat/chat.php');
 
 </div>
 
-<br>
-
-
-<div id="footer" style="background-image:url(../images/tente-berbere-sahara.jpg); background-position:bottom; background-repeat:no-repeat;">
-<div class="row">
-
-<div class="span-one-third">
-<strong>Informations ></strong><br />
-
-<a href="/infos/termes.html">Termes &amp; Conditions</a><br />
-<a href="/infos/reglement.html">Réglement du site</a><br />
-<a href="/infos/infos.html">Infos investisseurs</a> <br />&nbsp;
-
+<? 
+include('footer.php');
+?>
 </div>
-
-<div class="span-one-third">
-<strong>A propos ></strong><br />
-
-<a href="http://www.aldaffah.biz">Qui sommes nous ?</a><br />
-<a href="https://www.facebook.com/pages/neoFreelance/153022051480674?sk=wall">Suivez nous sur Facebook</a><br />
-<a href="https://github.com/boudeffa/neoFreelance/wiki">Code source du site</a>
-</div>
-
-<div class="span-one-third">
-<strong>Actions ></strong><br />
-
-<a href="http://neofreelance.com/clients/creer.php">Poster un projet</a><br />
-<a href="http://neofreelance.com/membres/inscription.php">Ouvrir un bureau</a><br />
-<a href="mailto:support@neofreelance.com">Contacter le support</a><br />&nbsp;
-
-</div>
-
-
-</div>
-
-</div><!-- footer -->
-
-<br>
-
-<div id="footer2">
-<a href="/infos/copyrights.html" style="text-decoration:none; color:#fff">Copyrights 2012, Al Daffah Creative Commons</a>
-</div> <!-- Fin de la marge -->
-
-<br>
-
-
-<div id="footer3">
-<a href="https://github.com/boudeffa/neoFreelance/blob/trinity/V0.2<? echo dirname($_SERVER["PHP_SELF"]); echo basename($_SERVER["PHP_SELF"]);?>"><img src="../images/logos/logo-github-panda.png" height="60"></a>
-</div> <!-- Fin de la marge -->
 
 </body>
 </html>

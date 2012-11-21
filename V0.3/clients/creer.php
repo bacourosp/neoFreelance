@@ -80,7 +80,7 @@ $message = "Veuillez renseigner tout les champs, merci <br>";
                     }
 
 		
-			$requete = "insert into PROJETS values('','".$PROPRIETAIREPROJET."','0','".$CLEF_ACTIVATION."','".$NOMPROJET."', '".$comp."', '".$DESCRIPTION."', '".$MONTANTMIN."','".$MONTANTMAX."', '".$DATE."', '".$DUREESOUMISSION."');" ;
+			$requete = "insert into PROJETS values('','".$PROPRIETAIREPROJET."','".$EMAIL."','0','".$CLEF_ACTIVATION."','".$NOMPROJET."', '".$comp."', '".$DESCRIPTION."', '".$MONTANTMIN."','".$MONTANTMAX."', '".$DATE."', '".$DUREESOUMISSION."');" ;
 			mysql_query($requete);
 
 // Envoi du mail d'activation
