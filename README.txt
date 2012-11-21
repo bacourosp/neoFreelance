@@ -1,7 +1,7 @@
-Ceci est une platteforme déstinée au télétravailet coworking.
+Ceci est une platteforme dï¿½stinï¿½e au tï¿½lï¿½travailet  coworking.
 
 L'installation est simple, il suffit de copier les fichiers dans un dossier.
 
-De créer la base de données.
+De crï¿½er la base de donnï¿½es.
 
-Voilà !
+Voilï¿½ !
