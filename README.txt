@@ -1,7 +1,7 @@
-Ceci est une platteforme d�stin�e au t�l�travailet  coworking.
+Ceci est une platteforme détinée au télétravail et  coworking.
 
 L'installation est simple, il suffit de copier les fichiers dans un dossier.
 
-De cr�er la base de donn�es.
+De crér la base de donnée
 
-Voil� !
+Voilà!
