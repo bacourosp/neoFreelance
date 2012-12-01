@@ -287,8 +287,8 @@ display: inline-block;
 
 <div style="padding-left:5px;">
 	En cliquant sur rejoindre, vous indiquez avoir lu et accepté les 
-	<a href='javascript: void()' onclick='window.open("../infos/termes.html","","width=500, height=450, left=100,top=100,menu=no, toolbar=no,scrollbars=yes,resizable=yes");return false;'>Termes &amp; Conditions</a> et le  
-	<a href='javascript: void()' onclick='window.open("../infos/reglement.html","","width=700, height=550, left=0,top=0,menu=no, toolbar=no,scrollbars=yes,resizable=yes");return false;'>Réglement</a>
+	<a href='javascript: void()' onclick='window.open("../infos/termes.html","","width=920, height=450, left=100,top=100,menu=no, toolbar=no,scrollbars=yes,resizable=yes");return false;'>Termes &amp; Conditions</a> et le  
+	<a href='javascript: void()' onclick='window.open("../infos/reglement.html","","width=920, height=450, left=200,top=200,menu=no, toolbar=no,scrollbars=yes,resizable=yes");return false;'>Réglement</a>
 </div>
 <br>
 <center>

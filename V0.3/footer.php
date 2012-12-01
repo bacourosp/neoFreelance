@@ -8,9 +8,9 @@
 
 <ul class="footer_nav">
 <h4>Informations ></h4>
-<li><a href="/infos/termes.html">Termes &amp; Conditions</a></li>
-<li><a href="/infos/reglement.html">Réglement du site</a></li>
-<li><a href="/infos/infos.html">Infos investisseurs</a></li>
+<li><a target="_blank" href="/infos/termes.html">Termes &amp; Conditions</a></li>
+<li><a target="_blank" href="/infos/reglement.html">Réglement du site</a></li>
+<li><a target="_blank" href="/infos/infos.html">Infos investisseurs</a></li>
 </ul>
 
 <ul class="footer_nav">

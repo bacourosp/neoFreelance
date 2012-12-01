@@ -3,7 +3,6 @@ session_start();
 ?>
 <?
 if (!isset($_POST["dureereal"]) or !isset($_POST["montantreal"]) or !isset($_POST["description"])) {
-header("Location: projets.php?projet=".$IDPROJET);
 
 }
 else {
@@ -21,14 +20,14 @@ $DESCRIPTION=$_POST["description"];
 			$link = mysql_connect ($host,$user,$pass) or die ('Erreur : '.mysql_error() );
 			mysql_select_db($db) or die ('Erreur :'.mysql_error());
 			
-            $requete = "insert into SOUMISSIONS values('','".$IDPROJET."', '".$IDFREELANCE."', '".$DESCRIPTION."', '".$DUREEREAL."', '".$MONTANTREAL."');" ;
+            $requete = "insert into SOUMISSIONS values('','".$IDPROJET."', '".$IDFREELANCE."', '".$DESCRIPTION."', '".$MONTANTREAL."', '".$DUREEREAL."');" ;
 			mysql_query($requete);
 			
 
 echo '
-<script language="Javascript">
-hideOffre();
-</script>
+<SCRIPT LANGUAGE="JavaScript">
+     document.location.href="projet.php?ID='.$IDPROJET.'"
+</SCRIPT>
 ';
 }
 ?>

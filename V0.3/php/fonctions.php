@@ -1,4 +1,38 @@
 <?
+function afficherCompetencesProjet($competences){
+ foreach ($competences as $competence){
+ echo '<span class="project-skill">'.$competence.'</span>';
+ }
+}
+
+function afficherMesCompetences($competences){
+
+			// information pour la connection à le DB
+			include('../../db.php');
+
+			// connection à la DB
+			$link = mysql_connect ($host,$user,$pass) or die ('Erreur : '.mysql_error() );
+			mysql_select_db($db) or die ('Erreur :'.mysql_error());
+
+
+foreach ($competences as $competence) {
+
+     $selectCompetence = 'SELECT * FROM CATEGORIES WHERE NOM="'.$competence.'"';
+     $resultCompetence = mysql_query($selectCompetence,$link) or die ('Erreur : '.mysql_error() );
+     $totalCompetence = mysql_num_rows($resultCompetence);
+
+     if ($totalCompetence) {
+
+     $rowCompetence = mysql_fetch_array($resultCompetence); 
+	 $id=$rowCompetence["ID"];
+     echo '<script> job_ids.push('.$id.');</script>';
+	 echo '<span class="chosen-skill" id="'.$id.'-chosen-skill">'.$competence.'<a><img class="btn-remove-skill" src="../images/icones/close_8x8.gif" onClick="javascript:retirer('.$id.');supprimerCompetence('.$id.');"></a></span>';
+      
+	 }
+}
+}
+
+
  /*
 exemple : 
 $dateDo = ("2009-09-07");
@@ -33,9 +67,9 @@ return  $newDate;
 /*                                                                            */
 /******************************************************************************/
  
-function coupe($chaine){
+function coupe($chaine,$taille){
   // Nombre de caractère
-  $max=100;
+  $max=$taille;
   if(strlen($chaine)>=$max)
   {
   // Met la portion de chaine dans $chaine

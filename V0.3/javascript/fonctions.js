@@ -145,12 +145,27 @@ var selected_job_count = selected_jobs.length;
 function ajouterCompetenceProfil(id) {
 	if ($('.chosen-skill').length >= 5) {
 		window.alert('Vous pouvez ajouter un maximum de 5 Compétences')
-	};
-    
-	if($('#'+id+'-chosen-skill').length != 0) {
+	} else {   
+	   if($('#'+id+'-chosen-skill').length != 0) {
 		window.alert('Vous avez déjà choisi cette compétence') }
-	else {
-        $('<span class="chosen-skill" id="'+id+'-chosen-skill">'+document.getElementById(id).innerHTML+'<a><img class="btn-remove-skill" src="../images/icones/close_8x8.gif" onClick="javascript:retirer('+id+');supprimerCompetence('+id+');"></a></span>').appendTo($('#profil-skill-container'));
-        updateCountOfAddedSkills(id);
-    };
+	   else {
+        $('<span class="chosen-skill" id="'+id+'-chosen-skill">'+document.getElementById(id).innerHTML+'<a><img class="btn-remove-skill" src="../images/icones/close_8x8.gif" onClick="javascript:retirer('+id+');supprimerCompetence('+id+');"></a></span>').appendTo($('#skill-container'));
+	    job_ids.push(id);
+	   }
+	};
+}
+
+function compteroffre(f) {
+   var max=400;
+   var txt=f.description.value +1;
+   var nb=txt.length;
+   var reste=max-nb;
+if (nb>max) { 
+      alert("Vous avez dépassé le nombre maximal de caractères qui est de " + max +".");
+      f.description.value=txt.substring(0,max);
+      nb=max;
+   }
+   //f.nbcar.value=nb;
+   //f.restcar.value=reste;
+   document.getElementById("proj-descr-char-count").innerHTML=reste;
 }

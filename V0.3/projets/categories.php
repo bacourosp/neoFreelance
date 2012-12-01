@@ -22,14 +22,15 @@ include('../menu.php');
 </br>
 <div id="consultprojectContainer">
 
-</br>
 
-<h1>Projets en télétravail</h1>
+<h1>Compétences actuelles</h1>
+
+<?
+include('competences.php');
+?>
 
 </div>
-<?
-include('explore.php');
-?>
+</br>
 </div>
 <? 
 include('../footer.php');

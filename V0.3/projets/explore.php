@@ -1,4 +1,7 @@
 <?
+include('../php/fonctions.php');
+?>
+<?
 //=========================================
 
 // information pour la connection à le DB
@@ -167,13 +170,19 @@ if($totalEnregistrements > $nombre) {
 
 	
 	$IDClassProjet = "'"."Project-".$row["ID"]."'";
-	$Description = coupe($row["DESCRIPTION"]);
+	$Description = coupe($row["DESCRIPTION"],100);
+	$competenceprojet=explode(", ",$row["COMPETENCES"]); //Pour afficher les competences sous forme de carrés
+
     if ($var==0){ //Affiche le projet numéro .$row["ID"].
-        echo '<tr bgcolor="#FFFFFF">';	
-        echo '<td><a href="/projets/projet.php?ID='.$row["ID"].'" onMouseOver="showHint('.$IDClassProjet.');" onMouseOut="hideHint('.$IDClassProjet.');">'.$row["DESIGNATION"].'</a>';
+        echo '<tr bgcolor="#FFFFFF" onMouseOver="showHint('.$IDClassProjet.');" onMouseOut="hideHint('.$IDClassProjet.');">';	
+		echo '<td>';echo'<a href="/projets/projet.php?ID='.$row["ID"].'">'.$row["DESIGNATION"].'</a>';
 		echo '<br>';
-		echo $row["COMPETENCES"];
-		echo '<span id="Project-'.$row["ID"].'" class="hint2">'.$Description.'<span class="hint-pointer2">&nbsp;</span></span>';
+		//echo $row["COMPETENCES"];
+		echo '<div style="margin-top:3px;">';
+		afficherCompetencesProjet($competenceprojet);
+		echo '</div>';
+		echo '<br>';
+		echo '<div id="Project-'.$row["ID"].'" class="hint-explore">'.$Description.'</div>';
 		echo '</td>';
 		echo '<td>'.$total2.'</td>';
 		echo '<td>'.$valeur_moyenne.'</td>';
@@ -183,11 +192,16 @@ if($totalEnregistrements > $nombre) {
 		$var=1;
 		}
 		else{
-		echo '<tr  bgcolor="#EEEEEE">';
-        echo '<td><a href="/projets/projet.php?ID='.$row["ID"].'" onMouseOver="showHint('.$IDClassProjet.');" onMouseOut="hideHint('.$IDClassProjet.');" >'.$row["DESIGNATION"].'</a>';
-		echo '<span id="Project-'.$row["ID"].'" class="hint2">'.$Description.'<span class="hint-pointer2">&nbsp;</span></span>';
+		echo '<tr  bgcolor="#EEEEEE" onMouseOver="showHint('.$IDClassProjet.');" onMouseOut="hideHint('.$IDClassProjet.');" >';
+        echo '<td>';
+		echo '<a href="/projets/projet.php?ID='.$row["ID"].'">'.$row["DESIGNATION"].'</a>';
 		echo '<br>';
-		echo $row["COMPETENCES"];
+		//echo $row["COMPETENCES"];
+		echo '<div style="margin-top:3px;">';
+		afficherCompetencesProjet($competenceprojet);
+		echo '</div>';
+		echo '<br>';
+		echo '<div id="Project-'.$row["ID"].'" class="hint-explore">'.$Description.'</div>';
 		echo '</td>';
 		echo '<td>'.$total2.'</td>';
         echo '<td>'.$valeur_moyenne.'</td>';

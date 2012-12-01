@@ -296,10 +296,11 @@ border-top:none;
 
 /* ---------------- Comp�tences --------------------*/
 
-#box-skills{display:none; width:250px; height:250px; position:absolute; top:51px; right:0px; border:#CCC solid 5px; background:#FFF; z-index:10; padding:25px 30px 10px 30px;}
+#box-skills{overflow:auto;display:none; width:250px; height:250px; position:absolute; top:51px; right:0px; border:#CCC solid 5px; background:#FFF; z-index:10; padding:25px 30px 10px 30px;}
 
 #chosen-skill{background:#FFF; border:#CCC solid 2px; padding:25px 30px 10px 30px;}
 
+.project-skill{color:#FFFFFF;background:#6A5ACD; border:#CCC solid 1px; padding:2px 3px 1px 3px;}
 .skill{cursor: pointer;}
 
 /*
@@ -552,40 +553,17 @@ font-size: 16px;
     z-index:5; 
 }
 /* Pour l'affichage des projets */
-.hint2 {
+.hint-explore {
+    margin:margin-top 3px;
    	display: none;
-    position: absolute;
 	
-	/* Revoir la position des hints */
-	
-	width: 200px;
-    margin-top: -4px;
-    padding: 10px 12px;
-    /* to fix IE6, I can't just declare a background-color,
-    I must do a bg image, too!  So I'm duplicating the pointer.gif
-    image, and positioning it so that it doesn't show up
-    within the box */
-    background: #FFFF99 url('../images/icones/hintpointer.png') no-repeat -10px 5px;
-	
-	border: 2px solid #FFFF00;
-	-moz-border-radius: 5px; 
-	-webkit-border-radius: 5px;
-
 	font-family:Helvetica, Arial, sans-serif;
 	font-size:12px;
-	color:#000000;
+	color:#333366;
 	z-index:5;
 	font-weight: normal; 
 }
-.hint2 .hint-pointer2 {
-    position: absolute;
-    left: -10px;
-    top: 5px;
-    width: 10px;
-    height: 19px;
-    background: url('../images/icones/hintpointer.png') left top no-repeat;
-    z-index:5; 
-}
+
 .clear {
 	clear:both;
 	content:".";
@@ -603,6 +581,8 @@ font-size: 16px;
 #project-description-err {display:none; width: 100%;}
 #bidperiod-err {display:none; width: 100%;}
 #email-err {display:none; width: 100%;}
+#dureereal-err {display:none; width: 100%;}
+#montantreal-err {display:none; width: 100%;}
 .err-msg {color:#CC3333;}
 
 .projectFormTextField {
@@ -644,11 +624,12 @@ font-size: 16px;
 
 /* Skills */
 span.chosen-skill {
+	float: left;
 	background-color: #82C5DF;
 	border: 1px solid #0094CC;
 	font-weight: bold; 
 	padding: 8px 55px 8px 8px; 
-    margin:0px 5px 0px 0px;
+    margin: 0px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px; 
 	-webkit-border-radius: 5px 5px 5px 5px; 
 }
@@ -948,9 +929,12 @@ padding-left: 10px;
 .content-main .in-reply-to .expansion-container:last-child .tweet:first-child{border-bottom:0;}
 .content-main .in-reply-to .content-divider{top:auto;bottom:-1px;left:35px;}
 
-#Offre{display:none; width:500px; height:500px; position:absolute; top:51px;  border:#CCC solid 5px; background:#FFF; z-index:10; padding:25px 30px 10px 30px; }
+.offre {width:500px; height:500px; border:#CCC solid 5px; background:#FFF; z-index:10; padding:25px 30px 10px 30px; }
 
-#FaireOffre{background:#008BCB; border:#CCC solid 2px; padding:25px 30px 20px 30px; color:#FFF; text-decoration:underline; cursor:pointer; position:absolute; top:50px; right:80px; font-size:18px}
+#IDProjet{background:#008BCB; border:#CCC solid 2px; padding:25px 30px 20px 30px; color:#FFF; position:absolute; top:50px; right:80px; font-size:18px}
+
+#popup_name{display:none; width:410px; height:550px; position:absolute; top:Opx; right:0px; border:#CCC solid 5px; background:#FFF; z-index:10; padding:25px 30px 10px 30px;}
+
 
 /* http://sohtanaka.developpez.com/tutoriels/javascript/creez-fenetre-modale-avec-css-et-jquery/ */
 
@@ -1011,3 +995,365 @@ position: absolute;
     float: left;
 }
 .ajaxloader{background:url(http://cdn6.f-cdn.com/img/ajax-loader.gif);}
+
+.btn {
+    cursor: pointer;
+    font-weight: bold;
+    color: rgb(115, 117, 119);
+    border-width: 1px;
+        border-top-width: 1px;
+        border-right-width-value: 1px;
+        border-bottom-width: 1px;
+        border-left-width-value: 1px;
+        border-left-width-ltr-source: physical;
+        border-left-width-rtl-source: physical;
+        border-right-width-ltr-source: physical;
+        border-right-width-rtl-source: physical;
+    border-style: solid;
+        border-top-style: solid;
+        border-right-style-value: solid;
+        border-bottom-style: solid;
+        border-left-style-value: solid;
+        border-left-style-ltr-source: physical;
+        border-left-style-rtl-source: physical;
+        border-right-style-ltr-source: physical;
+        border-right-style-rtl-source: physical;
+    border-color: rgb(226, 229, 229) rgb(226, 229, 229) rgb(210, 213, 213);
+        border-top-color: rgb(226, 229, 229);
+        border-right-color-value: rgb(226, 229, 229);
+        border-bottom-color: rgb(210, 213, 213);
+        border-left-color-value: rgb(226, 229, 229);
+        border-left-color-ltr-source: physical;
+        border-left-color-rtl-source: physical;
+        border-right-color-ltr-source: physical;
+        border-right-color-rtl-source: physical;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+        border-image-source: none;
+        border-image-slice: 100% 100% 100% 100%;
+        border-image-width: 1 1 1 1;
+        border-image-outset: 0 0 0 0;
+        border-image-repeat: stretch stretch;
+    border-radius: 4px 4px 4px 4px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+    padding: 6px 19px;
+        padding-top: 6px;
+        padding-right-value: 19px;
+        padding-bottom: 6px;
+        padding-left-value: 19px;
+        padding-left-ltr-source: physical;
+        padding-left-rtl-source: physical;
+        padding-right-ltr-source: physical;
+        padding-right-rtl-source: physical;
+    line-height: 16px;
+    background: -moz-linear-gradient(center top , rgb(251, 251, 251) 0px, rgb(247, 247, 248) 100%) repeat scroll 0% 0% transparent;
+        background-color: transparent;
+        background-image: -moz-linear-gradient(center top , rgb(251, 251, 251) 0px, rgb(247, 247, 248) 100%);
+        background-repeat: repeat;
+        background-attachment: scroll;
+        background-position: 0% 0%;
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-size: auto auto;
+    box-shadow: 0px -1px 1px rgba(206, 207, 208, 0.3) inset, 0px 1px 1px rgba(255, 255, 255, 0.3) inset, 0px 1px 1px rgba(180, 180, 180, 0.3);
+    transition: box-shadow 0.2s ease 0s;
+        transition-property: box-shadow;
+        transition-duration: 0.2s;
+        transition-timing-function: ease;
+        transition-delay: 0s;
+}
+.btn.green {
+border: 1px solid #4FB00F;
+border-top-color: #4FB00F;
+border-top-style: solid;
+border-top-width: 1px;
+border-right-color: #4FB00F;
+border-right-style: solid;
+border-right-width: 1px;
+border-bottom-color: #4FB00F;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: #4FB00F;
+border-left-style: solid;
+border-left-width: 1px;
+line-height: 26px;
+background: #5ECA16;
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5ECA16), to(#54B514));
+background-position-x: initial;
+background-position-y: initial;
+background-size: initial;
+background-repeat-x: initial;
+background-repeat-y: initial;
+background-attachment: initial;
+background-origin: initial;
+background-clip: initial;
+background-color: initial;
+background: -moz-linear-gradient(top,#5ECA16 0,#54B514 100%);
+background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#5ECA16),color-stop(100%,#54B514));
+background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5ECA16), to(#54B514));
+background-position-x: initial;
+background-position-y: initial;
+background-size: initial;
+background-repeat-x: initial;
+background-repeat-y: initial;
+background-attachment: initial;
+background-origin: initial;
+background-clip: initial;
+background-color: initial;
+background: linear-gradient(top,#5ECA16 0,#54B514 100%);
+color: white;
+}
+ul.navigation {
+    z-index: 4;
+    position: relative;
+    list-style: none outside none;
+        list-style-type: none;
+        list-style-image: none;
+        list-style-position: outside;
+    font-size: 14px;
+}
+
+ul.navigation li a {
+    display: block;
+    border-radius: 10px 10px 10px 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    padding: 0px 10px;
+        padding-top: 0px;
+        padding-right-value: 10px;
+        padding-bottom: 0px;
+        padding-left-value: 10px;
+        padding-left-ltr-source: physical;
+        padding-left-rtl-source: physical;
+        padding-right-ltr-source: physical;
+        padding-right-rtl-source: physical;
+}
+
+ul.navigation li a:hover {
+    background: none repeat scroll 0% 0% rgb(227, 240, 253);
+    color: rgb(16, 113, 209);
+}
+
+.well.silver {
+    border: 1px solid rgb(204, 204, 204);
+        border-top-width: 1px;
+        border-right-width-value: 1px;
+        border-right-width-ltr-source: physical;
+        border-right-width-rtl-source: physical;
+        border-bottom-width: 1px;
+        border-left-width-value: 1px;
+        border-left-width-ltr-source: physical;
+        border-left-width-rtl-source: physical;
+        border-top-style: solid;
+        border-right-style-value: solid;
+        border-right-style-ltr-source: physical;
+        border-right-style-rtl-source: physical;
+        border-bottom-style: solid;
+        border-left-style-value: solid;
+        border-left-style-ltr-source: physical;
+        border-left-style-rtl-source: physical;
+        border-top-color: rgb(204, 204, 204);
+        border-right-color-value: rgb(204, 204, 204);
+        border-right-color-ltr-source: physical;
+        border-right-color-rtl-source: physical;
+        border-bottom-color: rgb(204, 204, 204);
+        border-left-color-value: rgb(204, 204, 204);
+        border-left-color-ltr-source: physical;
+        border-left-color-rtl-source: physical;
+        -moz-border-top-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        border-image-source: none;
+        border-image-slice: 100% 100% 100% 100%;
+        border-image-width: 1 1 1 1;
+        border-image-outset: 0 0 0 0;
+        border-image-repeat: stretch stretch;
+}
+
+.well {
+    min-height: 0px;
+}
+.span2 {
+    width: 120px;
+}
+.span12 {
+    width: 900px;
+}
+.well {
+    min-height: 20px;
+    padding: 19px;
+        padding-top: 19px;
+        padding-right-value: 19px;
+        padding-bottom: 19px;
+        padding-left-value: 19px;
+        padding-left-ltr-source: physical;
+        padding-left-rtl-source: physical;
+        padding-right-ltr-source: physical;
+        padding-right-rtl-source: physical;
+    margin-bottom: 20px;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+        border-top-width: 1px;
+        border-right-width-value: 1px;
+        border-right-width-ltr-source: physical;
+        border-right-width-rtl-source: physical;
+        border-bottom-width: 1px;
+        border-left-width-value: 1px;
+        border-left-width-ltr-source: physical;
+        border-left-width-rtl-source: physical;
+        border-top-style: solid;
+        border-right-style-value: solid;
+        border-right-style-ltr-source: physical;
+        border-right-style-rtl-source: physical;
+        border-bottom-style: solid;
+        border-left-style-value: solid;
+        border-left-style-ltr-source: physical;
+        border-left-style-rtl-source: physical;
+        border-top-color: rgba(0, 0, 0, 0.05);
+        border-right-color-value: rgba(0, 0, 0, 0.05);
+        border-right-color-ltr-source: physical;
+        border-right-color-rtl-source: physical;
+        border-bottom-color: rgba(0, 0, 0, 0.05);
+        border-left-color-value: rgba(0, 0, 0, 0.05);
+        border-left-color-ltr-source: physical;
+        border-left-color-rtl-source: physical;
+        -moz-border-top-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        border-image-source: none;
+        border-image-slice: 100% 100% 100% 100%;
+        border-image-width: 1 1 1 1;
+        border-image-outset: 0 0 0 0;
+        border-image-repeat: stretch stretch;
+    border-radius: 4px 4px 4px 4px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05) inset;
+}
+.well.white {
+    background: none repeat scroll 0% 0% rgb(255, 255, 255);
+        background-color: rgb(255, 255, 255);
+        background-image: none;
+        background-repeat: repeat;
+        background-attachment: scroll;
+        background-position: 0% 0%;
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-size: auto auto;
+}
+
+.margin-b5 {
+    margin-bottom: 5px !important;
+}
+.text-blue {
+
+    color: rgb(0, 139, 203) !important;
+}
+.bold {
+    font-weight: bold !important;
+}
+.larger {
+    font-size: 22px !important;
+}
+.align-c {
+    text-align: center !important;
+}
+[class*="span"] {
+    float: left;
+    margin-left: 40px;
+        margin-left-value: 40px;
+        margin-left-ltr-source: physical;
+        margin-left-rtl-source: physical;
+}
+.border-r {
+    border-right: 1px solid rgb(204, 204, 204);
+        border-right-width-value: 1px;
+        border-right-style-value: solid;
+        border-right-color-value: rgb(204, 204, 204);
+        border-right-width-ltr-source: physical;
+        border-right-width-rtl-source: physical;
+        border-right-style-ltr-source: physical;
+        border-right-style-rtl-source: physical;
+        border-right-color-ltr-source: physical;
+        border-right-color-rtl-source: physical;
+}
+.padding-r10 {
+    padding-right: 10px !important;
+        padding-right-value: 10px;
+        padding-right-ltr-source: physical;
+        padding-right-rtl-source: physical;
+}
+.padding-l10 {
+    padding-left: 10px !important;
+        padding-left-value: 10px;
+        padding-left-ltr-source: physical;
+        padding-left-rtl-source: physical;
+}
+.padding-l5 {
+    padding-left: 5px !important;
+        padding-left-value: 5px;
+        padding-left-ltr-source: physical;
+        padding-left-rtl-source: physical;
+}
+.margin-l10 {
+    margin-left: 10px !important;
+        margin-left-value: 10px;
+        margin-left-ltr-source: physical;
+        margin-left-rtl-source: physical;
+}
+.margin-b10 {
+    margin-bottom: 10px !important;
+}
+.margin-t10 {
+    margin-top: 10px !important;
+}
+.padding-5 {
+    padding: 5px !important;
+        padding-top: 5px;
+        padding-right-value: 5px;
+        padding-bottom: 5px;
+        padding-left-value: 5px;
+        padding-left-ltr-source: physical;
+        padding-left-rtl-source: physical;
+        padding-right-ltr-source: physical;
+        padding-right-rtl-source: physical;
+}
+.padding-0 {
+    padding: 0px !important;
+        padding-top: 0px;
+        padding-right-value: 0px;
+        padding-bottom: 0px;
+        padding-left-value: 0px;
+        padding-left-ltr-source: physical;
+        padding-left-rtl-source: physical;
+        padding-right-ltr-source: physical;
+        padding-right-rtl-source: physical;
+}
+.margin-b0 {
+    margin-bottom: 0px !important;
+}
+.margin-t5 {
+    margin-top: 5px !important;
+}
+
+#category_select {
+    height: 30px;
+    line-height: 30px;
+}
+
+#competence_select {
+    height: 30px;
+    line-height: 30px;
+}

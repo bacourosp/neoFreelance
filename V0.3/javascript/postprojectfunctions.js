@@ -53,14 +53,14 @@ $('#'+ide+'-chosen-skill').remove();
 function ajouterCompetence(id) {
 	if ($('.chosen-skill').length >= 5) {
 		window.alert('Vous pouvez ajouter un maximum de 5 Compétences')
-	};
-    
-	if($('#'+id+'-chosen-skill').length != 0) {
+	} else {   
+	   if($('#'+id+'-chosen-skill').length != 0) {
 		window.alert('Vous avez déjà choisi cette compétence') }
-	else {
+	   else {
         $('<span class="chosen-skill" id="'+id+'-chosen-skill">'+document.getElementById(id).innerHTML+'<a><img class="btn-remove-skill" src="../images/icones/close_8x8.gif" onClick="javascript:retirer('+id+');supprimerCompetence('+id+');"></a></span>').appendTo($('#skill-container'));
-        updateCountOfAddedSkills(id);
-    };
+        job_ids.push(id);
+	   }
+	};
 }
 
 function showBoxSkills(){
@@ -163,10 +163,8 @@ function removeSkill(id) {
 	updateCountOfAddedSkill();
 }
 
-function updateCountOfAddedSkill(ignore) {
-	if (!ignore) {
-		needShowSkillRequiredErrMsg();
-	};
+function updateCountOfAddedSkill() {
+
 
 	var selected_jobs = get_selected_jobs().sort();
 	if (selected_jobs.length == 0) {
@@ -174,20 +172,20 @@ function updateCountOfAddedSkill(ignore) {
 	}
 	else {
 		jobPrediction.predictJobs(selected_jobs);
-	}
+	};
 
-	//var selected_job_count = jq('.chosen-skill-container').size();
+	var selected_job_count = $('.skill-container').size();
 	var selected_job_count = selected_jobs.length;
 
-	jq('#count-added-skill').parent().html('you can add <span id="count-added-skill"></span>');
+	document.getElementById('#count-added-skill').parent().innerHTML+'you can add <span id="count-added-skill1"></span>';
 
-	jq('#count-added-skill').html((5 - selected_job_count) + ' more skill' + (selected_job_count >= 4 ? '' : 's'));
+	document.getElementById('#count-added-skill1').innerHTML+(5 - selected_job_count) + ' more skill' + (selected_job_count >= 4 ? '' : 's');
 
 	if (selected_job_count == 5) {
-		jq('#count-added-skill').parent().html('you can not add more skills<span id="count-added-skill"></span>');
+		document.getElementById('#count-added-skill').parent().innerHTML+'you can not add more skills<span id="count-added-skill1"></span>';
 	}
 
 	if (get_selected_jobs().length == 0) {
-		jq('span.selected_skills_label').hide();
+		$('span.selected_skills_label').hide();
 	}
 }

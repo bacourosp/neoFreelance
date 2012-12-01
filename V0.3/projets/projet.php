@@ -4,57 +4,25 @@ session_start();
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Description du Projet</title>
+
+<title>Déscription du Projet</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <?
 include('../scriptes.php');
 ?>
+
 <script type="text/javascript">
-$(function() {
-    //Lorsque vous cliquez sur un lien de la classe poplight et que le href commence par #
-$('.poplight').click(function() {
-    var popID = $(this).attr('rel'); //Trouver la pop-up correspondante
-    var popURL = $(this).attr('href'); //Retrouver la largeur dans le href
 
-alert("coucou");
+$(document).ready(function(){
+$('#faire-offre').click(function(e) {
 
-	//RÃ©cupÃ©rer les variables depuis le lien
-	var query= popURL.split('?');
-	var dim= query[1].split('&');
-	var popWidth = dim[0].split('=')[1]; //La premiÃ¨re valeur du lien
+    e.preventDefault();
 
-	//Faire apparaitre la pop-up et ajouter le bouton de fermeture
-	$('#' + popID).fadeIn().css({
-		'width': Number(popWidth)
-	})
-	.prepend('');
+    $('#monOffre').reveal;
 
-	//RÃ©cupÃ©ration du margin, qui permettra de centrer la fenÃªtre - on ajuste de 80px en conformitÃ© avec le CSS
-	var popMargTop = ($('#' + popID).height() + 80) / 2;
-	var popMargLeft = ($('#' + popID).width() + 80) / 2;
-
-	//On affecte le margin
-	$('#' + popID).css({
-		'margin-top' : -popMargTop,
-		'margin-left' : -popMargLeft
-	});
-
-	//Effet fade-in du fond opaque
-	$('body').append(''); //Ajout du fond opaque noir
-	//Apparition du fond - .css({'filter' : 'alpha(opacity=80)'}) pour corriger les bogues de IE
-	$('#fade').css({'filter' : 'alpha(opacity=80)'}).fadeIn();
-
-	return false;
-});
-
-//Fermeture de la pop-up et du fond
-$('a.close, #fade').live('click', function() { //Au clic sur le bouton ou sur le calque...
-	$('#fade , .popup_block').fadeOut(function() {
-		$('#fade, a.close').remove();  //...ils disparaissent ensemble
-	});
-	return false;
 });
 });
+
 </script>
 
 </head>
@@ -63,14 +31,14 @@ $('a.close, #fade').live('click', function() { //Au clic sur le bouton ou sur le
 
 <?
 include('../menu.php');
-
+include('../php/fonctions.php');
 ?>
 
 <?
 
 //=========================================
 
-// information pour la connection ï¿½ le DB
+// information pour la connection ï¿œ le DB
 
 //=========================================
 
@@ -78,7 +46,7 @@ include('../../db.php');
 
 //=========================================    
 
-// connection ï¿½ la DB
+// connection ï¿œ la DB
 
 //=========================================
 
@@ -88,9 +56,9 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
 
 //=========================================
 
-// requï¿½te SQL qui ne prend que le nombre 
+// requï¿œte SQL qui ne prend que le nombre 
 
-// d'enregistrement necessaire ï¿½ l'affichage.
+// d'enregistrement necessaire ï¿œ l'affichage.
 
 //=========================================
 
@@ -98,54 +66,99 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   $total = mysql_num_rows($result);
 
+ 
+
 if($total) {
  $row = mysql_fetch_array($result);
  echo '<div class="content">';
 
+ $select22 = 'SELECT * FROM MEMBRES WHERE PSEUDO="'.$row["PROPRIETAIRE"].'";';
+ $result22 = mysql_query($select22,$link) or die ('Erreur : '.mysql_error() );
+ $total22 = mysql_num_rows($result22);
+ $row22 = mysql_fetch_array($result22);
+
  $ID_PROJET=$row["ID"];
 
- echo '</br>';
- echo '<div>';
- echo '<span style="width:700px; float:left;"><h1>'.$row["DESIGNATION"].'</h1></span>';
- 
+// echo '<span id="IDProjet"><b>ID : </b>'.$row["ID"].'</span>';
+ echo '<div style="width:700px; ">';
+ echo '<h1>'.$row["DESIGNATION"].'</h1>';
  echo '</div>';
  
+echo '<div class="well silver padding-0 margin-b10 margin-t5 span12 margin-l10">';
+
+ $select2 = 'SELECT * FROM SOUMISSIONS WHERE ID_PROJET='.$_GET["ID"];
+ $result2 = mysql_query($select2,$link) or die ('Erreur : '.mysql_error() );
+ $total2 = mysql_num_rows($result2);
+	
+ $selectmoy = 'SELECT AVG(MONTANT) FROM SOUMISSIONS WHERE ID_PROJET='.$_GET["ID"];
+ $resultmoy = mysql_query($selectmoy,$link) or die ('Erreur : '.mysql_error() );
+ $totalmoy = mysql_num_rows($resultmoy);
+ $moyenne = mysql_result($resultmoy,0);
+ $valeur_moyenne=(int)($moyenne); 
+
+if($total2>0) {
+ echo '<div class="well white silver align-c span margin-l10 margin-t10 margin-b10 padding-5" >'; 
+   echo '<div class="align-c border-r span padding-r10 padding-l5" style="display:inline-block;"><div class="margin-b5">Nombre d'."'".'offres</div><div class="text-blue larger bold">'.$total2.'</div></div>';
+   echo '<div class="align-c border-r span padding-110 padding-r10" style="display:inline-block;"><div class="margin-b5">Montant Moyen (EUR)</div><div class="text-blue larger bold">'.$valeur_moyenne.'</div></div>';
+   echo '<div class="align-c span padding-110 padding-r10" style="display:inline-block;"><div class="margin-b5">Budget (EUR)</div><div class="text-blue larger bold">'.$row["MIN"].' - '.$row["MAX"].'</div></div>';
+ echo '</div>';
  echo '<br>';
+ echo '<br>';
+} else {
+ echo '<div class="well white silver align-c span margin-l10 margin-t10 margin-b10 padding-5" >'; 
+   echo '<div class="align-c border-r span padding-r10 padding-l5" style="display:inline-block;"><div class="margin-b5">Nombre d'."'".'offres</div><div class="text-blue larger bold">0</div></div>';
+   echo '<div class="align-c border-r span padding-110 padding-r10" style="display:inline-block;"><div class="margin-b5">Montant Moyen (EUR)</div><div class="text-blue larger bold">N/A</div></div>';
+   echo '<div class="align-c span padding-110 padding-r10" style="display:inline-block;"><div class="margin-b5">Budget (EUR)</div><div class="text-blue larger bold">'.$row["MIN"].' - '.$row["MAX"].'</div></div>';
+ echo '</div>';
+ echo '<br>';
+ echo '<br>';
+};
+
+$competenceprojet=explode(",",$row["COMPETENCES"]); //Pour afficher les competences sous forme de carrés
+
+echo '</div>';
+
  echo '<div style="width:700px;">';
- echo '<span><b>Propriétaire : </b></span><span>'.$row["PROPRIETAIRE"].'</span>';
+ echo '<span><b>Porteur du projet : </b></span><span><a href="/membres/profil.php?ID='.$row22["ID"].'">'.$row["PROPRIETAIRE"].'</a></span>';
  echo '<br>';
- echo '<span><b>ID : </b></span><span>'.$row["ID"].'</span>';
  echo '<br>';
- echo '<span><b>Compétences recherchées : </b></span><span>'.$row["COMPETENCES"].'</span>';
+ echo '<span><b>Compétences recherchées : </b></span>';afficherCompetencesProjet($competenceprojet);
+ echo '<br>';
  echo '<br>';
  echo '<span><b>Déscription du projet : </b></span><br><p>'.$row["DESCRIPTION"].'</p>';
  echo '</div>';
-
+ echo '<div style="border: 2px solid #EEE;"></div>';
+ echo '<br>';
+ echo '<br>';
 };
+
 if ($_SESSION['connected']==TRUE) {
-echo '<div ><a id="FaireOffre" href="#" rel="popup_name" class="poplight">Faire une offre</a></div>';
 
-//echo '<div id="Offre" ><a style="position:absolute; top:0; right:0;"><img src="../images/icones/icon_close1.png"></a>';
-
-include('offre.php');
-
-//echo '</div>';
-} else
-{
-echo '<div ><a id="FaireOffre" href="../membres/connexion.php" rel="popup_name" class="poplight">Faire une offre</a></div>';
-}
+ $select3 = 'SELECT * FROM SOUMISSIONS WHERE ID_PROJET='.$_GET["ID"].' AND ID_FREELANCE='.$_SESSION["ID_UTILISATEUR"];
+ $result3 = mysql_query($select3,$link) or die ('Erreur : '.mysql_error() );
+ $total3 = mysql_num_rows($result3);
+ if ($total3>0){
+  echo '<div><a id="modifier-offre" href="#" class="btn green" data-reveal-id="monOffre" data-animation="fade" style="text-decoration:none;float:right;">Modifier votre offre</a></div>';
+  } else {
+  echo '<div><a id="faire-offre" href="#" class="btn green" data-reveal-id="monOffre" data-animation="fade" style="text-decoration:none;float:right;">Faire une offre</a></div>';
+  include('offre.php');
+  }
+ }else{
+ echo '<div ><a id="faire_offre" class="btn green" style="text-decoration:none;float:right;" href="../membres/connexion.php">Faire une offre</a></div>'; 
+ }
 ?>
-
+<br>
+<br>
 <?
 //=========================================
 
-// requï¿½te SQL qui ne prend que le nombre 
+// requête SQL qui ne prend que le nombre 
 
-// d'enregistrement necessaire ï¿½ l'affichage.
+// d'enregistrement necessaire à l'affichage.
 
 //=========================================
 
-  $select = 'SELECT * FROM SOUMISSIONS WHERE ID_PROJET ='.$row["ID"].' ORDER BY MONTANT DESC';
+  $select = 'SELECT * FROM SOUMISSIONS WHERE ID_PROJET ='.$_GET["ID"].' ORDER BY MONTANT DESC';
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   $total = mysql_num_rows($result);
 
@@ -154,31 +167,31 @@ if($total) {
 	echo '<center>';
 
     echo '<table id="projets-recents" class="dataTable" width="920">'."\n";
-        // premiï¿½re ligne on affiche les titres prï¿½nom et surnom dans 2 colonnes
+        // premiï¿œre ligne on affiche les titres prï¿œnom et surnom dans 2 colonnes
         echo '<thead><tr>';
         
         echo '<th width="200"><b><u>Freelance</u></b></th>';
         echo '<th width="200"><b><u>Montant</u></b></th>';
-		echo '<th width="200"><b><u>Durï¿½e de rï¿½alisation</u></b></th>';
+		echo '<th width="200"><b><u>Durée réalisation</u></b></th>';
         echo '<th width="200"><b><u>Description</u></b></th>';
         echo '</tr></thead>'."\n";
 		
-    // lecture et affichage des rï¿½sultats sur 2 colonnes, 1 rï¿½sultat par ligne.    
+    // lecture et affichage des rï¿œsultats sur 2 colonnes, 1 rï¿œsultat par ligne.    
     $var=0; 
 	while($row = mysql_fetch_array($result)) {
     
 	$selectfreelance = 'SELECT * FROM MEMBRES WHERE ID ='.$row["ID_FREELANCE"].'';
     $resultfreelance = mysql_query($selectfreelance,$link) or die ('Erreur : '.mysql_error() );
     $totalfreelance = mysql_num_rows($resultfreelance);
-	if (totalfreelance)  {$rowfreelance = mysql_fetch_array($resultfreelance); $FREELANCE=$rowfreelance["PSEUDO"];};
+	if ($totalfreelance)  {$rowfreelance = mysql_fetch_array($resultfreelance); $FREELANCE=$rowfreelance["PSEUDO"];};
 	
-    if ($var==0){ //Affiche le projet numï¿½ro .$row["ID"].
+    if ($var==0){ //Affiche le projet numï¿œro .$row["ID"].
         echo '<tr bgcolor="#FFFFFF">';	
         
 		echo '<td><a href="/membres/profil.php?ID='.$row["ID_FREELANCE"].'">'.$FREELANCE.'</a></td>';
         echo '<td>'.$row["MONTANT"].'</td>';
         echo '<td>'.$row["DUREE"].'</td>';
-		echo '<td><a href="detail.php?OFFRE='.$row["ID"].'">En savoir +</a></td>';
+		echo '<td><a href="detail.php?OFFRE='.$row["ID"].'">'.coupe($row["DESCRIPTION"],50).'</a></td>';
         echo '</tr>'."\n";
 		$var=1;
 		}
@@ -196,8 +209,8 @@ if($total) {
     // fin du tableau.
 	echo '</center>';
   }
-  else echo 'Pas d\'enregistrements dans cette table...';
-  // on libï¿½re le rï¿½sultat
+  else echo '<p>Il n'."'".'y a actuellement pas d'."'".'offres enregistrées pour ce projet</p>';
+  // on libï¿œre le rï¿œsultat
   mysql_free_result($result);
   
   echo '</div>';

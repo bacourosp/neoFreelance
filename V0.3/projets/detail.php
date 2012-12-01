@@ -60,19 +60,22 @@ if($total) {
 	
  echo '</br>';
  echo '<div>';
- echo '<span style="width:700px; float:left;"><h1>Détail de l offre</h1></span>';
+ echo '<span style="width:700px; float:left;"><h1>Détail de l'."'".'offre</h1></span>';
  
  echo '</div>';
  
  echo '<br>';
  echo '<div style="width:700px;">';
- echo '<span><b>Soumissionnaire : </b></span><a href="/membres/profil.php?ID='.$row["ID_FREELANCE"].'">'.$FREELANCE.'</a></span>';
+ echo '<span><b>Prestataire : </b></span><a href="/membres/profil.php?ID='.$row["ID_FREELANCE"].'">'.$FREELANCE.'</a></span>';
+ echo '<br>';
  echo '<br>';
  echo '<span><b>Montant de la réalisation : </b></span>'.$row["MONTANT"].'</span>';
  echo '<br>';
+ echo '<br>';
  echo '<span><b>Durée de la réalisation: </b></span>'.$row["DUREE"].'</span>';
  echo '<br>';
- echo '<span><b>Déscription de l offre : </b></span><br><p>'.$row["DESCRIPTION"].'</p>';
+ echo '<br>';
+ echo '<span><b>Déscription de l'."'".'offre : </b></span><br><p>'.$row["DESCRIPTION"].'</p>';
  echo '</div>';
 
 };
