@@ -3,6 +3,7 @@
 /*
 bleu foncé #0084C1
 bleu clair #eaf6fd
+autre bleu clair #008cc9
 orange
 */
 
@@ -206,7 +207,7 @@ border-top:none;
 #footer a {text-decoration:none; color:#FFFFFF;}
 
 #footer .upper_footer {
-
+    padding-top: 25px;
     min-height: 160px;
     overflow: hidden;
         overflow-x: hidden;
@@ -258,11 +259,11 @@ border-top:none;
         margin-right-rtl-source: physical;
 }
 
-#footer .container {
-    padding-top: 25px;
+#footer .footer-container {
+    padding-top: 5px;
 }
 
-.container {
+.footer-container {
     width: 920px;
     margin: 0px auto;
         margin-top: 0px;
@@ -469,6 +470,11 @@ border-left:#45b6ea solid 1px;
 /*
 --------------------- Cr�ation d'un projet-----------------------------------
 */
+
+.container {
+min-height:400px;
+}
+
 #freelancesContainer {
 
 padding:0px 0px 0px 20px;
@@ -491,7 +497,7 @@ font-size: 16px;
 }
 
 #profilContainer {
-
+min-height:400px; 
 padding:0px 0px 0px 20px;
 font-size: 16px;
 
@@ -895,12 +901,20 @@ background-color:#0d9bdd;
 -webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.25);
 -moz-box-shadow:inset 0 1px 0 rgba(255,255,255,.25);
 }
-.module .list-link:hover,.module .active .list-link{
-background-color:#0d9bdd;
+
+.module .list-link:hover{
+background-color:#eaf6fd;
 color:#333;
 text-decoration:none;
 }
-.module .active .list-link{
+
+.module .actif{
+background-color:#008cc9;
+color:#fff;
+text-decoration:none;
+}
+
+.module .actif{
 font-weight:bold;
 }
 
@@ -916,6 +930,7 @@ border-bottom-left-radius: 5px;
 .content-main{
 float:right;
 width:522px;
+min-height:300px;
 padding-top: 10px;
 padding-right: 10px;
 padding-bottom: 10px;

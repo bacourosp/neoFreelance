@@ -18,7 +18,7 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
 //=========================================
 $ID = $_SESSION["ID_UTILISATEUR"];
 
-  $select = "SELECT PSEUDO,EMAIL,PROFIL,COMPETENCES FROM MEMBRES WHERE ID='".$ID."';";
+  $select = "SELECT EMAIL,PSEUDO FROM MEMBRES WHERE ID='".$ID."';";
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   $total = mysql_num_rows($result);
 

@@ -59,10 +59,8 @@ if($total) {
  if (totalfreelance)  {$rowfreelance = mysql_fetch_array($resultfreelance); $FREELANCE=$rowfreelance["PSEUDO"];};
 	
  echo '</br>';
- echo '<div>';
+ echo '<div class="container">';
  echo '<span style="width:700px; float:left;"><h1>Détail de l'."'".'offre</h1></span>';
- 
- echo '</div>';
  
  echo '<br>';
  echo '<div style="width:700px;">';
@@ -77,7 +75,7 @@ if($total) {
  echo '<br>';
  echo '<span><b>Déscription de l'."'".'offre : </b></span><br><p>'.$row["DESCRIPTION"].'</p>';
  echo '</div>';
-
+ echo '</div>';
 };
 ?>
 </body>

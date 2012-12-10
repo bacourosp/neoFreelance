@@ -7,6 +7,7 @@ if (!isset($_POST["projectname"]) or !isset($_POST["description"]) or !isset($_P
 $masquer_formulaire = false;
 $message = "Veuillez renseigner tout les champs, merci <br>";
 } else {
+//Si le membre est connecté et qu'on connait son identité on recherches son pseudo
 		if (!isset($_SESSION["ID_UTILISATEUR"])){
 
        // information pour la connection à le DB
@@ -20,7 +21,7 @@ $message = "Veuillez renseigner tout les champs, merci <br>";
 
 		$result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   		$total = mysql_num_rows($result);
-  
+//Si on trouve son EMAIL pour savoir si il est membre sinon il sera anonyme
   			if ($total){
 			$row = mysql_fetch_array($result);
             $PROPRIETAIREPROJET = $row["PSEUDO"];			
@@ -41,7 +42,14 @@ $message = "Veuillez renseigner tout les champs, merci <br>";
   
   			if ($total){
 			$row = mysql_fetch_array($result);
-		    $PROPRIETAIREPROJET = $row["PSEUDO"];
+			  if ($_POST["anonyme"] == TRUE) 
+			  {
+		      $PROPRIETAIREPROJET = 'Anonyme';
+			  }
+			  else
+			  { 
+			  $PROPRIETAIREPROJET = $row["PSEUDO"];
+			  };
 			};
 	    };
 		
@@ -333,6 +341,9 @@ echo '</br>';
         <span id="email-hint" class="hint">Cet Email servira pour recevoir des notifications quand un Freelance soumissionne<span class="hint-pointer">&nbsp;</span></span>
         &nbsp;
 </div>
+<label for="subCategory"><b>Projet Anonyme :</b></label>
+<br>
+<input type="checkbox" name="anonyme"> Cocher cette case pour rester Anonyme ! <br>
 <?
 } else {
 echo '</br>';

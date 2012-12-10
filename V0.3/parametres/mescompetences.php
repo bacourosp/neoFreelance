@@ -73,7 +73,7 @@ include('../menu.php');
 
 ?>
 <div class="content">
-<div id="profilContainer">
+<div class="container">
 <br>
 <h1>Compétences</h1>
 <? 
@@ -97,7 +97,15 @@ echo '<div class"account-group"><img src="'.$grav_url.'" alt="" /></div>';
 echo '<div class="spacer"> </div>';
 echo '</div>';
 
-include('../parametres/menu-gauche.php');
+echo '<div class="module">';
+echo '<ul>';
+echo '<li><a class="list-link" href="compte.php">Compte</a></li>';
+echo '<li><a class="list-link" href="pass.php">Mot de passe</a></li>';
+echo '<li><a class="list-link" href="notifications.php">Notifications</a></li>';
+echo '<li><a class="list-link actif" href="mescompetences.php">Compètences</a></li>';
+echo '<li><a class="list-link" href="profil.php">Profil</a></li>';
+echo '</ul>';
+echo '</div>';
 
 echo '</div>';//dashboard
 
@@ -169,17 +177,19 @@ document.write('<input type="hidden" value="" size="45" maxlength="60" name="SKI
 <!------Fin Affichage dune compétence------>
 
 <?
-echo '<div class="clear"></div>';
-echo '
-
-</br>
-<center>
-<button class="ns_btn ns_blue" type="submit" value="post" onClick="ajouterSkills();">Modifier</button>
-</center>
-</form>
-';
 
 echo '</div>';//content-main
+
+echo '<div class="clear"></div>';
+echo '<div style="border: 2px solid #EEE;"></div>';
+
+echo '
+</br>
+
+<button class="ns_btn ns_blue" type="submit" value="post" style="float:right;">Modifier</button>
+
+</form>
+';
 
 ?>
 <div class="spacer"> </div>

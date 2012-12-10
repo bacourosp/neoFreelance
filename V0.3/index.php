@@ -39,10 +39,20 @@ include('menu.php');
   <br>
   <ul>
   <li>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1&appId=198916933513139";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+Parlez en autour de vous : 
+<div class="fb-like" data-href="https://www.facebook.com/pages/neoFreelance/153022051480674" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true" data-font="arial" data-action="recommend"></div>
   
-  <a href="https://www.facebook.com/pages/neoFreelance/153022051480674?sk=wall"><img src="images/logos/logo-facebook.png" width="90"></a>
-
   </li>
+  <li>Bientôt vous pourrez vous inscrire directement par votre compte facebook</li>
   </ul>
  </div>
 
@@ -91,26 +101,50 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
 <div style="font-size:20px ">
 
 <ul>
+
 <li><? echo $projets[0]; ?> projets en télétravail</li>
 <li><? echo $membres[0]; ?> membres dans le réseau</li> 
-</ul>
-</div>
 
-</div>
-
-<div class="span-one-half">
 <?
 include('chat/connectes.php');
 ?>
-<a name="chat"></a>
-<strong>Chat > Il y a <? echo $connectes; if ($connectes ==1) { echo ' connecté'; } else {echo ' connectés';} ?></strong><br />
-<?
-include('chat/chat.php');
-?>
+
+<li><? echo $connectes; if ($connectes ==1) { echo ' freelance connecté'; } else {echo ' freelances connectés';} ?></li>
+
+</ul>
 </div>
+<br>
+<h1>La presse en parle !</h1>
+<div style="font-size:20px ">
+<ul>
+<li>Le quotidien d'oran, <a href="medias/21112012.pdf">lire en page 13</a>.</li>
+<li>Maghreb emergent, <a href="http://www.maghrebemergent.info/high-tech/75-entreprise/18140-nazim-boudeffa-neofreelance-dhussein-dey-a-rennes-qchercher-le-travail-meme-au-bout-du-monde-q.html">lire en ligne</a>.</li>
+</ul>
+</div>
+</div>
+
+<div class="span-one-half">
+
+<?
+/*
+include('chat/chat.php');
+*/
+?>
+
+<div>
+<a class="twitter-timeline"  href="https://twitter.com/neoFreelance" data-widget-id="277769458364334080" height="350">Tweets de @neoFreelance</a>
+</div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];
+if(!d.getElementById(id)){js=d.createElement(s);
+js.id=id;js.src="//platform.twitter.com/widgets.js";
+fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
 
 </div>
 </div>
+
+</div>
+<div class="spacer"></div>
 
 <br>
 

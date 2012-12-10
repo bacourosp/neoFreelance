@@ -38,10 +38,11 @@ include('../scriptes.php');
 include('../menu.php');
 ?>
 <div class="content">
-<div id="profilContainer">
+<div class="container">
 <br>
 <h1>Notifications</h1>
 <p>Paramètre non encore disponible</p>
+<br>
 <?
 include('mini-profil.php');
 
@@ -53,7 +54,15 @@ echo '<div class"account-group"><img src="'.$grav_url.'" alt="" /></div>';
 echo '<div class="spacer"> </div>';
 echo '</div>';
 
-include('menu-gauche.php');
+echo '<div class="module">';
+echo '<ul>';
+echo '<li><a class="list-link" href="compte.php">Compte</a></li>';
+echo '<li><a class="list-link" href="pass.php">Mot de passe</a></li>';
+echo '<li><a class="list-link actif" href="notifications.php">Notifications</a></li>';
+echo '<li><a class="list-link" href="mescompetences.php">Compètences</a></li>';
+echo '<li><a class="list-link" href="profil.php">Profil</a></li>';
+echo '</ul>';
+echo '</div>';
 
 echo '</div>';//dashboard
 
@@ -85,16 +94,19 @@ echo'<INPUT type="checkbox" name="notification" value="0"> Je souhaite être info
 };
 
 };
-echo '<div class="clear"></div>';
-echo '
-</br>
-<center>
-<button class="ns_btn ns_blue" type="submit" value="post">Modifier</button>
-</center>
-</form>
-';
 
 echo '</div>';//content-main
+
+echo '<div class="clear"></div>';
+echo '<div style="border: 2px solid #EEE;"></div>';
+
+echo '
+</br>
+
+<button class="ns_btn ns_blue" type="submit" value="post" style="float:right;">Modifier</button>
+
+</form>
+';
 
 ?>
 <div class="spacer"> </div>

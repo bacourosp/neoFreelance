@@ -155,7 +155,7 @@ include('../scriptes.php');
 include('../menu.php');
 ?>
 <div class="content">
-<div id="profilContainer">
+<div class="container">
 <br>
 <h1>Compte</h1>
 <? 
@@ -184,11 +184,19 @@ echo $competences;
 echo '<div class="spacer"> </div>';
 echo '</div>';
 
-include('menu-gauche.php');
+echo '<div class="module">';
+echo '<ul>';
+echo '<li><a class="list-link actif" href="compte.php">Compte</a></li>';
+echo '<li><a class="list-link" href="pass.php">Mot de passe</a></li>';
+echo '<li><a class="list-link" href="notifications.php">Notifications</a></li>';
+echo '<li><a class="list-link" href="mescompetences.php">Compètences</a></li>';
+echo '<li><a class="list-link" href="profil.php">Profil</a></li>';
+echo '</ul>';
+echo '</div>';
 
 echo '</div>';//dashboard
 
-echo '<div class="module content-main">';
+echo '<div class="content-main">';
 
 echo '
 <form name="compte" method="post" action="compte.php">
@@ -204,17 +212,19 @@ echo '
 	<label for="gafEmail"><b>Adresse Email :</b></label><br>
 	<input type="text" name="email" id="tbx_email" value="'.$email.'" class="gaf_textbox">&nbsp;<br>	
 </div>';
+echo '</div>';//content-main
+
 echo '<div class="clear"></div>';
-echo'
+echo '<div style="border: 2px solid #EEE;"></div>';
+
+echo '
 </br>
-<center>
-<button class="ns_btn ns_blue" type="submit" value="post">Modifier</button>
-</center>
+
+<button class="ns_btn ns_blue" type="submit" value="post" style="float:right;">Modifier</button>
+
 </form>
 '; 
 
-
-echo '</div>';//content-main
 }
 ?>
 <div class="spacer"> </div>

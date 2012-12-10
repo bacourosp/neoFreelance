@@ -17,12 +17,10 @@ include('../php/fonctions.php');
 ?>
 <div class="content">
 
-<div id="profilContainer">
+<div class="container">
 <br>
 <h1>Accueil</h1>
 <br>
-
-</div>
 
 <?
 //=========================================
@@ -105,7 +103,7 @@ echo '<p>D'."'".'autres options comme pour la création de réunions de coworking 
 
 ?>
 
-
+</div>
 </div>
 
 </body>
