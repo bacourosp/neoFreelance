@@ -8,6 +8,19 @@ session_start();
 <?
 include('../scriptes.php');
 ?>
+<script type="text/javascript">
+
+$(document).ready(function(){
+$('#faire-offre').click(function(e) {
+
+    e.preventDefault();
+
+    $('#monOffre').reveal;
+
+});
+});
+
+</script>
 </head>
 <body id="sky">
 
@@ -51,33 +64,47 @@ $row = mysql_fetch_array($result);
 $EMAIL=$row["EMAIL"];
 
 $default = "http://www.gravatar.com/avatar/00000000000000000000000000000000";
-$size = 80;
+$size = 200;
 
 $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $EMAIL ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
 
 
 echo '<div class="dashboard">';
 
-echo '<div class="module mini-profile">';
+//echo '<div class="module mini-profile">';
 echo '<div class"account-group"><img src="'.$grav_url.'" alt="" /></div>';
 
 echo '<div class="spacer"> </div>';
-echo '</div>';
+//echo '</div>';
 
 echo '</div>';//dashboard
 
 echo '<div class="content-main">';
 
-echo '<div> Pseudo : '; echo $row["PSEUDO"]; echo '</div>'; 
+echo '<div><b>Pseudo : </b>'; echo $row["PSEUDO"]; echo '</div>'; 
 
-echo '<div>Compétences : '.$row["COMPETENCES"]; echo '</div>';
+echo '<div><b>Compétences : </b>'.$row["COMPETENCES"]; echo '</div>';
 
-echo '<div>Date Inscription : '; echo date("d/m/Y", strtotime($row["DEPUIS"])); echo '</div>';
+echo '<div><b>Date Inscription : </b>'; echo date("d/m/Y", strtotime($row["DEPUIS"])); echo '</div>';
 
-echo '<div>Description : '.$row["DESCRIPTION"]; echo '</div>';
+echo '<div><b>Description : </b>'.$row["DESCRIPTION"]; echo '</div>';
 
 echo '</div>';//content-main
+echo '<div class="clear"></div>';
+?>
 
+<?
+ 
+
+if ($_SESSION['connected']==TRUE) {
+
+echo '<div style="border: 2px solid #EEE;"></div>';
+echo '<br>';
+ 
+  echo '<div><a id="contacter" href="#" class="btn green" data-reveal-id="contact" data-animation="fade" style="text-decoration:none;float:right;">contacter</a></div>';
+  include('contacter.php');
+
+ };
 ?>
 <div class="spacer"> </div>
 </div>
