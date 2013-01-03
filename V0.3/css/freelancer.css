@@ -140,6 +140,116 @@ background:#fff;
 border-top:none;
 }
 
+<<<<<<< HEAD
+=======
+#footer {
+
+    color: rgb(99, 99, 99);
+    margin: 45px 0px 0px ;
+        margin-top: 45px;
+        margin-right-value: 0px;
+        margin-bottom: 0px;
+        margin-left-value: 0px;
+        margin-left-ltr-source: physical;
+        margin-left-rtl-source: physical;
+        margin-right-ltr-source: physical;
+        margin-right-rtl-source: physical;
+    font-size: 14px;
+    clear: both;
+}
+
+#footer h4 {color:#999999;}
+#footer a {text-decoration:none; color:#FFFFFF;}
+
+#footer .upper_footer {
+    min-height: 160px;
+    overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    border-top: 1px solid rgb(224, 224, 224);
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgb(224, 224, 224);
+    border-bottom: 1px solid rgb(224, 224, 224);
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(224, 224, 224);
+    box-shadow: 0px -1px 0px rgb(255, 255, 255) inset;
+    background-color: #0084C1;
+	/*
+	background-color: rgb(248, 248, 248);
+	*/
+}
+
+#footer .lower_footer {
+    position: relative;
+    background-color: #0084C1;
+    overflow: hidden;
+    clear: both;
+}
+
+#footer #logo {
+    height: 130px;
+    width: 164px;
+    float: left;
+    background: url("http://www.neofreelance.com/images/Logo-neoFreelance/Logo-neoF.png") no-repeat scroll 0% 0% transparent;
+        background-color: transparent;
+        background-image: url("http://www.neofreelance.com/images/Logo-neoFreelance/Logo-neoF.png");
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: 0% 0%;
+        background-clip: border-box;
+        background-origin: padding-box;
+        background-size: 50%;
+    text-indent: -5000px;
+    margin: 15px 20px 0px 0px;
+        margin-top: 15px;
+        margin-right-value: 20px;
+        margin-bottom: 0px;
+        margin-left-value: 0px;
+        margin-left-ltr-source: physical;
+        margin-left-rtl-source: physical;
+        margin-right-ltr-source: physical;
+        margin-right-rtl-source: physical;
+}
+
+#footer .container {
+    padding-top: 25px;
+    margin-left:100px;
+}
+
+.container {
+    width: 920px;
+    margin: 0px auto Opx auto;
+        margin-top: 0px;
+        margin-right-value: auto;
+        margin-bottom: 0px;
+        margin-left-value: auto;
+        margin-left-ltr-source: physical;
+        margin-left-rtl-source: physical;
+        margin-right-ltr-source: physical;
+        margin-right-rtl-source: physical;
+}
+
+#footer .clearfix {
+    display: block;
+}
+
+#footer .upper_footer ul.footer_nav {
+    position: relative;
+    float: left;
+    width: 164px;
+    margin: 20px 10px 20px 45px;
+        margin-top: 20px;
+        margin-right-value: 10px;
+        margin-bottom: 20px;
+        margin-left-value: 10px;
+        margin-left-ltr-source: physical;
+        margin-left-rtl-source: physical;
+        margin-right-ltr-source: physical;
+        margin-right-rtl-source: physical;
+}
+>>>>>>> df32d60ae62e63506d694cdd80a9bfe5d7685294
 
 /* ---------------- Comp�tences --------------------*/
 
