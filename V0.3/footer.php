@@ -2,12 +2,7 @@
 
 <div class="upper_footer">
 
-<<<<<<< HEAD
 <div class="footer-container clearfix">
-=======
-
-<div class="container clearfix">
->>>>>>> df32d60ae62e63506d694cdd80a9bfe5d7685294
 
 <h4 id="logo">Liens</h4>
 
@@ -33,7 +28,6 @@
 </ul>
 
 </div>
-
 </div>
 
 <br>
