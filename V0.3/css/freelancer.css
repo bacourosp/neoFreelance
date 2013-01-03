@@ -77,55 +77,8 @@ th {
 	display:none;
 }
 
-#wrapper{background:#fff; width:1000px; margin:0 auto; -webkit-box-shadow: 0px 0px 10px 3px #c8d9e9; -moz-box-shadow: 0px 0px 10px 3px #c8d9e9; box-shadow: 0px 0px 10px 3px #c8d9e9; }
 #sky{background:url(../images/ciel.png) repeat-x #ecf6ff;}
 
-/* 
- * --------------- Style de Header ---------------
- */
-#header{
-position:relative; 
-background:url(../images/menu.png) 0 -140px;
-position:relative;
-background-repeat:repeat-x;
-background-repeat-x: repeat;
-background-repeat-y: no-repeat;
-z-index:3; 
-font-size:14px; 
-line-height:1; 
-clear:both; 
-color:#333; 
-height:50px;
-}
-
-.wrap{margin:0 auto; position:relative; width:920px;}
-/*
-.logo{ background:url(../images/Logo-neoFreelance/Logo-neoF.png) no-repeat top left 10%; display:block; position:relative;}
-*/
-/* Login box */
-#login-wrap{ position:relative; display:block; right:0px; top:50px;}
-
-#login{cursor:pointer; margin:0px 0px 0px 0px; color:#000000;}
-#login{outline:none; float:right;}
-#login a:hover{color:#000000;}
-
-#profil{cursor:pointer; margin:0px 0px 0px 0px; border:#fff solid 1px; background-color:#008cc9 ;color:#ffffff;}
-#profil{outline:none; float:right;}
-
-
-#box-profil{float:right;display:none; width:280px; position:absolute; top:50px; right:0px; border:#CCC solid 5px; background:#FFF; z-index:2; padding:25px 30px 10px 30px;}
-
-#box-login{float:right;display:none; width:280px; position:absolute; top:50px; right:0px; border:#CCC solid 5px; background:#FFF; z-index:2; padding:25px 30px 10px 30px;}
-#box-login .field{padding-bottom:10px !important;}
-#box-login .remember{float:left; padding-top:12px;}
-#box-login .forgot{position: relative; left:2px; top:8px; right:0px;}
-#box-login-icon { background-image:url(../images/icon_close1.png); position:absolute; top : 0; left: 0;}
-#box-login a {color:#00CCCC;}
-
-#username{width:260px;}
-#passwd{width:190px;}
-#loginpermanent {vertical-align: middle;}
-.field {position:relative;}
 
 /* Contenu des pages */
 
@@ -187,113 +140,6 @@ background:#fff;
 border-top:none;
 }
 
-#footer {
-
-    color: rgb(99, 99, 99);
-    margin: 45px 0px 0px;
-        margin-top: 45px;
-        margin-right-value: 0px;
-        margin-bottom: 0px;
-        margin-left-value: 0px;
-        margin-left-ltr-source: physical;
-        margin-left-rtl-source: physical;
-        margin-right-ltr-source: physical;
-        margin-right-rtl-source: physical;
-    font-size: 12px;
-    clear: both;
-}
-
-#footer h4 {color:#999999;}
-#footer a {text-decoration:none; color:#FFFFFF;}
-
-#footer .upper_footer {
-    padding-top: 25px;
-    min-height: 160px;
-    overflow: hidden;
-        overflow-x: hidden;
-        overflow-y: hidden;
-    border-top: 1px solid rgb(224, 224, 224);
-        border-top-width: 1px;
-        border-top-style: solid;
-        border-top-color: rgb(224, 224, 224);
-    border-bottom: 1px solid rgb(224, 224, 224);
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-bottom-color: rgb(224, 224, 224);
-    box-shadow: 0px -1px 0px rgb(255, 255, 255) inset;
-    background-color: #0084C1;
-	/*
-	background-color: rgb(248, 248, 248);
-	*/
-}
-
-#footer .lower_footer {
-    position: relative;
-    background-color: #0084C1;
-    overflow: hidden;
-    clear: both;
-}
-
-#footer #logo {
-    height: 130px;
-    width: 164px;
-    float: left;
-    background: url("http://www.neofreelance.com/images/Logo-neoFreelance/Logo-neoF.png") no-repeat scroll 0% 0% transparent;
-        background-color: transparent;
-        background-image: url("http://www.neofreelance.com/images/Logo-neoFreelance/Logo-neoF.png");
-        background-repeat: no-repeat;
-        background-attachment: scroll;
-        background-position: 0% 0%;
-        background-clip: border-box;
-        background-origin: padding-box;
-        background-size: 50%;
-    text-indent: -5000px;
-    margin: 15px 20px 0px 0px;
-        margin-top: 15px;
-        margin-right-value: 20px;
-        margin-bottom: 0px;
-        margin-left-value: 0px;
-        margin-left-ltr-source: physical;
-        margin-left-rtl-source: physical;
-        margin-right-ltr-source: physical;
-        margin-right-rtl-source: physical;
-}
-
-#footer .footer-container {
-    padding-top: 5px;
-}
-
-.footer-container {
-    width: 920px;
-    margin: 0px auto;
-        margin-top: 0px;
-        margin-right-value: auto;
-        margin-bottom: 0px;
-        margin-left-value: auto;
-        margin-left-ltr-source: physical;
-        margin-left-rtl-source: physical;
-        margin-right-ltr-source: physical;
-        margin-right-rtl-source: physical;
-}
-
-#footer .clearfix {
-    display: block;
-}
-
-#footer .upper_footer ul.footer_nav {
-    position: relative;
-    float: left;
-    width: 164px;
-    margin: 20px 10px;
-        margin-top: 20px;
-        margin-right-value: 10px;
-        margin-bottom: 20px;
-        margin-left-value: 10px;
-        margin-left-ltr-source: physical;
-        margin-left-rtl-source: physical;
-        margin-right-ltr-source: physical;
-        margin-right-rtl-source: physical;
-}
 
 /* ---------------- Comp�tences --------------------*/
 
@@ -380,77 +226,6 @@ color: #343434;
 .paginate_button:hover { background-color: #CCC; }
 .paginate_active { background-color: #99B3FF; }
 
-/* 
- * --------------- Navigation dans le menu Principal ---------------
- */
-#nav-main-login-wrap{outline:none; float:right; margin:26px 0px 0px 0px; height:40px; background:url(../images/menu.png) no-repeat 0 -250px; z-index:8; clear:both; font-size:14px; color:#333333;}
-#nav-main-login{list-style:none; font-size:15px; margin-left:15px; position:relative;}
-#nav-main-login a:hover{text-decoration:none;}
-#nav-main-login li{float:left; position:relative;}
-#nav-main-login li a{float:left; position:relative; padding:15px 15px; display:block; line-height: 18px; text-decoration: none;}
-#nav-main-login li a:hover{color:#008cc9;}
-#nav-main-login li.first{border-left:none;}
-#nav-main-login li li.last{border-bottom:#009be2 solid 1px;}
-
-#menu-wrap{
-height:50px; 
-
-z-index:2;
-clear:both;
-font-size:14px;
-color:#333333;
-}
-
-.menu {list-style:none; font-size:15px;}
-.menu a:hover{text-decoration:none;}
-.menu li{ float:left; position:relative; border-right:#45b6ea solid 1px; border-top:solid 1px #009be2; border-bottom:solid 1px #31aee8; margin:0px;}
-.menu li a{color:#ffffff; padding:15px 15px; display:block; cursor:pointer; line-height: 18px; text-decoration: none;}
-.menu li a:hover{color:#008cc9;}/* quand le pointeur est sur le texte*/
-.menu li:hover, #nav-main li.selected, #nav-main li.over{text-decoration:none; background:#ffffff; color:#333333;}
-.menu li:hover a{color:#333333;}
-.menu li:hover a span.arrow-downWhite{background-position:100% -4673px !important; padding-right:15px;}
-
-.menu li:first-child {
-border-left:#45b6ea solid 1px;
-}
-
-.menu .icon-tiny{position:absolute; top:22px; right:12px; background-position:-1000px -17px;}
-
-.menu li ul{display:none; position: absolute; z-index: 10; margin-left:-1px; margin-top:0; border-top:0px; background:#FFFFFF; width:200px; list-style:none;}
-.menu li:hover ul, #nav-main li.over ul {display: block;}
-.menu li li{border:#45b6ea solid 1px; border-bottom:#45b6ea solid 1px; background:#FFFFFF; width: 100%; font-size:13px;}
-.menu li li a{line-height:20px; padding-top:8px; padding-bottom:8px; font-weight:normal; color:#008cc9;}
-.menu li li a:hover{background:#e0f2fe;color:#008cc9;}
-.menu li li a:active{background:#fff;}
-.menu li li.last{border-bottom:#009be2 solid 1px;}
-
-
-#sous-menu-header{
-position:relative; 
-background:url(../../images/menu.png) no-repeat;
-position:relative;
-background-position-x: 0px;
-background-position-y: -140px;
-z-index:1; 
-font-size:14px; 
-line-height:1; 
-clear:both; 
-color:#333; 
-height:50px;
-}
-
-.sous-menu {list-style:none; font-size:15px;}
-.sous-menu a:hover{text-decoration:none;}
-.sous-menu li{ float:left; position:relative; border-right:#45b6ea solid 1px; border-top:solid 1px #009be2; border-bottom:solid 1px #31aee8; margin:0px;}
-.sous-menu li a{color:#ffffff; padding:15px 15px; display:block; cursor:pointer; line-height: 18px; text-decoration: none;}
-.sous-menu li a:hover{color:#008cc9;}/* quand le pointeur est sur le texte*/
-.sous-menu li:hover, #nav-main li.selected, #nav-main li.over{text-decoration:none; background:#ffffff; color:#333333;}
-.sous-menu li:hover a{color:#333333;}
-.sous-menu li:hover a span.arrow-downWhite{background-position:100% -4673px !important; padding-right:15px;}
-
-.sous-menu li:first-child {
-border-left:#45b6ea solid 1px;
-}
 
 /* pris de twitter A voir */
 .nav li{list-style:none;position:relative;display:inline;}
@@ -667,13 +442,9 @@ span.chosen-skill {
 	height: 19px; 
 }
 
-.ns_margin-none{margin:0px !important;}
-
-.ns_right{float:right !important;}
-
 /* Search results list */
 	ul.ns_freelancer-list{margin:0 0 30px 0; padding:0; list-style-type:none; position:relative;}
-	ul.ns_freelancer-list li{padding:20px 10px; border-bottom:1px dotted #cccccc; display:block; /* Fixed hover error in IE7 */ *zoom:1;}
+	ul.ns_freelancer-list li{padding:20px 20px 20px 20px; border-bottom:1px dotted #cccccc; display:block; /* Fixed hover error in IE7 */ *zoom:1;}
 	ul.ns_freelancer-list li h3{font-size:16px; float:left; padding:0 5px;}
 	ul.ns_freelancer-list li p{font-size:12px;}
 	ul.ns_freelancer-list li img{float:left; margin-right:15px; border:1px solid #cccccc;}
@@ -693,6 +464,12 @@ span.chosen-skill {
 	/* Hover */
 	ul.ns_freelancer-list li:hover{background:#eaf6fd;}
 	ul.ns_freelancer-list li .ns_hover{width:250px; position:relative; display:none;}
+
+
+.ns_margin-none{margin:0px !important;}
+
+.ns_right{float:right !important;}
+
 	
 /* Blue Gradient */
 .ns_grad-blue, .ns_blue, .ns_form button.ns_blue, .ns_pagination .current, .ns_btn-big.ns_hire-me.ns_blue, .ns_notify.ns_info .ns_btn, ul.ns_entry-hover .ns_action-button:hover , ul.ns_action-tab .ns_action-button:hover  {

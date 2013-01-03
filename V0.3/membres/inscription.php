@@ -155,7 +155,7 @@ else {
 <?
 include('../scriptes.php');
 ?>
-<script src="/javascript/password.js" type="text/javascript"></script>
+<script src="../javascript/password.js" type="text/javascript"></script>
 </head>
 <body id="sky">
 <?

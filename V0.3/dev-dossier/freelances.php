@@ -6,6 +6,7 @@ session_start();
 <head>
 <title>Freelances</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="../css/freelance.css" rel="stylesheet" type="text/css">
 <?
 include('../scriptes.php');
 ?>
@@ -52,10 +53,24 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
 // d'enregistrement necessaire à l'affichage.
 
 //=========================================
+if (isset($_GET['competence'])){
 
-  $select = "SELECT * FROM MEMBRES WHERE ID LIKE '%".$_GET['competence']."%'";
+  $select_c = "SELECT * FROM CATEGORIES WHERE ID = ".$_GET['competence'].";";
+  $result_c = mysql_query($select_c,$link) or die ('Erreur : '.mysql_error() );
+  $total_c = mysql_num_rows($result_c);
+  if (total_c){
+  $row_c = mysql_fetch_array($result_c);
+  $select = "SELECT * FROM MEMBRES WHERE COMPETENCES LIKE '%".$row_c["NOM"]."%'";
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
-  $total = mysql_num_rows($result);
+  $total = mysql_num_rows($result);  
+  };
+
+
+  } else {
+  $select = "SELECT * FROM MEMBRES";
+  $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
+  $total = mysql_num_rows($result);  
+  }
 echo '<ul id="freelancer-list" class="ns_freelancer-list">';
 while($row = mysql_fetch_array($result)) {
 

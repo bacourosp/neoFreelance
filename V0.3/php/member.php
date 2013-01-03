@@ -32,11 +32,12 @@ function display_mini_profil_gravatar(){
 
  $grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;
 
- echo '<div class="module mini-profil">';
- echo '<img src="'.$grav_url.'" alt="" />';
+ echo '<div class="freelance">';
+ echo '<img src="'.$grav_url.'" alt="" class="img"/></img>';
  echo '<div>';
- echo '<a href="/membres/profil.php?ID='.$this->id.'" style="color:blue;">'.$this->pseudo.'</a>';
- echo '<p>'.$this->competences.'</p>';
+ echo '<a href="/membres/profil.php?ID='.$this->id.'" class="username">'.$this->pseudo.'</a>';
+ echo '<p class="competences">'.$this->competences.'</p>';
+ echo '<p class="description">'.$this->description.'</p>';
  echo '</div>';
  echo '<div class="spacer"></div>';
  echo '</div>';

@@ -1,4 +1,5 @@
 <div id="contact" class="reveal-modal offre">
+<p>Attention ! Ceci est une mise en relation et votre email sera communiqu&eacute; au membre !</p>
 <a class="close-reveal-modal"><img src="../images/icones/icon_close1.png"></a>
 <?
   $select2 = "SELECT PSEUDO FROM MEMBRES WHERE ID='".$_SESSION["ID_UTILISATEUR"]."';";
@@ -35,25 +36,25 @@ Partie permettant de garder un lien avec les information sur le projet et le Fre
 Fin de cette partie
 -->
 <div id="Sujet"  style="position:relative" >
-        <label for="subCategory"><b>Sujet� :</b></label><br>
-        <input type="text" class="projectFormTextField small-textbox" name="sujet" id="montantreal" maxlength="50" size="50" style="width:200px; " value="Sujet : " style="vertical-align:middle;" onMouseOver="showHint('montantreal-hint');" onMouseOut="hideHint('montantreal-hint');" onBlur="showError('montantrealm','montantreal-err');">
+        <label for="subCategory"><b>Sujet :</b></label><br>
+        <input type="text" class="projectFormTextField small-textbox" name="sujet" id="montantreal" maxlength="50" size="50" style="width:200px; " value="neoFreelance > " style="vertical-align:middle;" onMouseOver="showHint('montantreal-hint');" onMouseOut="hideHint('montantreal-hint');" onBlur="showError('montantrealm','montantreal-err');">
         <span id="montantreal-hint" class="hint">Quel est le sujet ?<span class="hint-pointer">&nbsp;</span></span>
-        <label></label> Saisissez un sujet &nbsp;<span id="montantreal-err" class="err-msg">Sujet de votre message.</span>
+        <label></label> &nbsp;<span id="montantreal-err" class="err-msg">Sujet de votre message.</span>
 </div>
 <div id="divProjectDescription" >
 	<table width="400" border="0">
 		<tr>
 			<td width="600"><label for="projectDetails"><b>Message :</b></label>
 			
-			<span id="project-description-err" class="err-msg">Entrez un minimum de dix carctè�res s'il vous plait</span></td>
+			<span id="project-description-err" class="err-msg">Entrez un minimum de dix caract&egrave;res s'il vous plait</span></td>
 			
 			<td> </td>
 		</tr>
 		<tr>
 			<td colspan="2">
 			<div style="width:400px; margin-bottom:15px; position:relative;">
-			<textarea style="width:400px;" name="message" rows="13" maxlength="400" id="project-description" class="projectFormTextField" onMouseOver="showHint('project-description-hint');" onMouseOut="hideHint('project-description-hint');" onBlur="showError10('project-description','project-description-err');" onkeypress="compteroffre(this.form);"></textarea>&nbsp;
-			<span id="project-description-hint" class="hint">Plus vous dé�taillez votre message, plus vous aurez de chance d'ê�tre contactéet.<span class="hint-pointer">&nbsp;</span></span>
+			<textarea style="width:300px;" name="message" rows="13" maxlength="400" id="project-description" class="projectFormTextField" onMouseOver="showHint('project-description-hint');" onMouseOut="hideHint('project-description-hint');" onBlur="showError10('project-description','project-description-err');" onkeypress="compteroffre(this.form);"></textarea>&nbsp;
+			<span id="project-description-hint" class="hint">Plus vous d&eacute;taillez votre message, plus vous aurez de chance d'&ecirc;tre contact&eacute;.<span class="hint-pointer">&nbsp;</span></span>
 			</div>
 			</td>
 		</tr>

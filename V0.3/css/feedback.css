@@ -1,0 +1,64 @@
+#feedback_tab {
+    position: fixed;
+    z-index: 101;
+    top: 210px;
+    left: -32px;
+    height: 120px;
+    width: 60px;
+    background-color: rgb(0, 157, 222);
+    cursor: pointer;
+    border: 2px solid rgb(255, 255, 255);
+        border-top-width: 2px;
+        border-right-width-value: 2px;
+        border-right-width-ltr-source: physical;
+        border-right-width-rtl-source: physical;
+        border-bottom-width: 2px;
+        border-left-width-value: 2px;
+        border-left-width-ltr-source: physical;
+        border-left-width-rtl-source: physical;
+        border-top-style: solid;
+        border-right-style-value: solid;
+        border-right-style-ltr-source: physical;
+        border-right-style-rtl-source: physical;
+        border-bottom-style: solid;
+        border-left-style-value: solid;
+        border-left-style-ltr-source: physical;
+        border-left-style-rtl-source: physical;
+        border-top-color: rgb(255, 255, 255);
+        border-right-color-value: rgb(255, 255, 255);
+        border-right-color-ltr-source: physical;
+        border-right-color-rtl-source: physical;
+        border-bottom-color: rgb(255, 255, 255);
+        border-left-color-value: rgb(255, 255, 255);
+        border-left-color-ltr-source: physical;
+        border-left-color-rtl-source: physical;
+        -moz-border-top-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        border-image-source: none;
+        border-image-slice: 100% 100% 100% 100%;
+        border-image-width: 1 1 1 1;
+        border-image-outset: 0 0 0 0;
+        border-image-repeat: stretch stretch;
+    border-radius: 8px 8px 8px 8px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+}
+
+#feedback_tab .text {
+    position: absolute;
+    font-size: 14px;
+    letter-spacing: 1px;
+    top: 51px;
+    left: 8px;
+    color: white;
+    background-color: rgb(0, 157, 222);
+    transform: rotate(-90deg);
+}
+
+#feedback_tab {
+    cursor: pointer;
+}

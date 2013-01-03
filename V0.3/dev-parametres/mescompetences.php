@@ -34,7 +34,7 @@ $message ='Modification de votre compte<br />';
 			//FIN TRAITEMENT
 
  include('../../db.php');
-$link = mysql_connect ($host,$user,$pass) or die ('Erreur : '.mysql_error() );
+$link = mysq_connect ($host,$user,$pass) or die ('Erreur : '.mysql_error() );
                     mysql_select_db($db) or die ('Erreur :'.mysql_error());
 
                     $result = mysql_query("
@@ -73,7 +73,7 @@ include('../menu.php');
 
 ?>
 <div class="content">
-<div id="profilContainer">
+<div class="container">
 <br>
 <h1>Compétences</h1>
 <? 
@@ -97,7 +97,15 @@ echo '<div class"account-group"><img src="'.$grav_url.'" alt="" /></div>';
 echo '<div class="spacer"> </div>';
 echo '</div>';
 
-include('../parametres/menu-gauche.php');
+echo '<div class="module">';
+echo '<ul>';
+echo '<li><a class="list-link" href="compte.php">Compte</a></li>';
+echo '<li><a class="list-link" href="pass.php">Mot de passe</a></li>';
+echo '<li><a class="list-link" href="notifications.php">Notifications</a></li>';
+echo '<li><a class="list-link actif" href="mescompetences.php">Compètences</a></li>';
+echo '<li><a class="list-link" href="profil.php">Profil</a></li>';
+echo '</ul>';
+echo '</div>';
 
 echo '</div>';//dashboard
 
@@ -122,7 +130,7 @@ echo '
 
 </div>
 
-<div id="skill-container">
+<div id="skill-container" style=" min-height:200px;>
 
 <?
 
@@ -170,19 +178,20 @@ document.write('<input type="hidden" value="" size="45" maxlength="60" name="SKI
 
 <?
 echo '<div class="clear"></div>';
+echo '<div style="border: 2px solid #EEE;"></div>';
 echo '
 
 </br>
-<center>
-<button class="ns_btn ns_blue" type="submit" value="post" onClick="ajouterSkills();">Modifier</button>
-</center>
-</form>
-';
 
-echo '</div>';//content-main
+<button class="ns_btn ns_blue" type="submit" value="post" onClick="ajouterSkills();" style="float:right;>Modifier</button>
+
+</form>
+
+';
+echo '<div class="spacer"> </div>';
 
 ?>
-<div class="spacer"> </div>
+
 </div>
 </div>
 

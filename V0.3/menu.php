@@ -1,3 +1,16 @@
+<script type="text/javascript">
+
+$(document).ready(function(){
+$('#feedback').click(function(e) {
+
+    e.preventDefault();
+
+    $('#support').reveal;
+
+});
+});
+
+</script>
 <!-- Header -->
 <div id="header">
 
@@ -80,6 +93,19 @@
 </div><!-- Header -->
 
 <br>
+
+<?
+include('feedback.php');
+?>
+
+<div id="feedback_tab">
+
+<div class="text">
+
+<a id="feedback" href="#" data-reveal-id="support" data-animation="fade" style="text-decoration:none;color:white;">Feedback</a>  
+
+</div>
+</div>
 
 <!-- Menu Principal -->	
 <div class="menu-content">

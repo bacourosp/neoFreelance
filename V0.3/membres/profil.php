@@ -11,11 +11,11 @@ include('../scriptes.php');
 <script type="text/javascript">
 
 $(document).ready(function(){
-$('#faire-offre').click(function(e) {
+$('#contacter').click(function(e) {
 
     e.preventDefault();
 
-    $('#monOffre').reveal;
+    $('#contact').reveal;
 
 });
 });
@@ -100,9 +100,9 @@ if ($_SESSION['connected']==TRUE) {
 
 echo '<div style="border: 2px solid #EEE;"></div>';
 echo '<br>';
+ include('contacter.php');
+  echo '<div><a id="contacter" href="#" class="btn green" data-reveal-id="contact" data-animation="fade" style="text-decoration:none;float:right;">contacter</a></div>';  
  
-  echo '<div><a id="contacter" href="#" class="btn green" data-reveal-id="contact" data-animation="fade" style="text-decoration:none;float:right;">contacter</a></div>';
-  include('contacter.php');
 
  };
 ?>

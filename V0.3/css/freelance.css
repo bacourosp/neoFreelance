@@ -1,0 +1,76 @@
+/* CSS Document */
+
+/* Search results list */
+/* ancien ns-freelancer-list */
+	ul.ns_freelancer-list{margin:0 0 30px 0; padding:0; list-style-type:none; position:relative;}
+	ul.ns_freelancer-list li{padding:20px 20px 20px 20px; border-bottom:1px dotted #cccccc; display:block; /* Fixed hover error in IE7 */ *zoom:1;}
+	ul.ns_freelancer-list li h3{font-size:16px; float:left; padding:0 5px;}
+	ul.ns_freelancer-list li p{font-size:12px;}
+	ul.ns_freelancer-list li img{float:left; margin-right:15px; border:1px solid #cccccc;}
+	ul.ns_freelancer-list li .ns_custom-icon{margin-top:2px;}
+	ul.ns_freelancer-list li.ns_highlighted{background:#fffacf;}
+	ul.ns_freelancer-list.ns_sponsored{border-bottom:10px solid #f8f7f7; margin-bottom:0!important;}
+	ul.ns_freelancer-list.ns_sponsored li{border-bottom:1px solid #cccccc;}
+	h2.ns_sponsored{padding:10px!important; border-bottom:1px solid #cccccc; background:#f8f7f7; margin-bottom:0!important; font-size:16px!important; font-weight:bold!important; color:#555555;}
+	
+	/* Ratings */
+	ul.ns_freelancer-list li .ns_ratings-new, ul.ns_freelancer-list li .ns_earnings-container{float:left;} 
+	ul.ns_freelancer-list li .ns_ratings-new{margin-right:40px;}
+	ul.ns_freelancer-list li .ns_earnings-container{margin-top:-5px;width:100px;}
+	ul.ns_freelancer-list li .ns_earnings-container .ns_ratings-num{margin:5px 0 0 7px;}
+	ul.ns_freelancer-list li .ns_ratings-new .ns_ratings-num{margin-right:-25px;}
+	
+	/* Hover */
+	ul.ns_freelancer-list li:hover{background:#eaf6fd;}
+	ul.ns_freelancer-list li .ns_hover{width:250px; position:relative; display:none;}
+
+/* ancien mini-profil et module */
+.freelance 
+{
+margin-top:10px;
+position: relative;
+background-color:#fff;*/
+height: 100%; 
+width: 100%;
+display:block;
+border: 5px solid #ea902b;
+
+  -webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-left-radius: 10px;	
+	
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-bottom-right-radius: 10px;
+  
+  -moz-border-radius-topleft: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-o-border-radius-topleft: 10px;
+	-o-border-top-left-radius: 10px;
+	-ms-border-radius-topleft: 10px;
+	-ms-border-top-left-radius: 10px;
+	-khtml-border-radius-topleft: 10px;
+	-khtml-border-top-left-radius: 10px;
+ 	border-top-left-radius: 10px;
+
+  -moz-border-radius-topright: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-o-border-radius-topright: 10px;
+	-o-border-top-right-radius: 10px;
+	-ms-border-radius-topright: 10px;
+	-ms-border-top-right-radius: 10px;
+	-khtml-border-radius-topright: 10px;
+	-khtml-border-top-right-radius: 10px;
+	border-top-right-radius: 10px; 
+}
+
+.freelance{font-size:12px;}
+.freelance .list-link{padding-top:12px;padding-bottom:12px;border-bottom:0;}
+.freelance img{float:left; margin: 5px 5px 5px 5px;}
+.freelance .content{margin-left:42px;}
+.freelance .fullname{display:block;font-size:14px;color:#333;}
+.freelance .username{color:blue;}
+.freelance .competences{color:#000;}
+.freelance .view-profile{display:block;}
+.freelance .metadata{font-size:11px;}
+

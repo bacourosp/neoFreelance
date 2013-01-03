@@ -186,7 +186,7 @@ echo '<div style="border: 2px solid #EEE;"></div>';
 echo '
 </br>
 
-<button class="ns_btn ns_blue" type="submit" value="post" style="float:right;">Modifier</button>
+<button class="ns_btn ns_blue" type="submit" value="post" onClick="ajouterSkills();" style="float:right;">Modifier</button>
 
 </form>
 ';
