@@ -48,10 +48,13 @@ h1{
 .div_product_title h1.product_name_big {font-size:16px; font-weight:bold; letter-spacing: normal; color: #362F2D !important; text-decoration: underline;} /*Free Market h2 fix*/
 
 h2 {
-	color: #008bcb;
-	font-size: 36px;
-	font-weight: bold;
-	font-family: Helvetica, Arial, sans-serif;
+   font-family:Arial, Verdana, Sans-serif;
+	font-size:30px;
+	color:#008BCB;
+	font-weight:normal;
+	padding-bottom:5px;
+	margin-bottom:20px;
+	letter-spacing:-1px; /* border-bottom:#008bcb solid 1px; */
 }
 
 li {
@@ -91,25 +94,7 @@ width:920px;
 background:#fff; 
 border-top:none;
 
-    -webkit-border-bottom-left-radius: 10px;
-	-moz-border-radius-bottomleft: 10px;
-	border-bottom-left-radius: 10px;	
-	
-	-webkit-border-bottom-right-radius: 10px;
-	-moz-border-radius-bottomright: 10px;
-	border-bottom-right-radius: 10px;
-}
-
-.menu-content{ 
-padding: 10px 10px 0px 10px; 
-margin:0 auto; 
-position:relative; 
-border:none; 
-width:920px; 
-background:#fff; 
-border-top:none;
-
-    -moz-border-radius-topleft: 10px;
+  -moz-border-radius-topleft: 10px;
 	-webkit-border-top-left-radius: 10px;
 	-o-border-radius-topleft: 10px;
 	-o-border-top-left-radius: 10px;
@@ -119,7 +104,7 @@ border-top:none;
 	-khtml-border-top-left-radius: 10px;
  	border-top-left-radius: 10px;
 
-    -moz-border-radius-topright: 10px;
+  -moz-border-radius-topright: 10px;
 	-webkit-border-top-right-radius: 10px;
 	-o-border-radius-topright: 10px;
 	-o-border-top-right-radius: 10px;
@@ -128,6 +113,54 @@ border-top:none;
 	-khtml-border-radius-topright: 10px;
 	-khtml-border-top-right-radius: 10px;
 	border-top-right-radius: 10px; 
+
+  -webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-left-radius: 10px;	
+	
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.arrondi{
+  -moz-border-radius-topleft: 10px;
+	-webkit-border-top-left-radius: 10px;
+	-o-border-radius-topleft: 10px;
+	-o-border-top-left-radius: 10px;
+	-ms-border-radius-topleft: 10px;
+	-ms-border-top-left-radius: 10px;
+	-khtml-border-radius-topleft: 10px;
+	-khtml-border-top-left-radius: 10px;
+ 	border-top-left-radius: 10px;
+
+  -moz-border-radius-topright: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-o-border-radius-topright: 10px;
+	-o-border-top-right-radius: 10px;
+	-ms-border-radius-topright: 10px;
+	-ms-border-top-right-radius: 10px;
+	-khtml-border-radius-topright: 10px;
+	-khtml-border-top-right-radius: 10px;
+	border-top-right-radius: 10px; 
+
+  -webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-left-radius: 10px;	
+	
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-bottom-right-radius: 10px;
+
+}
+.menu-content{ 
+padding: 10px 10px 0px 10px; 
+margin:0 auto; 
+position:relative; 
+border:none; 
+width:920px; 
+background:#fff; 
+border-top:none;
 }
 
 #quoi{ 
@@ -248,6 +281,7 @@ color: #343434;
 
 .container {
 min-height:400px;
+padding:0px 0px 0px 20px;
 }
 
 #freelancesContainer {

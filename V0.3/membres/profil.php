@@ -58,7 +58,7 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
   $result = mysql_query($select,$link) or die ('Erreur : '.mysql_error() );
   $total = mysql_num_rows($result);
 
-
+if ($total){
 $row = mysql_fetch_array($result);
 
 $EMAIL=$row["EMAIL"];
@@ -91,6 +91,13 @@ echo '<div><b>Description : </b>'.$row["DESCRIPTION"]; echo '</div>';
 
 echo '</div>';//content-main
 echo '<div class="clear"></div>';
+
+} else {
+
+echo '<p>le membre vous cherchez sera bientôt parmis nous<p>';
+
+}
+
 ?>
 
 <?

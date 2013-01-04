@@ -8,10 +8,10 @@ Partie permettant de garder un lien avec les information sur le projet et le Fre
 -->
 
 <div id="email"  style="position:relative;" >
-        <label for="subCategory"><b>EMAIL</b></label><br>
+        <label for="subCategory"><b>Email</b></label><br>
         <input type="text" class="projectFormTextField textbox" name="email" id="idprojet2" style="vertical-align:middle;" onMouseOver="showHint('idprojet-hint');" onMouseOut="hideHint('idprojet-hint');" onBlur="showError('idprojet','idprojet-err');">
         <span id="idprojet-hint" class="hint">Entrez votre eMail<span class="hint-pointer">&nbsp;</span></span>
-        <label>Votre eMail</label> &nbsp;<span id="idprojet-err" class="err-msg">eMail.</span>
+        <label>(Optionnel)</label> &nbsp;<span id="idprojet-err" class="err-msg"></span>
 </div>
 
 <!--

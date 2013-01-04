@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 
 <link href="../css/menu.css" rel="stylesheet" type="text/css">
-<link href="../css/freelancer.css" rel="stylesheet" type="text/css">
+<link href="../css/style.css" rel="stylesheet" type="text/css">
 <link href="../css/footer.css" rel="stylesheet" type="text/css">
 <link href="../css/feedback.css" rel="stylesheet" type="text/css">
 <link rel="icon" type="image/png" href="http://www.neofreelance.com/images/Logo-neoFreelance/Logo-neoF.png" />

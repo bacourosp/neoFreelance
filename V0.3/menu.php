@@ -107,6 +107,4 @@ include('feedback.php');
 </div>
 </div>
 
-<!-- Menu Principal -->	
-<div class="menu-content">
 </div>

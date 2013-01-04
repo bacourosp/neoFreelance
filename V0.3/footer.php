@@ -1,6 +1,7 @@
+<div class="footer-container">
 <div id="footer">
 
-<div class="upper_footer">
+<div class="upper_footer arrondi">
 
 <div class="footer-container clearfix">
 
@@ -32,10 +33,11 @@
 
 <br>
 
-<div class="lower_footer">
+<div class="lower_footer arrondi">
 <div class="footer-container clearfix">
 <a href="http://creativecommons.org/licenses/by-nc/3.0/" style="text-decoration:none; color:#fff"><img src="http://www.neofreelance.com/images/copyright/88x31.png"> Copyrights 2012, Al Daffah Creative Commons</a>
 </div>
 </div> <!-- Fin de la marge -->
 
 </div><!-- footer -->
+</div>

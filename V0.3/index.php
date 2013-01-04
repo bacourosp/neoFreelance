@@ -25,11 +25,11 @@ include('menu.php');
 
 <h1>Bienvenue Anonyme</h1>
 
-<div id="ns_banner-wrapper">
- <div id="ns_banner">
-
-  <h1 style="margin-left: 15px; ">neoFreelance.com c'est quoi ?</h1>
+  <h2 style="margin-left: 15px; ">neoFreelance.com c'est quoi ?</h2>
   <br>
+
+  <div style="font-size:20px ">
+
   <ul>
   
   <li>Une platteforme et une place de marché pour les projets en télétravail</li>
@@ -57,9 +57,9 @@ Parlez en autour de vous :
  </div>
 
 
-
 </div>
 
+<div class="content" style="margin-top:20px;">
 <?
 // Pour afficher le nombre de projets et le nombre de membres
 
@@ -96,7 +96,7 @@ mysql_select_db($db) or die ('Erreur :'.mysql_error());
 <div class="row">
 
 <div class="span-one-half">
-<h1 >Quoi de neuf ?</h1>
+<h2 >Quoi de neuf ?</h2>
 
 <div style="font-size:20px ">
 
@@ -114,7 +114,7 @@ include('chat/connectes.php');
 </ul>
 </div>
 <br>
-<h1>La presse en parle !</h1>
+<h2>La presse en parle !</h2>
 <div style="font-size:20px ">
 <ul>
 <li>Le quotidien d'oran, <a href="medias/21112012.pdf">lire en page 13</a>.</li>
@@ -149,11 +149,13 @@ fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 <br>
 
 </div>
+</div>
+</div>
+
 
 <? 
 include('footer.php');
 ?>
-</div>
 
 </body>
 </html>
