@@ -1,7 +1,9 @@
-Ceci est une platteforme détinée au télétravail et  coworking.
+This is a french freelance platteform in téléworking. I am working on multilanguage version.
 
-L'installation est simple, il suffit de copier les fichiers dans un dossier.
+The installation is simple :
 
-De crér la base de donnée
+- Download the sources into a folder of your choice
+- put credentials in db.php
+- Ask me for the last structure of the database ;)
 
-Voilà!
+Voilà !
